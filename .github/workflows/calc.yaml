@@ -1,63 +1,43 @@
-# name: calc
+name: calc
 
-# on:
-#   push:
-#     branches: [master]
-#   workflow_dispatch:
-
-# jobs:
-#   publish:
-#     runs-on: ubuntu-latest
-#     steps:
-#       -
-#         name: Checkout
-#         uses: actions/checkout@v3
-#       - 
-#         name: Build Site
-#         run: |
-#           npm install
-#           npm run build
-#       -
-#         name: Gen dummy page
-#         run: |
-#           mkdir public
-#           cat > public/index.html <<EOL
-#           <!doctype html>
-#           <html>
-#             <head>
-#               <title>GitHub Pages deployed!</title>
-#             </head>
-#             <body>
-#               <p>GitHub Pages with <strong>${{ github.sha }}</strong> commit ID has been deployed through <a href="https://github.com/marketplace/actions/github-pages">GitHub Pages action</a> successfully.</p>
-#             </body>
-#           </html>
-#           EOL
-#       -
-#         name: Deploy to GitHub Pages
-#         if: success()
-#         uses: crazy-max/ghaction-github-pages@v3
-#         with:
-#           target_branch: gh-pages
-#           build_dir: public
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-name: GitHub Actions Build and Deploy Demo
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  workflow_dispatch:
+
 jobs:
-  build-and-deploy:
+  publish:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install && npm run build
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      - 
+        name: Build Site
+        run: |
+          npm install
+          npm run build
+      -
+        name: Gen dummy page
+        run: |
+          mkdir public
+          cat > public/index.html <<EOL
+          <!doctype html>
+          <html>
+            <head>
+              <title>GitHub Pages deployed!</title>
+            </head>
+            <body>
+              <p>GitHub Pages with <strong>${{ github.sha }}</strong> commit ID has been deployed through <a href="https://github.com/marketplace/actions/github-pages">GitHub Pages action</a> successfully.</p>
+            </body>
+          </html>
+          EOL
+      -
+        name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
