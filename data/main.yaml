@@ -1,0 +1,5 @@
+games:
+  - id: 1
+    file: round1.yaml
+  - id: 2
+    file: round2.yaml

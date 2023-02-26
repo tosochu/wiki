@@ -1,0 +1,28 @@
+{
+  "name": "tosochu-wiki",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node src/build/main.js",
+    "run": "node src/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tosochu-wiki/tosochu-wiki.github.io.git"
+  },
+  "keywords": [
+    "wiki"
+  ],
+  "author": "Milmon",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/tosochu-wiki/tosochu-wiki.github.io/issues"
+  },
+  "homepage": "https://github.com/tosochu-wiki/tosochu-wiki.github.io#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
