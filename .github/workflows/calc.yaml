@@ -6,33 +6,38 @@ on:
   workflow_dispatch:
 
 jobs:
-  docs:
+  publish:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      # 运行构建脚本
-      - name: Build Site
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      - 
+        name: Build Site
         run: |
           npm install
           npm run build
-
-      # @see https://github.com/crazy-max/ghaction-github-pages
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
+      -
+        name: Gen dummy page
+        run: |
+          mkdir public
+          cat > public/index.html <<EOL
+          <!doctype html>
+          <html>
+            <head>
+              <title>GitHub Pages deployed!</title>
+            </head>
+            <body>
+              <p>GitHub Pages with <strong>${{ github.sha }}</strong> commit ID has been deployed through <a href="https://github.com/marketplace/actions/github-pages">GitHub Pages action</a> successfully.</p>
+            </body>
+          </html>
+          EOL
+      -
+        name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v3
         with:
-          # 部署到 gh-pages 分支
           target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
-          build_dir: dist
+          build_dir: public
         env:
-          # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
