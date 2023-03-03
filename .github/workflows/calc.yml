@@ -35,6 +35,7 @@ jobs:
             </body>
           </html>
           EOL
+          cat public/index.html
 
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
