@@ -1,0 +1,34 @@
+<style>
+    td,th{
+        word-wrap: break-word;
+    }
+    td{
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    td:nth-child(2){
+        width: 55%;
+    }
+    table{
+        width: 100%;
+        background-color: white;
+    }
+</style>
+<table>
+    <tr>
+        <th>Round</th>
+        <th>Title</th>
+        <th>Count</th>
+        <th>Date</th>
+        <th>Length</th>
+    </tr>
+    <% data.games.forEach((game,index)=>{ %>
+        <tr>
+            <td><%= game.id %></td>
+            <td><a href="/wiki/game/<%= game.id %>"><%= game.detail.title %></a></td>
+            <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.count %></td>
+            <td><%= game.detail.date %></td>
+            <td><%= game.detail.length %></td>
+        </tr>
+    <% }) %>
+</table>

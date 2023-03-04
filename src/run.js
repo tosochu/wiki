@@ -15,7 +15,10 @@ app.all('*',(req,res,next)=>{
     next();
 });
 
-app.use("/",express.static(path.join(__dirname,'../dist')));
+app.get("/",(req,res)=>{
+    res.redirect("/wiki");
+});
+app.use("/wiki",express.static(path.join(__dirname,'../dist')));
 
 app.listen(8399,()=>{
     console.log('Port :8399 is opened');
