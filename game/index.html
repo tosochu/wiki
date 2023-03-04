@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title id="title">Home - Tosochu Wiki</title>
+        <title id="title">Games List - Tosochu Wiki</title>
         <link rel="shortcut icon" type="image/x-icon" href="https://topan-dev.github.io/TopanUI/favicon.ico">
         <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
         <link rel="stylesheet" href="https://topan-dev.github.io/TopanUI/topan.css">
@@ -43,11 +43,48 @@
             <div class="topan-page">
                 <div class="topan-mainpage-auto">
                     <br>
-                    <div class="topan-section-shadow">
-    <h2>Hi, there!</h2>
-<p><em>本页</em>支持 <a href="https://wxy.com/">Markdown</a> <strong>基础</strong><s>语法</s>。</p>
-
-</div>
+                    <style>
+    td,th{
+        word-wrap: break-word;
+    }
+    td{
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    td:nth-child(2){
+        width: 55%;
+    }
+    table{
+        width: 100%;
+        background-color: white;
+    }
+</style>
+<table>
+    <tr>
+        <th>Round</th>
+        <th>Title</th>
+        <th>Count</th>
+        <th>Date</th>
+        <th>Length</th>
+    </tr>
+    
+        <tr>
+            <td>1</td>
+            <td><a href="/wiki/game/1">TITLETITLLE</a></td>
+            <td><i class="fa fa-solid fa-user"></i>&nbsp;</td>
+            <td>3 / 4 / 2023</td>
+            <td>100 h</td>
+        </tr>
+    
+        <tr>
+            <td>2</td>
+            <td><a href="/wiki/game/2">TITLETITLLE2</a></td>
+            <td><i class="fa fa-solid fa-user"></i>&nbsp;</td>
+            <td>3 / 4 / 2024</td>
+            <td>100 h</td>
+        </tr>
+    
+</table>
                     <br>
                 </div>
                 <footer class="topan-footer">
