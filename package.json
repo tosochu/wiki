@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node src/build/main.js",
-    "run": "node src/run.js"
+    "publish": "node src/build/main.js -github",
+    "dev:build": "node src/build/main.js",
+    "dev:run": "node src/run.js"
   },
   "repository": {
     "type": "git",
