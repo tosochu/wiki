@@ -3,5 +3,7 @@ title: Tosochu Wiki
 games:
   - id: 1
     file: 1.yaml
+  - id: 49
+    file: 49.yaml
   - id: 56
     file: 56.yaml
