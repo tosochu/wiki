@@ -38,7 +38,6 @@ var timeToString=(time)=>{
     if(displayHour)res+=String(hour)+" h";
     if(displayHour&&displayMinute)res+=" ";
     if(displayMinute)res+=String(minute)+" m";
-    console.log(hour,minute,displayMinute,displayHour,res);
     return res;
 }
 
@@ -57,10 +56,16 @@ ejs.renderFile("./src/templates/home.html",{
 });
 
 Config.games.forEach((game,index)=>{
-    var detail=YAML.load(`./data/${game.file}`);
+    var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
+    detail.message.forEach((message)=>{
+        if(!message.time)message.time=0;
+        if(!message.money)message.money=0;
+        playerset.add(message.person);
+    });
+    for(var player of playerset)players.push(player);
+    detail.player=players;
     detail.date=require('dayjs')(detail.date).format("M / D / YYYY");
     detail.length=timeToString(toStandardTime(detail.length));
-    console.log(detail.length);
     Config.games[index].detail=detail;
 });
 
@@ -75,5 +80,7 @@ ejs.renderFile("./src/templates/game_list.html",{
                  },HTML));
 });
 
-const ghpages=require('gh-pages');
-ghpages.publish('dist',function(err){});
+if(process.argv.slice(2).includes("-github")){
+    const ghpages=require('gh-pages');
+    ghpages.publish('dist',function(err){});
+}

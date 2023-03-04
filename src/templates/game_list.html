@@ -5,6 +5,7 @@
     td{
         white-space: nowrap;
         overflow: hidden;
+        height: 30px;
     }
     td:nth-child(2){
         width: 55%;
@@ -26,7 +27,7 @@
         <tr>
             <td><%= game.id %></td>
             <td><a href="/wiki/game/<%= game.id %>"><%= game.detail.title %></a></td>
-            <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.count %></td>
+            <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.player.length %></td>
             <td><%= game.detail.date %></td>
             <td><%= game.detail.length %></td>
         </tr>

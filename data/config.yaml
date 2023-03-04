@@ -2,6 +2,6 @@ readme: index.md
 title: Tosochu Wiki
 games:
   - id: 1
-    file: round1.yaml
+    file: 1.yaml
   - id: 2
-    file: round2.yaml
+    file: 2.yaml
