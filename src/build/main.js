@@ -40,6 +40,17 @@ var timeToString=(time)=>{
     if(displayMinute)res+=String(minute)+" m";
     return res;
 }
+var secondsToString=(time)=>{
+    var minute=parseInt(time/60),
+        second=time%60;
+    var res="";
+    var displayMinute=minute!=0,
+        displaySecond=second!=0;
+    if(displayMinute)res+=String(minute)+" m";
+    if(displayMinute&&displaySecond)res+=" ";
+    if(displaySecond)res+=String(second)+" s";
+    return res;
+}
 
 deleteDir("dist");
 fs.mkdirSync("dist");
@@ -58,9 +69,15 @@ ejs.renderFile("./src/templates/home.html",{
 Config.games.forEach((game,index)=>{
     var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
     detail.message.forEach((message)=>{
+        playerset.add(message.person);
         if(!message.time)message.time=0;
         if(!message.money)message.money=0;
-        playerset.add(message.person);
+        if(message.time==0)message.time="End of the Game";
+        else message.time=secondsToString(toStandardTime(message.time));
+        if(message.type=="catched")message.display=`Catched!`;
+        if(message.type=="win")    message.display=`Escape Successfully!`;
+        if(message.type=="revive") message.display=`Revived by ${message.reviver}.`,console.log(message);
+        if(message.money>0)message.display+=` Gets ${message.money} yen.`;
     });
     for(var player of playerset)players.push(player);
     detail.player=players;
@@ -68,12 +85,13 @@ Config.games.forEach((game,index)=>{
     detail.length=timeToString(toStandardTime(detail.length));
     Config.games[index].detail=detail;
     ejs.renderFile("./src/templates/game_detail.html",{
-        data: Config
+        data: Config.games[index],
+        description: MarkdownIt.render(game.detail.description)
     },(err,HTML)=>{
-        fs.writeFileSync(`./dist/game/${index+1}.html`,
+        fs.writeFileSync(`./dist/game/${game.id}.html`,
             Template({title: `Games List`,
-                    header: ``
-                    },HTML));
+                      header: ``
+                     },HTML));
     });
 });
 

@@ -1,6 +1,9 @@
 title: 美女とハンターと野獣
 length: 2:10
-description: description
+description: |
+  # markdown
+
+  awa
 date: 2022-01-01
 message: 
   - person: フワちゃん
@@ -31,6 +34,8 @@ message:
     type: catched
     time: 77:09
   - person: 中尾明慶
+    type: catched
+    time: 70:33
   - person: 景井ひな
     type: catched
     time: 62:31

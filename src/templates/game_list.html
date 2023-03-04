@@ -26,7 +26,7 @@
     <% data.games.forEach((game,index)=>{ %>
         <tr>
             <td><%= game.id %></td>
-            <td><a href="/wiki/game/<%= game.id %>"><%= game.detail.title %></a></td>
+            <td><a href="/wiki/game/<%= game.id %>.html"><%= game.detail.title %></a></td>
             <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.player.length %></td>
             <td><%= game.detail.date %></td>
             <td><%= game.detail.length %></td>
