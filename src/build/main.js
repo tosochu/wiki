@@ -67,6 +67,14 @@ Config.games.forEach((game,index)=>{
     detail.date=require('dayjs')(detail.date).format("M / D / YYYY");
     detail.length=timeToString(toStandardTime(detail.length));
     Config.games[index].detail=detail;
+    ejs.renderFile("./src/templates/game_detail.html",{
+        data: Config
+    },(err,HTML)=>{
+        fs.writeFileSync(`./dist/game/${index+1}.html`,
+            Template({title: `Games List`,
+                    header: ``
+                    },HTML));
+    });
 });
 
 console.log(JSON.stringify(Config,null,"  "));

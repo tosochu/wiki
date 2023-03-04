@@ -1,0 +1,35 @@
+<style>
+    td,th{
+        word-wrap: break-word;
+    }
+    td{
+        white-space: nowrap;
+        overflow: hidden;
+        height: 30px;
+    }
+    td:nth-child(2){
+        width: 55%;
+    }
+    table{
+        width: 100%;
+        background-color: white;
+    }
+</style>
+<div class="topan-section-shadow">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Count</th>
+        <th>Date</th>
+        <th>Length</th>
+    </tr>
+    <% data.games.forEach((game,index)=>{ %>
+        <tr>
+            <td><%= index+1 %></td>
+            <td><a href="/wiki/game/<%= game.id %>"><%= game.detail.title %></a></td>
+            <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.player.length %></td>
+            <td><%= game.detail.date %></td>
+            <td><%= game.detail.length %></td>
+        </tr>
+    <% }) %>
+</div>
