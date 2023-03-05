@@ -17,9 +17,19 @@
         width: 100%;
         background-color: white;
     }
+    .messages-display{
+        color: #888;
+    }
 </style>
 <div class="topan-section-shadow">
-    <h1>第 <%= data.id %> 回 - <%= data.detail.title %></h1>
+    <h2>第 <%= data.id %> 回 - <%= data.detail.title %></h2>
+    <p class="messages-display">
+        <strong>Date:</strong> <%= data.detail.date %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Length:</strong> <%= data.detail.length %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Count:</strong> <i class="fa fa-solid fa-user"></i> <%= data.detail.player.length %>
+    </p>
     <%- description %>
 </div>
 <br>

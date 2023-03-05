@@ -28,17 +28,6 @@ var toStandardTime=(time)=>{
     var temp=time.split(':');
     return Number(temp[0])*60+Number(temp[1]);
 }
-var timeToString=(time)=>{
-    var hour=parseInt(time/60),
-        minute=time%60;
-    var res="";
-    var displayHour=hour!=0,
-        displayMinute=minute!=0;
-    if(displayHour)res+=String(hour)+" h";
-    if(displayHour&&displayMinute)res+=" ";
-    if(displayMinute)res+=String(minute)+" m";
-    return res;
-}
 var secondsToString=(time)=>{
     var minute=parseInt(time/60),
         second=time%60;
@@ -115,7 +104,7 @@ Config.games.forEach((game,index)=>{
     for(var player of playerset)players.push(player);
     detail.player=players;
     detail.date=require('dayjs')(detail.date).format("M / D / YYYY");
-    detail.length=timeToString(toStandardTime(detail.length));
+    detail.length=`${toStandardTime(detail.length)} m`;
     Config.games[index].detail=detail;
     ejs.renderFile("./src/templates/game_detail.html",{
         data: Config.games[index],
