@@ -85,6 +85,10 @@ Config.games.forEach((game,index)=>{
         if(message.type=="win")        message.display=`Escaped! `;
         if(message.type=="revive")     message.display=`Revived by ${message.reviver}. `;
 
+        // Round #43
+        if(message.type=="companion-save") message.display=`Saved by ${message.saver}. `;
+        if(message.type=="companion-win")  message.display=``;
+
         // Round #49 ~ #51
         if(message.type=="money-game"){
             message.display=`<strong>Money Game!</strong>&#10;`;
@@ -101,9 +105,11 @@ Config.games.forEach((game,index)=>{
         message.person=temp;
 
         if(message.money>0){
-            if(message.person.split(",").length==1)
-                message.display+=`Got ${message.money} yen.`;
-            else message.display+=`Got ${message.money} yen together.`;
+            if(message.type=="companion-win")
+                message.display+=`Got ${message.money} yen because of ${message.rely}'s success.`;
+            else if(message.person.split(",").length>1)
+                message.display+=`Got ${message.money} yen together.`;
+            else message.display+=`Got ${message.money} yen.`;
         }
     });
     for(var player of playerset)players.push(player);

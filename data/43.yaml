@@ -1,7 +1,6 @@
 title: どうぶつ島を攻略せよ！
 description: description
 length: 100
-people: 16
 date: 2016-03-05
 message: 
   - person: [澤部佑, 白洲迅, ぺえ, 橋本良亮, 村本大輔, 八重樫東, 須賀健太, 伊藤一郎]
@@ -62,7 +61,8 @@ message:
     time: 1:32
   - person: 岡田結実
     type: win
-    time: 600000
+    money: 600000
   - person: ぺえ
     type: companion-win
-    time: 600000
+    money: 600000
+    rely: 岡田結実
