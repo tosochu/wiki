@@ -49,10 +49,7 @@ message:
   - person: 坡上忍
     time: 26:56
     type: catched
-  - person: 狩野英孝
-    time: 7:23
-    type: catched
-  - person: 白鳥久美子
+  - person: [狩野英孝, 白鳥久美子]
     time: 7:23
     type: catched
   - person: ダレノガレ明美
