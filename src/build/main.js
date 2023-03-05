@@ -81,7 +81,7 @@ Config.games.forEach((game,index)=>{
         if(message.time==0)message.time="End of the Game";
         else message.time=secondsToString(toStandardTime(message.time));
 
-        if(message.type=="catched")    message.display=`Catched! `;
+        if(message.type=="catched")    message.display=`Caught! `;
         if(message.type=="win")        message.display=`Escape Successfully! `;
         if(message.type=="revive")     message.display=`Revived by ${message.reviver}. `;
 
