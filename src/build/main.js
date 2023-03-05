@@ -2,7 +2,6 @@ const fs=require('fs');
 const path=require('path');
 const ejs=require('ejs');
 const Template=require('./template.js');
-const dayjs=require('dayjs');
 
 const YAML=require('yamljs');
 var Config=YAML.load('./data/config.yaml');
