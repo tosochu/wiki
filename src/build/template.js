@@ -18,7 +18,7 @@ module.exports=(config,HTML)=>{
     <body>
         <div class="topan-header">
             <div class="topan-header-home">
-                <a href="/wiki">
+                <a href="/${Config.on}">
                     <button class="topan-button-ordinary topan-button-commonly topan-button-header-round-left">
                         <i class="fa fa-home"></i>
                     </button>
@@ -26,13 +26,13 @@ module.exports=(config,HTML)=>{
             </div>
             <div class="topan-header-left">
                 <span class="topan-header-text">${Config.title}&nbsp;</span>
-                <a href="/wiki/player">
+                <a href="/${Config.on}/player">
                     <span class="topan-button-ordinary topan-button-commonly topan-button-header-block${config.onplayer?"-showed":""}">
                         <i class="fa fa-solid fa-user"></i>
                         <span>&nbsp;Players</span>
                     </span>
                 </a>
-                <a href="/wiki/game">
+                <a href="/${Config.on}/game">
                     <span class="topan-button-ordinary topan-button-commonly topan-button-header-block${config.ongame?"-showed":""}">
                         <i class="fa fa-solid fa-fire"></i>
                         <span>&nbsp;Games</span>
