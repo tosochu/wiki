@@ -10,11 +10,9 @@ module.exports=(config,HTML)=>{
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title id="title">${config.title} - ${Config.title}</title>
-        <link rel="shortcut icon" type="image/x-icon" href="https://topan-dev.github.io/TopanUI/favicon.ico">
         <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
         <link rel="stylesheet" href="https://topan-dev.github.io/TopanUI/topan.css">
         <script src="https://topan-dev.github.io/TopanUI/topan.js"></script>
-        <link rel="stylesheet" href="https://topan-dev.github.io/TopanUI/style.css">
         ${config.header}
     </head>
     <body>
