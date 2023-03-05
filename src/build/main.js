@@ -69,15 +69,45 @@ ejs.renderFile("./src/templates/home.html",{
 Config.games.forEach((game,index)=>{
     var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
     detail.message.forEach((message)=>{
-        playerset.add(message.person);
+        if(typeof message.person=="string"){
+            var temp=message.person;
+            message.person=new Array(),
+            message.person.push(temp);
+        }
+        message.person.forEach((player)=>{
+            playerset.add(player);
+        });
         if(!message.time)message.time=0;
         if(!message.money)message.money=0;
         if(message.time==0)message.time="End of the Game";
         else message.time=secondsToString(toStandardTime(message.time));
-        if(message.type=="catched")message.display=`Catched!`;
-        if(message.type=="win")    message.display=`Escape Successfully!`;
-        if(message.type=="revive") message.display=`Revived by ${message.reviver}.`,console.log(message);
-        if(message.money>0)message.display+=` Gets ${message.money} yen.`;
+
+        if(message.type=="catched")    message.display=`Catched! `;
+        if(message.type=="win")        message.display=`Escape Successfully! `;
+        if(message.type=="revive")     message.display=`Revived by ${message.reviver}. `;
+
+        // Round #49 ~ #51
+        if(message.type=="money-game"){
+            message.display=`<strong>Money Game!</strong>&#10;`;
+            var temp="";
+            message.person.forEach((player,playerIndex)=>{
+                if(message.challenger.includes(player))
+                    temp+=`<strong>${player}</strong>`;
+                else temp+=`${player}`;
+                if(playerIndex!=message.person.length-1)temp+=`, `;
+                if(playerIndex%5==4)temp+=`&#10;`;
+            });
+            message.person=temp;
+            message.display+="The bolds win the money game.&#10;";
+        }
+        else message.person=message.person[0];
+
+        if(message.money>0){
+            console.log(message.person);
+            if(message.person.split(",").length==1)
+                message.display+=`Gets ${message.money} yen.`;
+            else message.display+=`Gets ${message.money} yen together.`;
+        }
     });
     for(var player of playerset)players.push(player);
     detail.player=players;
