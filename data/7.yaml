@@ -1,0 +1,126 @@
+title: お台場
+length: [10, 70]
+description: |
+  
+date: 2008-04-22
+message: 
+  - type: round-start
+  - type: catched
+    time: 8:29
+    person: 藤原時
+  - type: catched
+    time: 7:18
+    person: 南明奈
+  - type: win
+    time: 5:49
+    person: たむらけんじ
+  - type: win
+    time: 5:30
+    person: 眞鍋かをり
+  - type: win
+    time: 5:15
+    person: 和泉元彌
+  - type: win
+    time: 5:09
+    person: 岩尾望
+  - type: win
+    time: 4:52
+    person: [矢口真里, 桜庭和志, 吉田敬, 近藤春菜]
+  - type: catched
+    time: 3:51
+    person: エド・はるみ
+  - type: win
+    time: 3:26
+    person: 箕輪はるか
+  - type: win
+    time: 3:17
+    person: [ルー大柴, 小杉竜一]
+  - type: catched
+    time: 2:29
+    person: 田崎佑一
+  - type: win
+    time: 1:48
+    person: [泰葉, 川合俊一, 野久保直樹, 花田勝]
+  - type: catched
+    time: 0:54
+    person: 木下優樹菜
+  - type: win
+    time: 0:05
+    person: くわばたりえ
+  - type: round-start
+  - type: catched
+    time: 野久保直樹
+    person: 65:24
+  - type: catched
+    time: 62:33
+    person: 上地雄輔
+  - type: catched
+    time: 56:22
+    person: たむらけんじ
+  - type: catched
+    time: 47:26
+    person: 箕輪はるか
+  - type: catched
+    time: 38:01
+    person: 泰葉
+  - type: catched
+    time: 31:57
+    person: 吉田敬
+  - type: catched
+    time: 29:20
+    person: ルー大柴
+  - type: catched
+    time: 25:36
+    person: くわばたりえ
+  - type: catched
+    time: 22:19
+    person: 小杉竜一
+  - type: catched
+    time: 17:03
+    person: 桜庭和志
+  - type: catched
+    time: 7:38
+    person: 花田勝
+  - type: catched
+    time: 4:26
+    person: 近藤春菜
+  - type: win
+    time: 0:00
+    person: 矢口真里
+    money: 1260000
+  - type: win
+    time: 0:00
+    person: 眞鍋かをり
+    money: 1260000
+  - type: win
+    time: 0:00
+    person: 川合俊一
+    money: 1260000
+  - type: win
+    time: 0:00
+    person: 岩尾望
+    money: 1260000
+  - type: win
+    time: 0:00
+    person: 和泉元彌
+    money: 1260000
+  - type: money-game-catched
+    time: 0:00
+    person: 岩尾望
+    money: -1260000
+  - type: money-game-catched
+    time: 0:00
+    person: 眞鍋かをり
+    money: -1260000
+  - type: money-game-catched
+    time: 0:00
+    person: 川合俊一
+    money: -1260000
+  - type: money-game-catched
+    time: 0:00
+    person: 和泉元彌
+    money: -1260000
+  - type: money-game-win
+    time: 0:00
+    person: 矢口真里
+    money: 740000
