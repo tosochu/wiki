@@ -126,10 +126,9 @@ Config.games.forEach((game,index)=>{
     else{
         var length="";
         detail.length.forEach((len,lengthIndex)=>{
-            length+=`${toStandardTime(len)} `;
+            length+=`${toStandardTime(len)} m`;
             if(lengthIndex!=detail.length.length-1)
-                length+="+ ";
-            else length+="m";
+                length+=" + ";
         });
         detail.length=length;
     }
