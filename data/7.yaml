@@ -49,8 +49,8 @@ message:
     person: くわばたりえ
   - type: round-start
   - type: catched
-    time: 野久保直樹
-    person: 65:24
+    person: 野久保直樹
+    time: 65:24
   - type: catched
     time: 62:33
     person: 上地雄輔
@@ -85,42 +85,32 @@ message:
     time: 4:26
     person: 近藤春菜
   - type: win
-    time: 0:00
     person: 矢口真里
     money: 1260000
   - type: win
-    time: 0:00
     person: 眞鍋かをり
     money: 1260000
   - type: win
-    time: 0:00
     person: 川合俊一
     money: 1260000
   - type: win
-    time: 0:00
     person: 岩尾望
     money: 1260000
   - type: win
-    time: 0:00
     person: 和泉元彌
     money: 1260000
   - type: money-game-catched
-    time: 0:00
     person: 岩尾望
     money: -1260000
   - type: money-game-catched
-    time: 0:00
     person: 眞鍋かをり
     money: -1260000
   - type: money-game-catched
-    time: 0:00
     person: 川合俊一
     money: -1260000
   - type: money-game-catched
-    time: 0:00
     person: 和泉元彌
     money: -1260000
   - type: money-game-win
-    time: 0:00
     person: 矢口真里
     money: 740000

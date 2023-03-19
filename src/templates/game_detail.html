@@ -10,7 +10,7 @@
     td:nth-child(2){
         width: 55%;
     }
-    td:nth-last-child(1){
+    td:nth-last-child(1):not(.round-starter){
         text-align: left;
     }
     table{
@@ -19,6 +19,9 @@
     }
     .messages-display{
         color: #888;
+    }
+    .round-starter{
+        text-align: center;
     }
 </style>
 <div class="topan-section-shadow">
@@ -40,11 +43,18 @@
         <th>Player</th>
         <th>Message</th>
     </tr>
-    <% data.detail.message.forEach((message,index)=>{ %>
+    <% data.detail.message.forEach((message,index)=>{
+        if(message.type=="round-start"){ %>
+        <tr>
+            <td colspan="3" class="round-starter"><%- message.display %></td>
+        </tr>
+        <% }
+        else{ %>
         <tr>
             <td><%= message.time %></td>
             <td><%- message.person %></td>
             <td><%- message.display %></td>
         </tr>
-    <% }) %>
+        <% }
+    }) %>
 </table>

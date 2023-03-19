@@ -56,7 +56,15 @@ ejs.renderFile("./src/templates/home.html",{
 
 Config.games.forEach((game,index)=>{
     var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
+    var roundId=0;
     detail.message.forEach((message)=>{
+        // Round #7
+        if(message.type=="round-start"){
+            roundId++;
+            message.display=`<strong>Round ${roundId}</strong>`;
+            return;
+        }
+
         if(typeof message.person=="string"){
             var temp=message.person;
             message.person=new Array(),
@@ -83,6 +91,13 @@ Config.games.forEach((game,index)=>{
             message.display=`<strong>Money Game!</strong>&#10;`;
             message.display+="The bolds won the money game.&#10;";
         }
+
+        // Round #7
+        if(message.type=="money-game-catched")
+            message.display=`Lose the money game! Confiscate ${-message.money} yen!`
+        if(message.type=="money-game-win")
+            message.display=`Win the money game! `;
+
         var temp="";
         message.person.forEach((player,playerIndex)=>{
             if(message.type=="money-game"&&message.challenger.includes(player))
@@ -96,6 +111,8 @@ Config.games.forEach((game,index)=>{
         if(message.money>0){
             if(message.type=="companion-win")
                 message.display+=`Got ${message.money} yen because of ${message.rely}'s success.`;
+            else if(message.type=="money-game-win")
+                message.display+=`Got another ${message.money}.`;
             else if(message.person.split(",").length>1)
                 message.display+=`Got ${message.money} yen together.`;
             else message.display+=`Got ${message.money} yen.`;
@@ -104,15 +121,27 @@ Config.games.forEach((game,index)=>{
     for(var player of playerset)players.push(player);
     detail.player=players;
     detail.date=require('dayjs')(detail.date).format("M / D / YYYY");
-    detail.length=`${toStandardTime(detail.length)} m`;
+    if(typeof detail.length=="string"||typeof detail.length=="number")
+        detail.length=`${toStandardTime(detail.length)} m`;
+    else{
+        var length="";
+        detail.length.forEach((len,lengthIndex)=>{
+            length+=`${toStandardTime(len)} `;
+            if(lengthIndex!=detail.length.length-1)
+                length+="+ ";
+            else length+="m";
+        });
+        detail.length=length;
+    }
     Config.games[index].detail=detail;
     ejs.renderFile("./src/templates/game_detail.html",{
         data: Config.games[index],
         description: MarkdownIt.render(game.detail.description)
     },(err,HTML)=>{
         fs.writeFileSync(`./dist/game/${game.id}.html`,
-            Template({title: `Games List`,
-                      header: ``
+            Template({title: `第 ${game.id} 回：${game.detail.title}`,
+                      header: ``,
+                      ongame: true
                      },HTML));
     });
 });
@@ -124,7 +153,8 @@ ejs.renderFile("./src/templates/game_list.html",{
 },(err,HTML)=>{
     fs.writeFileSync("./dist/game/index.html",
         Template({title: `Games List`,
-                  header: ``
+                  header: ``,
+                  ongame: true
                  },HTML));
 });
 
