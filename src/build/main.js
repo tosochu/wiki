@@ -132,7 +132,12 @@ Config.games.forEach((game,index)=>{
         });
         detail.length=length;
     }
-    Config.games[index].detail=detail;
+    if(detail.video)
+        detail.videohtml=`
+        <iframe src="//player.bilibili.com/player.html?${detail.video.startsWith('BV')?'bvid':'aid'}=${detail.video}"
+            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"></iframe>
+        `;
+    game.detail=detail;
     ejs.renderFile("./src/templates/game_detail.html",{
         data: Config.games[index],
         description: MarkdownIt.render(game.detail.description)
