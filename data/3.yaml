@@ -1,0 +1,33 @@
+title: 江戸の町
+length: 50
+date: 2006-04-01
+description: description
+people: 8
+video: BV1QK4y197se
+message: 
+  - type: catched
+    time: 41:12
+    person: レッド吉田
+  - type: catched
+    time: 36:39
+    person: 山本梓
+  - type: catched
+    time: 32:08
+    person: 袴田吉彦
+  - type: waiver
+    time: 28:40
+    person: 斉藤舞子
+    money: 128000
+  - type: waiver
+    time: 11:40
+    person: 矢沢心
+    money: 230000
+  - type: catched
+    time: 3:52
+    person: 国生さゆり
+  - type: win
+    person: ゴルゴ松本
+    money: 300000
+  - type: win
+    person: 諸星和己
+    money: 300000
