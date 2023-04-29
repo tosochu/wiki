@@ -81,6 +81,7 @@ Config.games.forEach((game,index)=>{
         if(message.type=="catched")    message.display=`Caught! `;
         if(message.type=="win")        message.display=`Escaped! `;
         if(message.type=="revive")     message.display=`Revived by ${message.reviver}. `;
+        if(message.type=="waiver")     message.display=`Waiver! `;
 
         // Round #43
         if(message.type=="companion-save") message.display=`Saved by ${message.saver}. `;
