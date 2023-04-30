@@ -1,0 +1,74 @@
+title: 沈黙の巨大迷宮
+description: description
+length: 130
+date: 2011-12-20
+video: undefined
+message:
+  - person: 杉村太蔵
+    time: 84:43
+    type: catched
+  - person: 高橋真麻
+    time: 82:01
+    type: catched
+  - person: 遠藤章造
+    time: 73:00
+    type: catched
+  - person: 河北麻友子
+    time: 61:56
+    type: catched
+  - person: 高橋茂雄
+    time: 60:24
+    type: catched
+  - person: 中田敦彦
+    time: 56:14
+    type: catched
+  - person: NAOTO
+    time: 53:25
+    type: catched
+  - person: 大久保佳代子
+    time: 51:43
+    type: catched
+  - person: 具志堅用高
+    time: 48:32
+    type: catched
+  - person: 磯野貴理子
+    time: 46:12
+    type: catched
+  - person: 高橋茂雄
+    time: 35:37
+    type: revive
+    reviver: 眞鍋かをり
+  - person: あやまん監督
+    time: 33:12
+    type: catched
+  - person: NAOTO
+    time: 31:50
+    type: revive
+    reviver: NAOKI
+  - person: 狩野英孝
+    time: 30:18
+    type: catched
+  - person: 市川知宏
+    time: 26:49
+    type: catched
+  - person: 杉崎美香
+    time: 18:32
+    type: catched
+  - person: NAOTO
+    time: 15:31
+    type: catched
+  - person: 高橋茂雄
+    time: 12:21
+    type: catched
+  - person: 眞鍋かをり
+    time: 4:49
+    type: catched
+  - person: NAOKI
+    time: 2:22
+    type: catched
+  - person: 藤森慎吾
+    type: win
+    money: 1080000
+  - person: NAOKI
+    type: companion-win
+    money: 1080000
