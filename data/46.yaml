@@ -1,0 +1,69 @@
+title: 上野アメ横妖怪伝説
+description: |
+  **前回に引き続き、今回も街中で大規模ロケを敢行！**
+
+  今回の舞台はパンダでも話題！ 東京･上野の“アメ横”。年末になると、真っ直ぐ歩けなくなるほどの人でごった返す“アメ横”を挑戦者、そしてハンターが疾走！
+
+  **有名人やアイドル、俳優など9名が初参戦！**
+
+  ｢ゴールデンボンバー｣ から鬼龍院翔と樽美酒研二、“イヤミ課長”こと木下ほうか、AKB総選挙第2位・須田亜香里(SKE48)、さらに、ひょっこりはん、森崎ウィン、えなこなど、9名の初参戦者がゲームに挑みます！
+  
+  制限時間の100分間を逃げ切り、見事賞金60万円を獲得する者は現れるのか !?
+length: 100
+date: 2018-09-02
+message: 
+  - person: 岡副麻希
+    type: catched
+    time: 98:02
+  - person: 宮田俊哉
+    type: catched
+    time: 92:14
+  - person: えなこ
+    type: catched
+    time: 80:51
+  - person: HIKAKIN
+    type: catched
+    time: 74:36
+  - person: 高橋茂雄
+    type: catched
+    time: 70:47
+  - person: 久保田かずのぶ
+    type: catched
+    time: 66:49
+  - person: 須田亜香里
+    type: catched
+    time: 56:43
+  - person: 池田美優
+    type: catched
+    time: 55:28
+  - person: 木下ほうか
+    type: waiver
+    money: 345200
+  - person: 鬼龍院翔
+    type: catched
+    time: 38:45
+  - person: 松島聡
+    type: catched
+    time: 31:40
+  - person: 宮田俊哉
+    type: revive
+    time: 30:10
+    reviver: 森崎ウィン
+  - person: 真珠・野沢オークライヤー
+    type: catched
+    time: 25:23
+  - person: ひょっこりはん
+    type: catched
+    time: 16:50
+  - person: 森崎ウィン
+    type: catched
+    time: 7:17
+  - person: 宮田俊哉
+    type: catched
+    time: 4:45
+  - person: 田中卓志
+    type: catched
+    time: 1:49
+  - person: 樽美酒研二
+    type: catched
+    time: 0:18
