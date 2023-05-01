@@ -10,10 +10,14 @@ games:
     file: 3.yaml
   - id: 7
     file: 7.yaml
+  - id: 25
+    file: 25.yaml
   - id: 35
     file: 35.yaml
   - id: 43
     file: 43.yaml
+  - id: 46
+    file: 46.yaml
   - id: 49
     file: 49.yaml
   - id: 56
