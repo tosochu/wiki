@@ -1,0 +1,123 @@
+title: 信長と忍者の里
+description: description
+length: 120
+date: 2010-10-10
+video: BV1CB4y1T7UG
+massage: 
+  - person: 東尾理子
+    time: 119:32
+    type: catched
+  - person: 福田薫
+    time: 115:10
+    type: catched
+  - person: 又吉直樹
+    time: 107:56
+    type: catched
+  - person: 塙宣之
+    time: 104:56
+    type: catched
+  - person: 木下隆行
+    time: 96:27
+    type: catched
+  - person: 澤部佑
+    time: 90:32
+    type: catched
+  - person: 南明奈
+    time: 78:06
+    type: catched
+  - person: 小森純
+    time: 75:15
+    type: catched
+  - person: JOY
+    time: 71:14
+    type: catched
+  - person: 高橋茂雄
+    time: 68:28
+    type: catched
+  - person: 川越達也
+    time: 67:20
+    type: catched
+  - person: 益子卓郎
+    time: 66:47
+    type: catched
+  - person: いとうあさこ
+    time: 66:37
+    type: catched
+  - person: 板野友美
+    time: 65:00
+    type: catched
+  - person: 高橋みなみ
+    time: 64:38
+    type: catched
+  - person: 鳥居みゆき
+    time: 64:07
+    type: catched
+  - person: 優木まおみ
+    time: 63:07
+    type: catched
+  - person: 鈴木Q太郎
+    time: 62:28
+    type: catched
+  - person: 綾部祐二
+    time: 61:34
+    type: catched
+  - person: 木本武宏
+    time: 60:14
+    type: catched
+  - person: [塙宣之, 鳥居みゆき, いとうあさこ, 川越達也, 優木まおみ]
+    time: 60:14
+    type: revive
+    reviver: [鳥居みゆき, 川越達也, 優木まおみ]
+  - person: [高橋みなみ, 板野友美, 鈴木Q太郎, 高橋茂雄, 南明奈]
+    time: 60:14
+    type: revive
+    reviver: [高橋みなみ, 高橋茂雄]
+  - person: [JOY, 綾部祐二, 福田薫, 小森純, 東尾理子]
+    time: 60:14
+    type: revive
+    reviver: [綾部祐二]
+  - person: JOY
+    time: 55:46
+    type: catched
+  - person: 福田薫
+    time: 53:36
+    type: catched
+  - person: 小森純
+    time: 51:51
+    type: catched
+  - person: 鈴木Q太郎
+    time: 50:19
+    type: catched
+  - person: 鳥居みゆき
+    time: 36:05
+    type: catched
+  - person: 高橋茂雄
+    time: 34:30
+    type: catched
+  - person: 塙宣之
+    time: 30:46
+    type: catched
+  - person: 板野友美
+    time: 27:40
+    type: catched
+  - person: 川越達也
+    time: 20:34
+    type: catched
+  - person: 南明奈
+    time: 18:37
+    type: catched
+  - person: 高橋みなみ
+    time: 6:49
+    type: catched
+  - person: 優木まおみ
+    time: 5:30
+    type: catched
+  - person: いとうあさこ
+    time: 3:33
+    type: catched
+  - person: 綾部祐二
+    time: 1:03
+    type: catched
+  - person: 東尾理子
+    money: 2160000
+    type: catched
