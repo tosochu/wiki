@@ -10,6 +10,8 @@ games:
     file: 3.yaml
   - id: 7
     file: 7.yaml
+  - id: 18
+    file: 18.yaml
   - id: 25
     file: 25.yaml
   - id: 35
