@@ -14,6 +14,8 @@ games:
     file: 25.yaml
   - id: 35
     file: 35.yaml
+  - id: 38
+    file: 38.yaml
   - id: 43
     file: 43.yaml
   - id: 46
