@@ -10,7 +10,7 @@ message:
   - person: 原史奈
     type: catched
     time: 2377
-  - person: ニコラス･ペタス
+  - person: ニコラス・ペタス
     type: catched
     time: 1788
   - person: ふかわりょう
@@ -28,6 +28,6 @@ message:
   - person: ウエンツ瑛士
     type: catched
     time: 92
-  - person: 保阪尚希
+  - person: 保坂尚輝
     type: win
     money: 390000
