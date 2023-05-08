@@ -13,7 +13,7 @@ message:
   - person: 多田健二
     time: 104:50
     type: catched
-  - person: 真鍋かをり
+  - person: 眞鍋かをり
     time: 96:10
     type: catched
   - person: 千葉雄大
@@ -31,13 +31,13 @@ message:
   - person: 横山由依
     time: 52:43
     type: catched
-  - person: 卢次重幸
+  - person: 戸次重幸
     time: 49:58
     type: catched
   - person: 今井華
     time: 39:29
     type: catched
-  - person: 真鍋かをり
+  - person: 眞鍋かをり
     time: 35:22
     type: revive
     reviver: 的場浩司
@@ -47,7 +47,7 @@ message:
   - person: 林修
     time: 30:06
     type: catched
-  - person: 坡上忍
+  - person: 坂上忍
     time: 26:56
     type: catched
   - person: [狩野英孝, 白鳥久美子]
@@ -56,7 +56,7 @@ message:
   - person: ダレノガレ明美
     time: 1:12
     type: catched
-  - person: 真鍋かをり
+  - person: 眞鍋かをり
     money: 1560000
     type: win
   - person: 的場浩司
