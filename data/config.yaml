@@ -1,5 +1,6 @@
 on: wiki
 readme: index.md
+dictionary: dictionary.yaml
 title: Tosochu Wiki
 games:
   - id: 1
