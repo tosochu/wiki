@@ -158,7 +158,8 @@ Config.games.forEach((game,index)=>{
     game.detail=detail;
     ejs.renderFile("./src/templates/game_detail.html",{
         data: Config.games[index],
-        description: MarkdownIt.render(game.detail.description)
+        description: MarkdownIt.render(game.detail.description),
+        on: Config.on, Player
     },(err,HTML)=>{
         fs.writeFileSync(`./dist/game/${game.id}.html`,
             Template({title: `第 ${game.id} 回：${game.detail.title}`,

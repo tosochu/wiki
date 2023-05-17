@@ -56,7 +56,7 @@
         else{ %>
         <tr>
             <td><%= message.time %></td>
-            <td><%- message.person %></td>
+            <td><a href="/<%= on %>/player/<%= Player.getStandardSymbol(message.person) %>.html"><%- message.person %></a></td>
             <td><%- message.display %></td>
         </tr>
         <% }
