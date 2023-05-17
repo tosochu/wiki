@@ -197,6 +197,15 @@ ejs.renderFile("./src/templates/player_list.html",{
 });
 
 Config.player.forEach(player=>{
+    ejs.renderFile("./src/templates/redirect.html",{
+        url: `/${Config.on}/player/${player.standardSymbol}.html`
+    },(err,HTML)=>{
+        fs.writeFileSync(`./dist/player/${player.symbol}.html`,
+            Template({title: `${player.name+(player.standardSymbol!=player.symbol?` (${player.standardSymbol})`:'')}`,
+                      header: ``,
+                      onplayer: true
+                     },HTML));
+    });
     ejs.renderFile("./src/templates/player_detail.html",{
         data: player,
         games: Config.games,
