@@ -118,9 +118,10 @@ Config.games.forEach((game,index)=>{
 
         var temp="";
         message.person.forEach((player,playerIndex)=>{
+            var playerhtml=`<a href="/${Config.on}/player/${Player.getStandardSymbol(player)}.html">${player}</a>`;
             if(message.type=="money-game"&&message.challenger.includes(player))
-                temp+=`<strong>${player}</strong>`;
-            else temp+=`${player}`;
+                temp+=`<strong>${playerhtml}</strong>`;
+            else temp+=`${playerhtml}`;
             if(playerIndex!=message.person.length-1)temp+=`, `;
             if(playerIndex%5==4)temp+=`&#10;`;
 
@@ -163,8 +164,7 @@ Config.games.forEach((game,index)=>{
     game.detail=detail;
     ejs.renderFile("./src/templates/game_detail.html",{
         data: Config.games[index],
-        description: MarkdownIt.render(game.detail.description),
-        on: Config.on, Player
+        description: MarkdownIt.render(game.detail.description)
     },(err,HTML)=>{
         fs.writeFileSync(`./dist/game/${game.id}.html`,
             Template({title: `第 ${game.id} 回：${game.detail.title}`,

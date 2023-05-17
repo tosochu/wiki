@@ -8,7 +8,7 @@
         height: 30px;
     }
     td:nth-child(2){
-        width: 55%;
+        width: 45%;
     }
     table{
         width: 100%;
@@ -46,6 +46,7 @@
         <th>Round</th>
         <th>Title</th>
         <th>Money</th>
+        <th>Escape Rate</th>
         <th>Count</th>
         <th>Date</th>
         <th>Length</th>
@@ -56,6 +57,7 @@
             <td><%= game.id %></td>
             <td><a href="/<%= on %>/game/<%= game.id %>.html"><%= game.detail.title %></a></td>
             <td><%= record.money %> yen</td>
+            <td><%= "?" %></td>
             <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.player.length %></td>
             <td><%= game.detail.date %></td>
             <td><%= game.detail.length %></td>
