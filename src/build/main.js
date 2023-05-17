@@ -123,6 +123,11 @@ Config.games.forEach((game,index)=>{
             else temp+=`${player}`;
             if(playerIndex!=message.person.length-1)temp+=`, `;
             if(playerIndex%5==4)temp+=`&#10;`;
+
+            var i=0; while(Config.player[i].name!=player)i++;
+            var newrecord=Config.player[i].record[Config.player[i].record.length-1];
+            newrecord.money+=message.money;
+            Config.player[i].record[Config.player[i].record.length-1]=newrecord;
         });
         message.person=temp;
 
@@ -187,17 +192,9 @@ Config.player=Config.player.sort((x,y)=>{
     return y.symbol==y.standardSymbol?-1:1;
 });
 
-ejs.renderFile("./src/templates/player_list.html",{
-    data: Config
-},(err,HTML)=>{
-    fs.writeFileSync("./dist/player/index.html",
-        Template({title: `Players List`,
-                  header: ``,
-                  onplayer: true
-                 },HTML));
-});
-
 Config.player.forEach(player=>{
+    player.money=0;
+    player.record.forEach(record=>player.money+=record.money);
     ejs.renderFile("./src/templates/redirect.html",{
         url: `/${Config.on}/player/${player.standardSymbol}.html`
     },(err,HTML)=>{
@@ -214,6 +211,16 @@ Config.player.forEach(player=>{
                       onplayer: true
                      },HTML));
     });
+});
+
+ejs.renderFile("./src/templates/player_list.html",{
+    data: Config
+},(err,HTML)=>{
+    fs.writeFileSync("./dist/player/index.html",
+        Template({title: `Players List`,
+                  header: ``,
+                  onplayer: true
+                 },HTML));
 });
 
 console.log(Config);
