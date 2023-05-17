@@ -9,8 +9,12 @@ games:
     file: 2.yaml
   - id: 3
     file: 3.yaml
+  - id: 4
+    file: 4.yaml
   - id: 7
     file: 7.yaml
+  - id: 17
+    file: 17.yaml
   - id: 18
     file: 18.yaml
   - id: 25

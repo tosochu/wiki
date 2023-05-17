@@ -1,375 +1,187 @@
-dictionary:
-  - key: "定岡正二"
-    value: "sadaoka-shoji"
-  - key: "原史奈"
-    value: "hara-fumina"
-  - key: "ニコラス・ペタス"
-    value: "Nicholas-pettas"
-  - key: "ふかわりょう"
-    value: "fukawaryou"
-  - key: "遠藤久美子"
-    value: "endo-kumiko"
-  - key: "KABA.ちゃん"
-    value: "KABA-chan"
-  - key: "梨花"
-    value: "rika"
-  - key: "ウエンツ瑛士"
-    value: "Wentz-eiji"
-  - key: "保坂尚輝"
-    value: "hosaka-naoki"
-  - key: "嶋大輔"
-    value: "shima-daisuke"
-  - key: "藤崎奈々子"
-    value: "itou-yuko"
-  - key: "森下千里"
-    value: "morishita-chisato"
-  - key: "浅香唯"
-    value: "asaka-ta"
-  - key: "島崎和歌子"
-    value: "wakako-shimazaki"
-  - key: "セイン･カミュ"
-    value: "Sene-Camu"
-  - key: "出川哲朗"
-    value: "dagewa-tetsuro"
-  - key: "ゴルゴ松本"
-    value: "Golgo-matsumoto"
-  - key: "金子貴俊"
-    value: "kaneko-takatoshi"
-  - key: "袴田吉彦"
-    value: "hakamada-yoshihiko"
-  - key: "岡田義徳"
-    value: "okada-yoshinori"
-  - key: "平畠啓史"
-    value: "hirahatake-hiroshi"
-  - key: "レッド吉田"
-    value: "Red-shiyoda"
-  - key: "山本梓"
-    value: "yamamoto-azusa"
-  - key: "斉藤舞子"
-    value: "saito-maiko"
-  - key: "矢沢心"
-    value: "yazawa-kokoro"
-  - key: "国生さゆり"
-    value: "kokusho-sayuri"
-  - key: "諸星和己"
-    value: "morohoshi-kazumi"
-  - key: "和泉元彌"
-    value: "izumi-motoiya"
-  - key: "岩尾望"
-    value: "iwao-nozomu"
-  - key: "エド・はるみ"
-    value: "edo-harumi"
-  - key: "上地雄輔"
-    value: "jouchi-yuusuke"
-  - key: "川合俊一"
-    value: "kawai-shunichi"
-  - key: "木下優樹菜"
-    value: "kinishita-yuukisai"
-  - key: "くわばたりえ"
-    value: "kuwabatarie"
-  - key: "小杉竜一"
-    value: "kosugi-ryuuichi"
-  - key: "近藤春菜"
-    value: "kondou-haruna"
-  - key: "桜庭和志"
-    value: "sakuraba-kazushi"
-  - key: "田崎佑一"
-    value: "tasaki-tasukuichi"
-  - key: "たむらけんじ"
-    value: "tamurakenji"
-  - key: "野久保直樹"
-    value: "nokuno-naoki"
-  - key: "花田勝"
-    value: "hanata-kachi"
-  - key: "藤原時"
-    value: "fujiwara-toki"
-  - key: "眞鍋かをり"
-    value: "manabe-kawori"
-  - key: "南明奈"
-    value: "minami-akina"
-  - key: "箕輪はるか"
-    value: "minowa-haruka"
-  - key: "矢口真里"
-    value: "yaguchi-mari"
-  - key: "泰葉"
-    value: "yasuha"
-  - key: "吉田敬"
-    value: "yoshida-takashi"
-  - key: "ルー大柴"
-    value: "ruu-ooshiba"
-  - key: "綾部祐二"
-    value: "ayabe-yuuji"
-  - key: "大久保佳代子"
-    value: "okubo-kayako"
-  - key: "狩野英孝"
-    value: "hano-hidetaka"
-  - key: "亀田興毅"
-    value: "kameda-kyouatsushi"
-  - key: "亀田大毅"
-    value: "kameda-daiatsushi"
-  - key: "川島邦裕"
-    value: "kawashima-kunihiro"
-  - key: "くみっきー"
-    value: "kumikkii"
-  - key: "後藤輝基"
-    value: "goto-terumoto"
-  - key: "島田秀平"
-    value: "shimada-shuuhei"
-  - key: "JOY"
-    value: "JOY"
-  - key: "鈴木紗理奈"
-    value: "suzuki-sarina"
-  - key: "土屋伸之"
-    value: "tsuchiya-nobuyuki"
-  - key: "西山茉希"
-    value: "nishiyama-momare"
-  - key: "塙宣之"
-    value: "hanawa-nobuyuki"
-  - key: "雛形あきこ"
-    value: "hinagata-akiko"
-  - key: "優木まおみ"
-    value: "yuuki-maomi"
-  - key: "渡辺直美"
-    value: "watanabe-naomi"
-  - key: "板野友美"
-    value: "inato-yumi"
-  - key: "いとうあさこ"
-    value: "iyou-asako"
-  - key: "川越達也"
-    value: "kawagoe-tatsuya"
-  - key: "木下隆行"
-    value: "kinoshita-takayuki"
-  - key: "木本武宏"
-    value: "mokuhon-takehiro"
-  - key: "小森純"
-    value: "komori-jun"
-  - key: "澤部佑"
-    value: "sawabe-tasuku"
-  - key: "鈴木Q太郎"
-    value: "suzuki-Qtarou"
-  - key: "高橋茂雄"
-    value: "takahashi-shigeo"
-  - key: "高橋みなみ"
-    value: "takahashi-minami"
-  - key: "鳥居みゆき"
-    value: "torii-miyuki"
-  - key: "東尾理子"
-    value: "higashio-satoko"
-  - key: "福田薫"
-    value: "fukuda-kaoru"
-  - key: "益子卓郎"
-    value: "mashiko-takorou"
-  - key: "又吉直樹"
-    value: "matayoshi-naoki"
-  - key: "南明奈"
-    value: "minami-akina"
-  - key: "あやまん監督"
-    value: "ayamankantoku"
-  - key: "磯野貴理子"
-    value: "isono-kiriko"
-  - key: "市川知宏"
-    value: "ichikawa-tomohiro"
-  - key: "遠藤章造"
-    value: "endou-shouzou"
-  - key: "狩野英孝"
-    value: "kano-hidetaka"
-  - key: "河北麻友子"
-    value: "kahoku-asayuuko"
-  - key: "具志堅用高"
-    value: "gushiken-youkada"
-  - key: "杉崎美香"
-    value: "sugisaki-mika"
-  - key: "杉村太蔵"
-    value: "sugimura-tazou"
-  - key: "高橋真麻"
-    value: "takahashi-masa"
-  - key: "NAOKI"
-    value: "NAOKI"
-  - key: "NAOTO"
-    value: "NAOTO"
-  - key: "中田敦彦"
-    value: "nakata-atsuhiko"
-  - key: "藤森慎吾"
-    value: "fujimori-shingo"
-  - key: "飯尾和樹"
-    value: "iio-kazuki"
-  - key: "今井華"
-    value: "imai-hana"
-  - key: "岩尾望"
-    value: "iwao-mochi"
-  - key: "ゴリ"
-    value: "Gori"
-  - key: "斉藤慎二"
-    value: "saito-shinji"
-  - key: "坂上忍"
-    value: "sakagami-shinobu"
-  - key: "白鳥久美子"
-    value: "shiratori-kumiko"
-  - key: "多田健二"
-    value: "tada-kenji"
-  - key: "田中卓志"
-    value: "tanaka-takashi"
-  - key: "ダレノガレ明美"
-    value: "Darenogare-akemi"
-  - key: "千葉雄大"
-    value: "senyou-yuudai"
-  - key: "戸次重幸"
-    value: "totsugi-shigeyuki"
-  - key: "林修"
-    value: "hayashiomasu"
-  - key: "的場浩司"
-    value: "matoba-kouji"
-  - key: "やしろ優"
-    value: "yashiro-yuu"
-  - key: "横山由依"
-    value: "yokoyama-yuui"
-  - key: "植野行雄"
-    value: "ueno-yukio"
-  - key: "えなりかずき"
-    value: "enari-kazuki"
-  - key: "蛭子能収"
-    value: "ebisu-yoshikazu"
-  - key: "織田信成"
-    value: "oda-nobunari"
-  - key: "クリス松村"
-    value: "Creas-matsumura"
-  - key: "小峠英二"
-    value: "shoutouge-eini"
-  - key: "佐藤江梨子"
-    value: "satou-eriko"
-  - key: "ざわちん"
-    value: "zawachin"
-  - key: "陣内智則"
-    value: "jinnai-tomonori"
-  - key: "千葉真一"
-    value: "chiba-maichi"
-  - key: "野々村真"
-    value: "nonomura-ma"
-  - key: "バービー"
-    value: "Barbie"
-  - key: "はるな愛"
-    value: "naruna-ai"
-  - key: "山本彩"
-    value: "yamamoto-aya"
-  - key: "和田正人"
-    value: "wada-masato"
-  - key: "伊藤一朗"
-    value: "itou-ichirou"
-  - key: "岡田結実"
-    value: "okada-yui"
-  - key: "加藤諒"
-    value: "katou-ryou"
-  - key: "白洲迅"
-    value: "shirasu-jin"
-  - key: "須賀健太"
-    value: "suka-kenta"
-  - key: "千秋"
-    value: "senshuu"
-  - key: "塚田僚一"
-    value: "tukada-ryoichi"
-  - key: "橋本良亮"
-    value: "hashimoto-yoakira"
-  - key: "藤田ニコル"
-    value: "fujita-Nicole"
-  - key: "ぺえ"
-    value: "pee"
-  - key: "水谷隼"
-    value: "mizutani-hayabusa"
-  - key: "村本大輔"
-    value: "maramoto-daisuke"
-  - key: "八重樫東"
-    value: "hashijuukashi-higashi"
-  - key: "柳沢慎吾"
-    value: "yanagisawa-shingo"
-  - key: "りゅうちぇる"
-    value: "ryuucheru"
-  - key: "池田美優"
-    value: "ikeda-miyu"
-  - key: "えなこ"
-    value: "enako"
-  - key: "岡副麻希"
-    value: "okafuku-maki"
-  - key: "木下ほうか"
-    value: "kinoshita-houka"
-  - key: "鬼龍院翔"
-    value: "kiryuun-shou"
-  - key: "久保田かずのぶ"
-    value: "kubota-kazunobu"
-  - key: "真珠·野沢オークライヤー"
-    value: "shinju·nozawaoukutaiyaa"
-  - key: "須田亜香里"
-    value: "suda-akaori"
-  - key: "樽美酒研二"
-    value: "tarubishu-kenni"
-  - key: "HIKAKIN"
-    value: "HIKAKIN"
-  - key: "ひょっこりはん"
-    value: "hyokkorihan"
-  - key: "松島聡"
-    value: "matsushima-sato"
-  - key: "宮田俊哉"
-    value: "miyata-toshiya"
-  - key: "森崎ウィン"
-    value: "morisaki-uin"
-  - key: "朝日奈央"
-    value: "asahi-nao"
-  - key: "安藤美姫"
-    value: "andou-biki"
-  - key: "伊藤桃々"
-    value: "itou-momomomo"
-  - key: "岡崎紗絵"
-    value: "okazaki-shae"
-  - key: "岸優太"
-    value: "kishi-yuuta"
-  - key: "工藤阿須加"
-    value: "kudou-azuka"
-  - key: "斎藤司"
-    value: "saito-tsukasa"
-  - key: "酒井一圭"
-    value: "sakai-ichikei"
-  - key: "西畑大吾"
-    value: "nishigata-daigo"
-  - key: "福岡堅樹"
-    value: "fukuoka-kenju"
-  - key: "亜生"
-    value: "asei"
-  - key: "村山輝星"
-    value: "murayama-teruboshi"
-  - key: "りんごちゃん"
-    value: "ringochan"
-  - key: "昂生"
-    value: "kosei"
-  - key: "伊藤俊介"
-    value: "itou-shunsuke"
-  - key: "岡田結実"
-    value: "okada-ketsujitsu"
-  - key: "景井ひな"
-    value: "keiihina"
-  - key: "春日俊彰"
-    value: "shunjitsu-shun'akira"
-  - key: "佐藤勝利"
-    value: "saito-shouri"
-  - key: "柴田英嗣"
-    value: "shibata-hidetsugu"
-  - key: "須﨑優衣"
-    value: "sasuki-yui"
-  - key: "SEIKIN"
-    value: "SEIKIN"
-  - key: "髙藤直寿"
-    value: "takato-naoisa"
-  - key: "中尾明慶"
-    value: "nakao-meikei"
-  - key: "ヒコロヒー"
-    value: "hikurohii"
-  - key: "フワちゃん"
-    value: "fuwachan"
-  - key: "松田宣浩"
-    value: "matsuda-senhirosi"
-  - key: "松丸亮吾"
-    value: "matsumaru-akiware"
-  - key: "見延和靖"
-    value: "minobe-kazuyasushi"
-  - key: "矢吹奈子"
-    value: "yabuki-nako"
-  - key: "四十住さくら"
-    value: "yonjuujuu-sakura"
+定岡正二: sadaoka-shoji
+原史奈: hara-fumina
+ニコラス・ペタス: Nicholas-pettas
+ふかわりょう: fukawaryou
+遠藤久美子: endo-kumiko
+KABA.ちゃん: KABA-chan
+梨花: rika
+ウエンツ瑛士: Wentz-eiji
+保坂尚輝: hosaka-naoki
+嶋大輔: shima-daisuke
+藤崎奈々子: itou-yuko
+森下千里: morishita-chisato
+浅香唯: asaka-ta
+島崎和歌子: wakako-shimazaki
+セイン･カミュ: Sene-Camu
+出川哲朗: dagewa-tetsuro
+ゴルゴ松本: Golgo-matsumoto
+金子貴俊: kaneko-takatoshi
+袴田吉彦: hakamada-yoshihiko
+岡田義徳: okada-yoshinori
+平畠啓史: hirahatake-hiroshi
+レッド吉田: Red-shiyoda
+山本梓: yamamoto-azusa
+斉藤舞子: saito-maiko
+矢沢心: yazawa-kokoro
+国生さゆり: kokusho-sayuri
+諸星和己: morohoshi-kazumi
+和泉元彌: izumi-motoiya
+岩尾望: iwao-nozomu
+エド・はるみ: edo-harumi
+上地雄輔: jouchi-yuusuke
+川合俊一: kawai-shunichi
+木下優樹菜: kinishita-yuukisai
+くわばたりえ: kuwabatarie
+小杉竜一: kosugi-ryuuichi
+近藤春菜: kondou-haruna
+桜庭和志: sakuraba-kazushi
+田崎佑一: tasaki-tasukuichi
+たむらけんじ: tamurakenji
+野久保直樹: nokuno-naoki
+花田勝: hanata-kachi
+藤原時: fujiwara-toki
+眞鍋かをり: manabe-kawori
+南明奈: minami-akina
+箕輪はるか: minowa-haruka
+矢口真里: yaguchi-mari
+泰葉: yasuha
+吉田敬: yoshida-takashi
+ルー大柴: ruu-ooshiba
+綾部祐二: ayabe-yuuji
+大久保佳代子: okubo-kayako
+狩野英孝: hano-hidetaka
+亀田興毅: kameda-kyouatsushi
+亀田大毅: kameda-daiatsushi
+川島邦裕: kawashima-kunihiro
+くみっきー: kumikkii
+後藤輝基: goto-terumoto
+島田秀平: shimada-shuuhei
+JOY: JOY
+鈴木紗理奈: suzuki-sarina
+土屋伸之: tsuchiya-nobuyuki
+西山茉希: nishiyama-momare
+塙宣之: hanawa-nobuyuki
+雛形あきこ: hinagata-akiko
+優木まおみ: yuuki-maomi
+渡辺直美: watanabe-naomi
+板野友美: inato-yumi
+いとうあさこ: iyou-asako
+川越達也: kawagoe-tatsuya
+木下隆行: kinoshita-takayuki
+木本武宏: mokuhon-takehiro
+小森純: komori-jun
+澤部佑: sawabe-tasuku
+鈴木Q太郎: suzuki-Qtarou
+高橋茂雄: takahashi-shigeo
+高橋みなみ: takahashi-minami
+鳥居みゆき: torii-miyuki
+東尾理子: higashio-satoko
+福田薫: fukuda-kaoru
+益子卓郎: mashiko-takorou
+又吉直樹: matayoshi-naoki
+南明奈: minami-akina
+あやまん監督: ayamankantoku
+磯野貴理子: isono-kiriko
+市川知宏: ichikawa-tomohiro
+遠藤章造: endou-shouzou
+狩野英孝: kano-hidetaka
+河北麻友子: kahoku-asayuuko
+具志堅用高: gushiken-youkada
+杉崎美香: sugisaki-mika
+杉村太蔵: sugimura-tazou
+高橋真麻: takahashi-masa
+NAOKI: NAOKI
+NAOTO: NAOTO
+中田敦彦: nakata-atsuhiko
+藤森慎吾: fujimori-shingo
+飯尾和樹: iio-kazuki
+今井華: imai-hana
+岩尾望: iwao-mochi
+ゴリ: Gori
+斉藤慎二: saito-shinji
+坂上忍: sakagami-shinobu
+白鳥久美子: shiratori-kumiko
+多田健二: tada-kenji
+田中卓志: tanaka-takashi
+ダレノガレ明美: Darenogare-akemi
+千葉雄大: senyou-yuudai
+戸次重幸: totsugi-shigeyuki
+林修: hayashiomasu
+的場浩司: matoba-kouji
+やしろ優: yashiro-yuu
+横山由依: yokoyama-yuui
+植野行雄: ueno-yukio
+えなりかずき: enari-kazuki
+蛭子能収: ebisu-yoshikazu
+織田信成: oda-nobunari
+クリス松村: Creas-matsumura
+小峠英二: shoutouge-eini
+佐藤江梨子: satou-eriko
+ざわちん: zawachin
+陣内智則: jinnai-tomonori
+千葉真一: chiba-maichi
+野々村真: nonomura-ma
+バービー: Barbie
+はるな愛: naruna-ai
+山本彩: yamamoto-aya
+和田正人: wada-masato
+伊藤一朗: itou-ichirou
+岡田結実: okada-yui
+加藤諒: katou-ryou
+白洲迅: shirasu-jin
+須賀健太: suka-kenta
+千秋: senshuu
+塚田僚一: tukada-ryoichi
+橋本良亮: hashimoto-yoakira
+藤田ニコル: fujita-Nicole
+ぺえ: pee
+水谷隼: mizutani-hayabusa
+村本大輔: maramoto-daisuke
+八重樫東: hashijuukashi-higashi
+柳沢慎吾: yanagisawa-shingo
+りゅうちぇる: ryuucheru
+池田美優: ikeda-miyu
+えなこ: enako
+岡副麻希: okafuku-maki
+木下ほうか: kinoshita-houka
+鬼龍院翔: kiryuun-shou
+久保田かずのぶ: kubota-kazunobu
+真珠·野沢オークライヤー: shinju·nozawaoukutaiyaa
+須田亜香里: suda-akaori
+樽美酒研二: tarubishu-kenni
+HIKAKIN: HIKAKIN
+ひょっこりはん: hyokkorihan
+松島聡: matsushima-sato
+宮田俊哉: miyata-toshiya
+森崎ウィン: morisaki-uin
+朝日奈央: asahi-nao
+安藤美姫: andou-biki
+伊藤桃々: itou-momomomo
+岡崎紗絵: okazaki-shae
+岸優太: kishi-yuuta
+工藤阿須加: kudou-azuka
+斎藤司: saito-tsukasa
+酒井一圭: sakai-ichikei
+西畑大吾: nishigata-daigo
+福岡堅樹: fukuoka-kenju
+亜生: asei
+村山輝星: murayama-teruboshi
+りんごちゃん: ringochan
+昂生: kosei
+伊藤俊介: itou-shunsuke
+岡田結実: okada-ketsujitsu
+景井ひな: keiihina
+春日俊彰: shunjitsu-shun'akira
+佐藤勝利: saito-shouri
+柴田英嗣: shibata-hidetsugu
+須﨑優衣: sasuki-yui
+SEIKIN: SEIKIN
+髙藤直寿: takato-naoisa
+中尾明慶: nakao-meikei
+ヒコロヒー: hikurohii
+フワちゃん: fuwachan
+松田宣浩: matsuda-senhirosi
+松丸亮吾: matsumaru-akiware
+見延和靖: minobe-kazuyasushi
+矢吹奈子: yabuki-nako
+四十住さくら: yonjuujuu-sakura

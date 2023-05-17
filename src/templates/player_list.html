@@ -1,0 +1,43 @@
+<style>
+    td,th{
+        word-wrap: break-word;
+    }
+    td{
+        white-space: nowrap;
+        overflow: hidden;
+        height: 30px;
+    }
+    td:nth-child(1){
+        width: 45%;
+    }
+    table{
+        width: 100%;
+        background-color: white;
+    }
+
+    .player-note{
+        color: grey;
+        font-size: 70%;
+    }
+</style>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Count</th>
+        <th>Money</th>
+        <th>Rate of Escape</th>
+    </tr>
+    <% data.player.forEach(player=>{ %>
+        <tr>
+            <td>
+                <a href="/<%= data.on %>/player/<%= player.standardSymbol %>.html"><%= player.name %></a>
+                <% if(player.standardSymbol!=player.symbol){ %>
+                    <span class="player-note">(<%= player.standardSymbol %>)</span>
+                <% } %>
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.record.length %></td>
+            <td><%= "?" %></td>
+            <td><%= "?" %></td>
+        </tr>
+    <% }) %>
+</table>

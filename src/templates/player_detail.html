@@ -1,0 +1,64 @@
+<style>
+    td,th{
+        word-wrap: break-word;
+    }
+    td{
+        white-space: pre;
+        overflow: hidden;
+        height: 30px;
+    }
+    td:nth-child(2){
+        width: 55%;
+    }
+    table{
+        width: 100%;
+        background-color: white;
+    }
+
+    .messages-display{
+        color: #888;
+    }
+    .player-note{
+        color: grey;
+        font-size: 75%;
+        font-weight: normal;
+    }
+</style>
+<div class="topan-section-shadow">
+    <h2>
+        <%= data.name %>
+        <% if(data.symbol!=data.standardSymbol){ %>
+            <span class="player-note">(<%= data.standardSymbol %>)</span>
+        <% } %>
+    </h2>
+    <p class="messages-display">
+        <strong>Counts:</strong> <i class="fa fa-solid fa-fire"></i> <%= data.record.length %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Money:</strong> <i class="fa fa-solid fa-coins"></i> <%= "?" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Rate of Escape:</strong> <%= "?" %>
+    </p>
+</div>
+<br>
+<h3>Game Records</h3>
+<table>
+    <tr>
+        <th>Round</th>
+        <th>Title</th>
+        <th>Money</th>
+        <th>Count</th>
+        <th>Date</th>
+        <th>Length</th>
+    </tr>
+    <% data.record.forEach(record=>{
+        var game=games[record.id]; %>
+        <tr>
+            <td><%= game.id %></td>
+            <td><a href="/<%= on %>/game/<%= game.id %>.html"><%= game.detail.title %></a></td>
+            <td><%= "?" %></td>
+            <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.player.length %></td>
+            <td><%= game.detail.date %></td>
+            <td><%= game.detail.length %></td>
+        </tr>
+    <% }); %>
+</table>

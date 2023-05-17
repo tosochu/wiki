@@ -2,9 +2,11 @@ const fs=require('fs');
 const path=require('path');
 const ejs=require('ejs');
 const Template=require('./template.js');
+const Player=require('./player.js');
 
 const YAML=require('yamljs');
 var Config=YAML.load('./data/config.yaml');
+Config.dictionary=YAML.load(`./data/${Config.dictionary}`);
 var MarkdownIt=require('markdown-it')({
     html: true,
     linkify: true
@@ -54,6 +56,9 @@ ejs.renderFile("./src/templates/home.html",{
                  },HTML));
 });
 
+Config.player=new Array();
+var playerSet=new Set();
+
 Config.games.forEach((game,index)=>{
     var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
     var roundId=0;
@@ -71,7 +76,19 @@ Config.games.forEach((game,index)=>{
             message.person.push(temp);
         }
         message.person.forEach((player)=>{
-            playerset.add(player);
+            if(!playerSet.has(player))
+                playerSet.add(player),
+                Config.player.push({
+                    name: player,
+                    standardSymbol: Player.getStandardSymbol(player),
+                    symbol: Player.getSymbol(player),
+                    record: []
+                });
+            if(!playerset.has(player)){
+                playerset.add(player);
+                var i=0; while(Config.player[i].name!=player)i++;
+                Config.player[i].record.push({id: index, money: 0});
+            }
         });
         if(!message.time)message.time=0;
         if(!message.money)message.money=0;
@@ -151,8 +168,6 @@ Config.games.forEach((game,index)=>{
     });
 });
 
-console.log(JSON.stringify(Config,null,"  "));
-
 ejs.renderFile("./src/templates/game_list.html",{
     data: Config
 },(err,HTML)=>{
@@ -163,7 +178,42 @@ ejs.renderFile("./src/templates/game_list.html",{
                  },HTML));
 });
 
+Config.player=Config.player.sort((x,y)=>{
+    if(x.symbol==x.standardSymbol&&y.symbol==y.standardSymbol)
+        return x.symbol.localeCompare(y.symbol);
+    if(x.symbol!=x.standardSymbol&&y.symbol!=y.standardSymbol)
+        return x.standardSymbol.localeCompare(y.standardSymbol);
+    return y.symbol==y.standardSymbol?-1:1;
+});
+
+ejs.renderFile("./src/templates/player_list.html",{
+    data: Config
+},(err,HTML)=>{
+    fs.writeFileSync("./dist/player/index.html",
+        Template({title: `Players List`,
+                  header: ``,
+                  onplayer: true
+                 },HTML));
+});
+
+Config.player.forEach(player=>{
+    ejs.renderFile("./src/templates/player_detail.html",{
+        data: player,
+        games: Config.games,
+        on: Config.on
+    },(err,HTML)=>{
+        fs.writeFileSync(`./dist/player/${player.standardSymbol}.html`,
+            Template({title: `${player.name+(player.standardSymbol!=player.symbol?` (${player.standardSymbol})`:'')}`,
+                      header: ``,
+                      onplayer: true
+                     },HTML));
+    });
+});
+
+console.log(Config);
+// console.log(JSON.stringify(Config,null,"  "));
+
 if(process.argv.slice(2).includes("-github")){
     const ghpages=require('gh-pages');
-    ghpages.publish('dist',function(err){});
+    ghpages.publish('dist',console.log);
 }
