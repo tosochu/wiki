@@ -19,7 +19,7 @@ message:
   - person: 四十住さくら
     type: catched
     time: 100:10
-  - person: 須崎優衣
+  - person: 須﨑優衣
     type: catched
     time: 96:04
   - person: 岡田結実
@@ -55,7 +55,7 @@ message:
   - person: 久保田かずのぶ
     type: catched
     time: 29:09
-  - person: 高藤直寿
+  - person: 髙藤直寿
     type: catched
     time: 13:14
   - person: 松丸亮吾
