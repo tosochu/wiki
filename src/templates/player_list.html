@@ -31,7 +31,7 @@
         <tr>
             <td>
                 <a href="/<%= data.on %>/player/<%= player.standardSymbol %>.html"><%= player.name %></a>
-                <% if(player.standardSymbol!=player.symbol){ %>
+                <% if(player.standardSymbol!=player.symbol&&player.name!=player.standardSymbol){ %>
                     <span class="player-note">(<%= player.standardSymbol %>)</span>
                 <% } %>
             </td>

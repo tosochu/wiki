@@ -27,7 +27,7 @@
 <div class="topan-section-shadow">
     <h2>
         <%= data.name %>
-        <% if(data.symbol!=data.standardSymbol){ %>
+        <% if(data.symbol!=data.standardSymbol&&data.name!=data.standardSymbol){ %>
             <span class="player-note">(<%= data.standardSymbol %>)</span>
         <% } %>
     </h2>

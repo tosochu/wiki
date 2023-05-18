@@ -206,7 +206,8 @@ Config.player.forEach(player=>{
         on: Config.on
     },(err,HTML)=>{
         fs.writeFileSync(`./dist/player/${player.standardSymbol}.html`,
-            Template({title: `${player.name+(player.standardSymbol!=player.symbol?` (${player.standardSymbol})`:'')}`,
+            Template({title: `${player.name+(player.standardSymbol!=player.symbol
+                        &&player.name!=player.standardSymbol?` (${player.standardSymbol})`:'')}`,
                       header: ``,
                       onplayer: true
                      },HTML));
