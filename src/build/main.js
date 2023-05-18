@@ -127,7 +127,7 @@ Config.games.forEach((game,index)=>{
 
             var i=0; while(Config.player[i].name!=player)i++;
             var newrecord=Config.player[i].record[Config.player[i].record.length-1];
-            newrecord.money+=message.money;
+            newrecord.money+=parseInt(message.money/message.person.length/100)*100;
             Config.player[i].record[Config.player[i].record.length-1]=newrecord;
         });
         message.person=temp;
