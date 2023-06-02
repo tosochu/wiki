@@ -1,0 +1,22 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:    
+      - master
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Build Pages
+      run: |
+        npm install
+        npm run dev:build
+        cat dist/index.html
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist
