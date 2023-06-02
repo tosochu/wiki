@@ -19,7 +19,176 @@
         color: grey;
         font-size: 70%;
     }
+
+    .page-select-up,.page-select-down{
+        box-sizing: inherit;
+        display: block;
+    }
+    ul{
+        font-size: 14px;
+        text-align: center;
+        list-style: none;
+        margin: 0;
+    }
+    ul>li{
+        display: inline-block;
+        padding: 6px 10px;
+        transition-duration: 0.15s;
+        cursor: pointer;
+        color: grey;
+    }
+    .page-select-up>ul>li{
+        border-bottom: solid 2px transparent;
+    }
+    .page-select-down>ul>li{
+        border-top: solid 2px transparent;
+    }
+    ul>span{
+        padding: 6px;
+        color: grey;
+    }
+    ul>li:hover{
+        background-color: rgba(0,0,0,0.05);
+        color: var(--topan-colors-main);
+    }
+    .page-select-up>ul>li:hover{
+        border-bottom: solid 2px var(--topan-colors-main);
+    }
+    .page-select-down>ul>li:hover{
+        border-top: solid 2px var(--topan-colors-main);
+    }
+    ul>li.topan-tab-showed{
+        color: var(--topan-colors-stress);
+    }
+    .page-select-up>ul>li.topan-tab-showed{
+        border-bottom: solid 2px var(--topan-colors-stress);
+    }
+    .page-select-down>ul>li.topan-tab-showed{
+        border-top: solid 2px var(--topan-colors-stress);
+    }
+    .page-select-up>ul>li.topan-tab-showed:hover{
+        border-bottom: solid 2px var(--topan-colors-stress);
+    }
+    .page-select-down>ul>li.topan-tab-showed:hover{
+        border-top: solid 2px var(--topan-colors-stress);
+    }
 </style>
+<% data.player.forEach(player=>{
+    player.count=player.record.length;
+    delete player.record;
+}); %>
+<script>
+    var UiContext=<%- JSON.stringify(data.player) %>;
+    var getSearch=()=>new URL(window.location.href).searchParams;
+    const eachPage=50;
+    var Sorter={
+        dictionary: (x,y)=>{
+            if(x.symbol==x.standardSymbol&&y.symbol==y.standardSymbol)
+                return x.symbol.localeCompare(y.symbol);
+            if(x.symbol!=x.standardSymbol&&y.symbol!=y.standardSymbol)
+                return x.standardSymbol.localeCompare(y.standardSymbol);
+            return y.symbol==y.standardSymbol?-1:1;
+        },
+        money: (x,y)=>{
+            if(y.money-x.money)return y.money-x.money;
+            else return Sorter.dictionary(x,y);
+        },
+        count: (x,y)=>{
+            if(y.count-x.count)return y.count-x.count;
+            else return Sorter.dictionary(x,y);
+        }
+    };
+    var movetoPage=(pageId)=>{
+        nowsearch.page=pageId;
+        show(search(nowsearch));
+    };
+    var show=(data)=>{
+        $('#sorttype').val(nowsearch.sort??'dictionary');
+        var players=data.players;
+        var HTML=`<tr><th>Name</th><th>Count</th><th>Money</th><th>Rate of Escape</th></tr>`;
+        players.forEach(player=>{
+            HTML+=`
+                <tr>
+                    <td>
+                        <a href="/<%= data.on %>/player/${player.standardSymbol}.html">${player.name}</a>
+                        ${(player.standardSymbol!=player.symbol&&player.name!=player.standardSymbol)?`
+                            <span class="player-note">(${player.standardSymbol})</span>
+                        `:''}
+                    </td>
+                    <td><i class="fa fa-solid fa-fire"></i>&nbsp;${player.count}</td>
+                    <td>${player.money} yen</td>
+                    <td>${"?"}</td>
+                </tr>
+            `;
+        });
+        $('table').html(HTML);
+        HTML=``;
+        var pageCount=data.pageCount,minPageId,maxPageId,pageId=data.pageId;
+        if(pageCount<=11)minPageId=1,maxPageId=pageCount;
+        else{
+            if(pageId>pageCount-5)minPageId=pageCount-10,maxPageId=pageCount;
+            else if(pageId<=5)minPageId=1,maxPageId=11;
+            else minPageId=pageId-5,maxPageId=pageId+5;
+        }
+        if(pageId>=3)HTML+=`<li onclick="movetoPage(1);">« 第一页</li>`;
+        if(pageId>=2)HTML+=`<li onclick="movetoPage(${pageId-1});">‹ 前一页</li>`;
+        if(minPageId>1)HTML+=`<span>...</span>`
+        for(var i=minPageId;i<=maxPageId;i++)
+            if(i==pageId)HTML+=`<li class="topan-tab-showed">${i}</li>`;
+            else HTML+=`<li onclick="movetoPage(${i});">${i}</li>`;
+        if(maxPageId<pageCount)HTML+=`<span>...</span>`;
+        if(pageId<=pageCount-1)HTML+=`<li onclick="movetoPage(${pageId+1});">下一页 ›</li>`;
+        if(pageId<=pageCount-2)HTML+=`<li onclick="movetoPage(${pageCount});">末页 »</li>`;
+        $('.page-select-up>ul').html(HTML);
+        $('.page-select-down>ul').html(HTML);
+    };
+    var search=(rules)=>{
+        var res=new Array();
+        if(!rules.page)rules.page=1;
+        if(!rules.sort)rules.sort='dictionary';
+        UiContext.forEach(player=>res.push(player));
+        res.sort(Sorter[rules.sort]);
+        if(res.length&&(rules.page-1)*eachPage>=res.length)rules.page=1;
+        var RES=new Array();
+        for(var i=(rules.page-1)*eachPage;i<rules.page*eachPage;i++)
+            if(i<res.length)RES.push(res[i]);
+        nowsearch=rules;
+        var _return={
+            players: RES, pageId: rules.page,
+            pageCount: Math.max(Math.ceil(res.length/eachPage),1)
+        };
+        if(nowsearch.page==1)delete nowsearch.page;
+        if(nowsearch.sort=='dictionary')delete nowsearch.sort;
+        if(JSON.stringify(nowsearch)=='{}')window.history.pushState(null,null,`/<%= data.on %>/player/`);
+        else if(nowsearch.page&&!nowsearch.sort)
+            window.history.pushState(null,null,`/<%= data.on %>/player/?page=${nowsearch.page}`);
+        else if(!nowsearch.page&&nowsearch.sort)
+            window.history.pushState(null,null,`/<%= data.on %>/player/?sort=${nowsearch.sort}`);
+        else window.history.pushState(null,null,`/<%= data.on %>/player/?sort=${nowsearch.sort}&page=${nowsearch.page}`);
+        return _return;
+    }
+    $(document).ready(()=>{
+        show(search({page: getSearch().get('page')??1,
+            sort: getSearch().get('sort')??'dictionary'}));
+        $('#sorttype').change(()=>{
+            nowsearch.sort=$('#sorttype').val();
+            nowsearch.page=1;
+            show(search(nowsearch));
+        });
+    });
+</script>
+
+<p>
+    排序方式：
+    <select name="sorttype" id="sorttype">
+        <option value="dictionary">Dictionary</option>
+        <option value="money">Money</option>
+        <option value="count">Count</option>
+    </select>
+</p>
+<div class="page-select-up"><ul>
+    <li class="topan-tab-showed">1</li>
+</ul></div>
 <table>
     <tr>
         <th>Name</th>
@@ -35,9 +204,12 @@
                     <span class="player-note">(<%= player.standardSymbol %>)</span>
                 <% } %>
             </td>
-            <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.record.length %></td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.count %></td>
             <td><%= player.money %> yen</td>
             <td><%= "?" %></td>
         </tr>
     <% }) %>
 </table>
+<div class="page-select-down"><ul>
+    <li class="topan-tab-showed">1</li>
+</ul></div>
