@@ -27,16 +27,16 @@ module.exports=(config,HTML)=>{
             </div>
             <div class="topan-header-left">
                 <span class="topan-header-text">${Config.title}&nbsp;</span>
-                <a href="/${Config.on}/player">
-                    <span class="topan-button-ordinary topan-button-commonly topan-button-header-block${config.onplayer?"-showed":""}">
-                        <i class="fa fa-solid fa-user"></i>
-                        <span>&nbsp;Players</span>
-                    </span>
-                </a>
                 <a href="/${Config.on}/game">
                     <span class="topan-button-ordinary topan-button-commonly topan-button-header-block${config.ongame?"-showed":""}">
                         <i class="fa fa-solid fa-fire"></i>
                         <span>&nbsp;Games</span>
+                    </span>
+                </a>
+                <a href="/${Config.on}/player">
+                    <span class="topan-button-ordinary topan-button-commonly topan-button-header-block${config.onplayer?"-showed":""}">
+                        <i class="fa fa-solid fa-user"></i>
+                        <span>&nbsp;Players</span>
                     </span>
                 </a>
             </div>
