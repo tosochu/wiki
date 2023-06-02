@@ -93,6 +93,10 @@
             if(y.money-x.money)return y.money-x.money;
             else return Sorter.dictionary(x,y);
         },
+        lastpart: (x,y)=>{
+            if(y.lastTime-x.lastTime)return y.lastTime-x.lastTime;
+            else return Sorter.dictionary(x,y);
+        },
         count: (x,y)=>{
             if(y.count-x.count)return y.count-x.count;
             else return Sorter.dictionary(x,y);
@@ -105,7 +109,7 @@
     var show=(data)=>{
         $('#sorttype').val(nowsearch.sort??'dictionary');
         var players=data.players;
-        var HTML=`<tr><th>Name</th><th>Count</th><th>Money</th><th>Rate of Escape</th></tr>`;
+        var HTML=`<tr><th>Name</th><th>Count</th><th>Money</th><th>Last Part</th><th>Rate of Escape</th></tr>`;
         players.forEach(player=>{
             HTML+=`
                 <tr>
@@ -117,6 +121,7 @@
                     </td>
                     <td><i class="fa fa-solid fa-fire"></i>&nbsp;${player.count}</td>
                     <td>${player.money} yen</td>
+                    <td><a href="/<%= data.on %>/game/${player.lastTime}.html">${player.lastTime}</a></td>
                     <td>${"?"}</td>
                 </tr>
             `;
@@ -183,6 +188,7 @@
     <select name="sorttype" id="sorttype">
         <option value="dictionary">Dictionary</option>
         <option value="money">Money</option>
+        <option value="lastpart">Last Part</option>
         <option value="count">Count</option>
     </select>
 </p>
@@ -194,6 +200,7 @@
         <th>Name</th>
         <th>Count</th>
         <th>Money</th>
+        <th>Last Part</th>
         <th>Rate of Escape</th>
     </tr>
     <% data.player.forEach(player=>{ %>
@@ -206,6 +213,7 @@
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.count %></td>
             <td><%= player.money %> yen</td>
+            <td><a href="/<%= data.on %>/game/<%= player.lastTime %>.html"><%= player.lastTime %></a></td>
             <td><%= "?" %></td>
         </tr>
     <% }) %>

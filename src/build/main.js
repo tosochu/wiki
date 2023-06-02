@@ -195,6 +195,7 @@ Config.player=Config.player.sort((x,y)=>{
 Config.player.forEach(player=>{
     player.money=0;
     player.record.forEach(record=>player.money+=record.money);
+    player.lastTime=Config.games[player.record[player.record.length-1].id].id;
     ejs.renderFile("./src/templates/redirect.html",{
         url: `/${Config.on}/player/${player.standardSymbol}.html`
     },(err,HTML)=>{
