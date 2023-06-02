@@ -18,7 +18,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: dist
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        token: ${{ secrets.ACCESS_TOKEN }}
         branch: gh-pages
         git-config-name: Molmin
         git-config-email: 115549630@qq.com
