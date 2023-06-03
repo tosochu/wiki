@@ -50,7 +50,7 @@
 <p>本项目主要由 <a href="https://github.com/Molmin">Milmon</a> 和 <a href="https://github.com/hexuben">hexuben</a> 维护。如果你喜欢本项目，欢迎给我们点亮 Star！如果您愿意帮助我们搜集数据，也可以进行 <a href="https://github.com/tosochu/wiki/compare">Pull Request</a>。</p>
 <h3>逃走率</h3>
 <p>Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，并提供逃走率排序。每个玩家的平均逃走率是他（她）在参与的每个回合中的逃走率的平均值。</p>
-<p>注：在排序方式中，<a href="https://tosochu.github.io/wiki/player/?sort=escapeRate">Rate of Escape</a> 是按照玩家平均逃走率排名，而 <a href="https://tosochu.github.io/wiki/player/?sort=escapeRateBetter">Rate of Escape (Upgraded version)”</a> 是先按照<strong>参与回合数</strong>排序，再对<strong>分别</strong>对参与回合数为 1，2，以及大于等于 3 的玩家的逃走率排序（<a href="https://github.com/tosochu/wiki/blob/master/src/templates/player_list.html#L89-L94">对应源码部分</a>）。（我们提供这种排序方式，是因为参与回合数<strong>过少</strong>时，平均逃走率<strong>并不准确</strong>。）</p>
+<p>注：在排序方式中，<a href="https://tosochu.github.io/wiki/player/?sort=escapeRate">Rate of Escape</a> 是按照玩家平均逃走率排名，而 <a href="https://tosochu.github.io/wiki/player/?sort=escapeRateBetter">Rate of Escape (Upgraded version)</a> 是先按照<strong>参与回合数</strong>排序，再对<strong>分别</strong>对参与回合数为 1，2，以及大于等于 3 的玩家的逃走率排序（<a href="https://github.com/tosochu/wiki/blob/master/src/templates/player_list.html#L89-L94">对应源码部分</a>）。（我们提供这种排序方式，是因为参与回合数<strong>过少</strong>时，平均逃走率<strong>并不准确</strong>。）</p>
 <p>下面是玩家在单个回合中的逃走率计算方式（<a href="https://github.com/tosochu/wiki/blob/master/src/build/main.js#L150-L175">源代码</a>）：</p>
 <ul>
 <li>
