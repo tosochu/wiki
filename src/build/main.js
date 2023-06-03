@@ -150,7 +150,7 @@ Config.games.forEach((game,index)=>{
     for(var person in timeline){
         var i=0; while(Config.player[i].name!=person)i++;
         var line=timeline[person],res=0;
-        var status="escape",lastTime=gameLength*60;
+        var status="escape",lastTime=gameLength*60,flag=false;
         line.forEach(event=>{
             if(event.type=='catched'||event.type=="waiver"){
                 if(status=="escape")
@@ -167,9 +167,11 @@ Config.games.forEach((game,index)=>{
                     lastTime=event.numberTime,
                     status="escape";
             }
+            if(event.type=='money-game-catched')
+                flag=true; // 输掉 Money Game 的显示 99.99%，因为他们并没有完美完成
         });
         Config.player[i].record
-            [Config.player[i].record.length-1].escapeRate=res/(gameLength*60);
+            [Config.player[i].record.length-1].escapeRate=flag?0.9999:res/(gameLength*60);
     }
     if(detail.video)
         detail.videohtml=`

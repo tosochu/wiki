@@ -126,7 +126,7 @@
                     <td><i class="fa fa-solid fa-fire"></i>&nbsp;${player.count}</td>
                     <td>${player.money} yen</td>
                     <td><a href="/<%= data.on %>/game/${player.lastTime}.html">${player.lastTime}</a></td>
-                    <td>${(player.escapeRate*100).toFixed(3)}%</td>
+                    <td>${(player.escapeRate*100).toFixed(2)}%</td>
                 </tr>
             `;
         });
@@ -219,7 +219,7 @@
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.count %></td>
             <td><%= player.money %> yen</td>
             <td><a href="/<%= data.on %>/game/<%= player.lastTime %>.html"><%= player.lastTime %></a></td>
-            <td><%= (player.escapeRate*100).toFixed(3) %>%</td>
+            <td><%= (player.escapeRate*100).toFixed(2) %>%</td>
         </tr>
     <% }) %>
 </table>
