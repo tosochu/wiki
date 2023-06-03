@@ -82,6 +82,10 @@
     var getSearch=()=>new URL(window.location.href).searchParams;
     const eachPage=50;
     var Sorter={
+        escapeRate: (x,y)=>{
+            if(y.escapeRate-x.escapeRate)return y.escapeRate-x.escapeRate;
+            else return Sorter.dictionary(x,y);
+        },
         dictionary: (x,y)=>{
             if(x.symbol==x.standardSymbol&&y.symbol==y.standardSymbol)
                 return x.symbol.localeCompare(y.symbol);
@@ -122,7 +126,7 @@
                     <td><i class="fa fa-solid fa-fire"></i>&nbsp;${player.count}</td>
                     <td>${player.money} yen</td>
                     <td><a href="/<%= data.on %>/game/${player.lastTime}.html">${player.lastTime}</a></td>
-                    <td>${"?"}</td>
+                    <td>${(player.escapeRate*100).toFixed(3)}</td>
                 </tr>
             `;
         });
@@ -186,6 +190,7 @@
 <p>
     排序方式：
     <select name="sorttype" id="sorttype">
+        <option value="escapeRate">Rate of Escape</option>
         <option value="dictionary">Dictionary</option>
         <option value="money">Money</option>
         <option value="lastpart">Last Part</option>
@@ -214,7 +219,7 @@
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.count %></td>
             <td><%= player.money %> yen</td>
             <td><a href="/<%= data.on %>/game/<%= player.lastTime %>.html"><%= player.lastTime %></a></td>
-            <td><%= "?" %></td>
+            <td><%= (player.escapeRate*100).toFixed(3) %></td>
         </tr>
     <% }) %>
 </table>

@@ -36,7 +36,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <strong>Money:</strong> <i class="fa fa-solid fa-coins"></i> <%= data.money %> yen
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>Rate of Escape:</strong> <%= "?" %>
+        <strong>Rate of Escape:</strong> <%= (data.escapeRate*100).toFixed(3) %>
     </p>
 </div>
 <br>
@@ -57,7 +57,7 @@
             <td><%= game.id %></td>
             <td><a href="/<%= on %>/game/<%= game.id %>.html"><%= game.detail.title %></a></td>
             <td><%= record.money %> yen</td>
-            <td><%= "?" %></td>
+            <td><%= (record.escapeRate*100).toFixed(3) %>%</td>
             <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.player.length %></td>
             <td><%= game.detail.date %></td>
             <td><%= game.detail.length %></td>

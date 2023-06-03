@@ -61,7 +61,7 @@ var playerSet=new Set();
 
 Config.games.forEach((game,index)=>{
     var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
-    var roundId=0;
+    var roundId=0,timeline={};
     detail.message.forEach((message)=>{
         // Round #7
         if(message.type=="round-start"){
@@ -76,6 +76,9 @@ Config.games.forEach((game,index)=>{
             message.person.push(temp);
         }
         message.person.forEach((player)=>{
+            if(!timeline[player])
+                timeline[player]=new Array();
+            timeline[player].push(message);
             if(!playerSet.has(player))
                 playerSet.add(player),
                 Config.player.push({
@@ -92,8 +95,9 @@ Config.games.forEach((game,index)=>{
         });
         if(!message.time)message.time=0;
         if(!message.money)message.money=0;
-        if(message.time==0)message.time="End of the Game";
-        else message.time=secondsToString(toStandardTime(message.time));
+        if(message.time==0)message.time="End of the Game",message.numberTime=0;
+        else message.numberTime=toStandardTime(message.time),
+            message.time=secondsToString(toStandardTime(message.time));
 
         if(message.type=="catched")    message.display=`Caught! `;
         if(message.type=="win")        message.display=`Escaped! `;
@@ -145,7 +149,9 @@ Config.games.forEach((game,index)=>{
     for(var player of playerset)players.push(player);
     detail.player=players;
     detail.date=require('dayjs')(detail.date).format("M / D / YYYY");
+    var gameLength;
     if(typeof detail.length=="string"||typeof detail.length=="number")
+        gameLength=toStandardTime(detail.length),
         detail.length=`${toStandardTime(detail.length)} m`;
     else{
         var length="";
@@ -153,8 +159,28 @@ Config.games.forEach((game,index)=>{
             length+=`${toStandardTime(len)} m`;
             if(lengthIndex!=detail.length.length-1)
                 length+=" + ";
+            gameLength=toStandardTime(len);
         });
         detail.length=length;
+    }
+    for(var person in timeline){
+        var i=0; while(Config.player[i].name!=person)i++;
+        var line=timeline[person],res=0;
+        var status="escape",lastTime=gameLength*60;
+        line.forEach(event=>{
+            if(event.type=='catched'){
+                if(status=="escape")
+                    res+=lastTime-event.numberTime,
+                    status="catch",
+                    lastTime=event.numberTime;
+            }
+            if(event.type=='win'){
+                if(status=="escape")
+                    res+=lastTime-event.numberTime;
+            }
+        });
+        Config.player[i].record
+            [Config.player[i].record.length-1].escapeRate=res/(gameLength*60);
     }
     if(detail.video)
         detail.videohtml=`
@@ -193,8 +219,12 @@ Config.player=Config.player.sort((x,y)=>{
 });
 
 Config.player.forEach(player=>{
-    player.money=0;
-    player.record.forEach(record=>player.money+=record.money);
+    player.money=0,player.escapeRate=0;
+    player.record.forEach(record=>{
+        player.money+=record.money;
+        player.escapeRate+=record.escapeRate;
+    });
+    player.escapeRate/=player.record.length;
     player.lastTime=Config.games[player.record[player.record.length-1].id].id;
     ejs.renderFile("./src/templates/redirect.html",{
         url: `/${Config.on}/player/${player.standardSymbol}.html`
@@ -215,6 +245,9 @@ Config.player.forEach(player=>{
     });
 });
 
+console.log(Config);
+console.log(JSON.stringify(Config,null,"  "));
+
 ejs.renderFile("./src/templates/player_list.html",{
     data: Config
 },(err,HTML)=>{
@@ -224,9 +257,6 @@ ejs.renderFile("./src/templates/player_list.html",{
                   onplayer: true
                  },HTML));
 });
-
-console.log(Config);
-// console.log(JSON.stringify(Config,null,"  "));
 
 if(process.argv.slice(2).includes("-github")){
     const ghpages=require('gh-pages');
