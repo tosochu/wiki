@@ -80,10 +80,16 @@
 <script>
     var UiContext=<%- JSON.stringify(data.player) %>;
     var getSearch=()=>new URL(window.location.href).searchParams;
-    const eachPage=50;
+    const eachPage=50,defaultSorter="escapeRateBetter";
     var Sorter={
         escapeRate: (x,y)=>{
             if(y.escapeRate-x.escapeRate)return y.escapeRate-x.escapeRate;
+            else return Sorter.money(x,y);
+        },
+        escapeRateBetter: (x,y)=>{
+            if(x.count==y.count||(x.count>=3&&y.count>=3))
+                return y.escapeRate-x.escapeRate;
+            if(y.count-x.count)return y.count-x.count;
             else return Sorter.money(x,y);
         },
         dictionary: (x,y)=>{
@@ -111,7 +117,7 @@
         show(search(nowsearch));
     };
     var show=(data)=>{
-        $('#sorttype').val(nowsearch.sort??'escapeRate');
+        $('#sorttype').val(nowsearch.sort??defaultSorter);
         var players=data.players;
         var HTML=`<tr><th>Name</th><th>Count</th><th>Money</th><th>Last Part</th><th>Rate of Escape</th></tr>`;
         players.forEach(player=>{
@@ -154,7 +160,7 @@
     var search=(rules)=>{
         var res=new Array();
         if(!rules.page)rules.page=1;
-        if(!rules.sort)rules.sort='escapeRate';
+        if(!rules.sort)rules.sort=defaultSorter;
         UiContext.forEach(player=>res.push(player));
         res.sort(Sorter[rules.sort]);
         if(res.length&&(rules.page-1)*eachPage>=res.length)rules.page=1;
@@ -167,7 +173,7 @@
             pageCount: Math.max(Math.ceil(res.length/eachPage),1)
         };
         if(nowsearch.page==1)delete nowsearch.page;
-        if(nowsearch.sort=='escapeRate')delete nowsearch.sort;
+        if(nowsearch.sort==defaultSorter)delete nowsearch.sort;
         if(JSON.stringify(nowsearch)=='{}')window.history.pushState(null,null,`/<%= data.on %>/player/`);
         else if(nowsearch.page&&!nowsearch.sort)
             window.history.pushState(null,null,`/<%= data.on %>/player/?page=${nowsearch.page}`);
@@ -178,7 +184,7 @@
     }
     $(document).ready(()=>{
         show(search({page: getSearch().get('page')??1,
-            sort: getSearch().get('sort')??'escapeRate'}));
+            sort: getSearch().get('sort')??defaultSorter}));
         $('#sorttype').change(()=>{
             nowsearch.sort=$('#sorttype').val();
             nowsearch.page=1;
@@ -190,6 +196,7 @@
 <p>
     排序方式：
     <select name="sorttype" id="sorttype">
+        <option value="escapeRateBetter">Rate of Escape (Upgraded version)</option>
         <option value="escapeRate">Rate of Escape</option>
         <option value="dictionary">Dictionary</option>
         <option value="money">Money</option>
