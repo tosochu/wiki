@@ -1,54 +1,13 @@
 title: お台場2
-length: [10, 70]
+length: 70
 description: |
   
 date: 2008-04-22
 video: BV17x411S78p
 message: 
-  - type: round-start
-  - type: catched
-    time: 8:29
-    person: 藤原時
-  - type: catched
-    time: 7:18
-    person: 南明奈
-  - type: win
-    time: 5:49
-    person: たむらけんじ
-  - type: win
-    time: 5:30
-    person: 眞鍋かをり
-  - type: win
-    time: 5:15
-    person: 和泉元彌
-  - type: win
-    time: 5:09
-    person: 岩尾望
-  - type: win
-    time: 4:52
-    person: [矢口真里, 桜庭和志, 吉田敬, 近藤春菜]
-  - type: catched
-    time: 3:51
-    person: エド・はるみ
-  - type: win
-    time: 3:26
-    person: 箕輪はるか
-  - type: win
-    time: 3:17
-    person: [ルー大柴,小杉竜一]
-  - type: catched
-    time: 2:29
-    person: 田崎佑一
-  - type: win
-    time: 1:48
-    person: [泰葉, 川合俊一, 野久保直樹, 花田勝]
-  - type: catched
-    time: 0:54
-    person: 木下優樹菜
-  - type: win
-    time: 0:05
-    person: くわばたりえ
-  - type: round-start
+  - type: openning-game
+    person: [藤原時, 南明奈, エド・はるみ, 田崎佑一, 木下優樹菜]
+    time: 70:00
   - type: catched
     person: 野久保直樹
     time: 65:24

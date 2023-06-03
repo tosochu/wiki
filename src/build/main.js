@@ -61,15 +61,8 @@ var playerSet=new Set();
 
 Config.games.forEach((game,index)=>{
     var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
-    var roundId=0,timeline={};
+    var timeline={};
     detail.message.forEach((message)=>{
-        // Round #7
-        if(message.type=="round-start"){
-            roundId++;
-            message.display=`<strong>Round ${roundId}</strong>`;
-            return;
-        }
-
         if(typeof message.person=="string"){
             var temp=message.person;
             message.person=new Array(),
@@ -96,6 +89,9 @@ Config.games.forEach((game,index)=>{
         if(!message.time)message.time=0;
         if(!message.money)message.money=0;
         if(message.time==0)message.time="End of the Game",message.numberTime=0;
+        else if(toStandardTime(message.time)==detail.length*60) // Round #7
+            message.time="Openning Game",message.numberTime=toStandardTime(message.time),
+            message.display=`Caught! `;
         else message.numberTime=toStandardTime(message.time),
             message.time=secondsToString(toStandardTime(message.time));
 
@@ -149,20 +145,8 @@ Config.games.forEach((game,index)=>{
     for(var player of playerset)players.push(player);
     detail.player=players;
     detail.date=require('dayjs')(detail.date).format("M / D / YYYY");
-    var gameLength;
-    if(typeof detail.length=="string"||typeof detail.length=="number")
-        gameLength=toStandardTime(detail.length),
-        detail.length=`${toStandardTime(detail.length)} m`;
-    else{
-        var length="";
-        detail.length.forEach((len,lengthIndex)=>{
-            length+=`${toStandardTime(len)} m`;
-            if(lengthIndex!=detail.length.length-1)
-                length+=" + ";
-            gameLength=toStandardTime(len);
-        });
-        detail.length=length;
-    }
+    var gameLength=toStandardTime(detail.length);
+    detail.length=`${gameLength} m`;
     for(var person in timeline){
         var i=0; while(Config.player[i].name!=person)i++;
         var line=timeline[person],res=0;
