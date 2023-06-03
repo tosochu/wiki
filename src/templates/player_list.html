@@ -80,7 +80,7 @@
 <script>
     var UiContext=<%- JSON.stringify(data.player) %>;
     var getSearch=()=>new URL(window.location.href).searchParams;
-    const eachPage=50,defaultSorter="escapeRateBetter";
+    const eachPage=50,defaultSorter="dictionary";
     var Sorter={
         escapeRate: (x,y)=>{
             if(y.escapeRate-x.escapeRate)return y.escapeRate-x.escapeRate;
