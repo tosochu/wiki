@@ -67,3 +67,7 @@ message:
   - person: 樽美酒研二
     type: catched
     time: 0:18
+  - type: money-game
+    person: [池田美優, えなこ, 岡副麻希, 鬼龍院翔, 久保田かずのぶ, 真珠・野沢オークライヤー, 須田亜香里, 高橋茂雄, 田中卓志, 樽美酒研二, HIKAKIN, ひょっこりはん, 松島聡, 宮田俊哉, 森崎ウィン]
+    challenger: [HIKAKIN, 須田亜香里]
+    money: 100000
