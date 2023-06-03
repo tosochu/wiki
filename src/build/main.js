@@ -152,7 +152,7 @@ Config.games.forEach((game,index)=>{
         var line=timeline[person],res=0;
         var status="escape",lastTime=gameLength*60;
         line.forEach(event=>{
-            if(event.type=='catched'){
+            if(event.type=='catched'||event.type=="waiver"){
                 if(status=="escape")
                     res+=lastTime-event.numberTime,
                     status="catch",
@@ -161,6 +161,11 @@ Config.games.forEach((game,index)=>{
             if(event.type=='win'){
                 if(status=="escape")
                     res+=lastTime-event.numberTime;
+            }
+            if(event.type=='revive'){
+                if(status=="catch")
+                    lastTime=event.numberTime,
+                    status="escape";
             }
         });
         Config.player[i].record

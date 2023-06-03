@@ -84,7 +84,7 @@
     var Sorter={
         escapeRate: (x,y)=>{
             if(y.escapeRate-x.escapeRate)return y.escapeRate-x.escapeRate;
-            else return Sorter.dictionary(x,y);
+            else return Sorter.money(x,y);
         },
         dictionary: (x,y)=>{
             if(x.symbol==x.standardSymbol&&y.symbol==y.standardSymbol)
@@ -111,7 +111,7 @@
         show(search(nowsearch));
     };
     var show=(data)=>{
-        $('#sorttype').val(nowsearch.sort??'dictionary');
+        $('#sorttype').val(nowsearch.sort??'escapeRate');
         var players=data.players;
         var HTML=`<tr><th>Name</th><th>Count</th><th>Money</th><th>Last Part</th><th>Rate of Escape</th></tr>`;
         players.forEach(player=>{
@@ -126,7 +126,7 @@
                     <td><i class="fa fa-solid fa-fire"></i>&nbsp;${player.count}</td>
                     <td>${player.money} yen</td>
                     <td><a href="/<%= data.on %>/game/${player.lastTime}.html">${player.lastTime}</a></td>
-                    <td>${(player.escapeRate*100).toFixed(3)}</td>
+                    <td>${(player.escapeRate*100).toFixed(3)}%</td>
                 </tr>
             `;
         });
@@ -154,7 +154,7 @@
     var search=(rules)=>{
         var res=new Array();
         if(!rules.page)rules.page=1;
-        if(!rules.sort)rules.sort='dictionary';
+        if(!rules.sort)rules.sort='escapeRate';
         UiContext.forEach(player=>res.push(player));
         res.sort(Sorter[rules.sort]);
         if(res.length&&(rules.page-1)*eachPage>=res.length)rules.page=1;
@@ -167,7 +167,7 @@
             pageCount: Math.max(Math.ceil(res.length/eachPage),1)
         };
         if(nowsearch.page==1)delete nowsearch.page;
-        if(nowsearch.sort=='dictionary')delete nowsearch.sort;
+        if(nowsearch.sort=='escapeRate')delete nowsearch.sort;
         if(JSON.stringify(nowsearch)=='{}')window.history.pushState(null,null,`/<%= data.on %>/player/`);
         else if(nowsearch.page&&!nowsearch.sort)
             window.history.pushState(null,null,`/<%= data.on %>/player/?page=${nowsearch.page}`);
@@ -178,7 +178,7 @@
     }
     $(document).ready(()=>{
         show(search({page: getSearch().get('page')??1,
-            sort: getSearch().get('sort')??'dictionary'}));
+            sort: getSearch().get('sort')??'escapeRate'}));
         $('#sorttype').change(()=>{
             nowsearch.sort=$('#sorttype').val();
             nowsearch.page=1;
@@ -219,7 +219,7 @@
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.count %></td>
             <td><%= player.money %> yen</td>
             <td><a href="/<%= data.on %>/game/<%= player.lastTime %>.html"><%= player.lastTime %></a></td>
-            <td><%= (player.escapeRate*100).toFixed(3) %></td>
+            <td><%= (player.escapeRate*100).toFixed(3) %>%</td>
         </tr>
     <% }) %>
 </table>
