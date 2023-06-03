@@ -1,0 +1,2889 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title id="title">Players List - Tosochu Wiki</title>
+        <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
+        <link rel="stylesheet" href="https://topan-dev.github.io/TopanUI/topan.css">
+        <script src="https://topan-dev.github.io/TopanUI/topan.js"></script>
+        <script src="https://kit.fontawesome.com/0d8081718e.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div class="topan-header">
+            <div class="topan-header-home">
+                <a href="/wiki">
+                    <button class="topan-button-ordinary topan-button-commonly topan-button-header-round-left">
+                        <i class="fa fa-home"></i>
+                    </button>
+                </a>
+            </div>
+            <div class="topan-header-left">
+                <span class="topan-header-text">Tosochu Wiki&nbsp;</span>
+                <a href="/wiki/game">
+                    <span class="topan-button-ordinary topan-button-commonly topan-button-header-block">
+                        <i class="fa fa-solid fa-fire"></i>
+                        <span>&nbsp;Games</span>
+                    </span>
+                </a>
+                <a href="/wiki/player">
+                    <span class="topan-button-ordinary topan-button-commonly topan-button-header-block-showed">
+                        <i class="fa fa-solid fa-user"></i>
+                        <span>&nbsp;Players</span>
+                    </span>
+                </a>
+            </div>
+            <div class="topan-header-right">
+            </div>
+        </div>
+        <div class="topan-outer">
+            <div class="topan-page">
+                <div class="topan-mainpage-auto">
+                    <br>
+                    <style>
+    td,th{
+        word-wrap: break-word;
+    }
+    td{
+        white-space: nowrap;
+        overflow: hidden;
+        height: 30px;
+    }
+    td:nth-child(1){
+        width: 45%;
+    }
+    table{
+        width: 100%;
+        background-color: white;
+    }
+
+    .player-note{
+        color: grey;
+        font-size: 70%;
+    }
+
+    .page-select-up,.page-select-down{
+        box-sizing: inherit;
+        display: block;
+    }
+    ul{
+        font-size: 14px;
+        text-align: center;
+        list-style: none;
+        margin: 0;
+    }
+    ul>li{
+        display: inline-block;
+        padding: 6px 10px;
+        transition-duration: 0.15s;
+        cursor: pointer;
+        color: grey;
+    }
+    .page-select-up>ul>li{
+        border-bottom: solid 2px transparent;
+    }
+    .page-select-down>ul>li{
+        border-top: solid 2px transparent;
+    }
+    ul>span{
+        padding: 6px;
+        color: grey;
+    }
+    ul>li:hover{
+        background-color: rgba(0,0,0,0.05);
+        color: var(--topan-colors-main);
+    }
+    .page-select-up>ul>li:hover{
+        border-bottom: solid 2px var(--topan-colors-main);
+    }
+    .page-select-down>ul>li:hover{
+        border-top: solid 2px var(--topan-colors-main);
+    }
+    ul>li.topan-tab-showed{
+        color: var(--topan-colors-stress);
+    }
+    .page-select-up>ul>li.topan-tab-showed{
+        border-bottom: solid 2px var(--topan-colors-stress);
+    }
+    .page-select-down>ul>li.topan-tab-showed{
+        border-top: solid 2px var(--topan-colors-stress);
+    }
+    .page-select-up>ul>li.topan-tab-showed:hover{
+        border-bottom: solid 2px var(--topan-colors-stress);
+    }
+    .page-select-down>ul>li.topan-tab-showed:hover{
+        border-top: solid 2px var(--topan-colors-stress);
+    }
+</style>
+
+<script>
+    var UiContext=[{"name":"安藤美姫","standardSymbol":"andou-biki","symbol":"4268c2db","money":6100,"escapeRate":0.3524074074074074,"lastTime":49,"count":1},{"name":"朝日奈央","standardSymbol":"asahi-nao","symbol":"a5166f80","money":6100,"escapeRate":0.5737037037037037,"lastTime":49,"count":1},{"name":"浅香唯","standardSymbol":"asaka-ta","symbol":"9ddd2d7e","money":129200,"escapeRate":0.3422222222222222,"lastTime":2,"count":1},{"name":"亜生","standardSymbol":"asei","symbol":"62247e9b","money":6100,"escapeRate":0.23296296296296296,"lastTime":49,"count":1},{"name":"綾部祐二","standardSymbol":"ayabe-yuuji","symbol":"b156d036","money":0,"escapeRate":0.5993402777777778,"lastTime":18,"count":2},{"name":"あやまん監督","standardSymbol":"ayamankantoku","symbol":"4ffed7ae","money":0,"escapeRate":0.7446153846153846,"lastTime":25,"count":1},{"name":"バービー","standardSymbol":"Barbie","symbol":"818aeef9","money":0,"escapeRate":0.9127777777777778,"lastTime":38,"count":1},{"name":"千葉真一","standardSymbol":"chiba-maichi","symbol":"acb27fcd","money":0,"escapeRate":0.6085185185185186,"lastTime":38,"count":1},{"name":"クリス松村","standardSymbol":"Creas-matsumura","symbol":"2dc5bdb4","money":0,"escapeRate":0.5924074074074074,"lastTime":38,"count":1},{"name":"出川哲朗","standardSymbol":"dagewa-tetsuro","symbol":"3b1016f2","money":0,"escapeRate":0.5802777777777778,"lastTime":2,"count":1},{"name":"DAIGO","standardSymbol":"DAIGO","symbol":"cd9234d2","money":6100,"escapeRate":0.9588888888888889,"lastTime":49,"count":1},{"name":"ダレノガレ明美","standardSymbol":"Darenogare-akemi","symbol":"d4eb1fea","money":0,"escapeRate":0.8090883190883191,"lastTime":38,"count":2},{"name":"蛭子能収","standardSymbol":"ebisu-yoshikazu","symbol":"aacd0fe1","money":0,"escapeRate":0.03722222222222222,"lastTime":38,"count":1},{"name":"エド・はるみ","standardSymbol":"edo-harumi","symbol":"b550a9b3","money":0,"escapeRate":0,"lastTime":7,"count":1},{"name":"えなこ","standardSymbol":"enako","symbol":"cb6409a8","money":6600,"escapeRate":0.1915,"lastTime":46,"count":1},{"name":"えなりかずき","standardSymbol":"enari-kazuki","symbol":"8cff5e95","money":1080000,"escapeRate":1,"lastTime":38,"count":1},{"name":"遠藤久美子","standardSymbol":"endo-kumiko","symbol":"4dd4b722","money":0,"escapeRate":0.573,"lastTime":1,"count":1},{"name":"遠藤章造","standardSymbol":"endou-shouzou","symbol":"c3b2d597","money":0,"escapeRate":0.43846153846153846,"lastTime":25,"count":1},{"name":"藤森慎吾","standardSymbol":"fujimori-shingo","symbol":"64b26f04","money":1080000,"escapeRate":0.8716666666666666,"lastTime":38,"count":2},{"name":"藤田ニコル","standardSymbol":"fujita-Nicole","symbol":"5b1198da","money":6100,"escapeRate":0.743787037037037,"lastTime":49,"count":2},{"name":"藤原時","standardSymbol":"fujiwara-toki","symbol":"e8a0d4a4","money":0,"escapeRate":0,"lastTime":7,"count":1},{"name":"ふかわりょう","standardSymbol":"fukawaryou","symbol":"8e855c1c","money":0,"escapeRate":0.527,"lastTime":1,"count":1},{"name":"福田薫","standardSymbol":"fukuda-kaoru","symbol":"f104f660","money":0,"escapeRate":0.09555555555555556,"lastTime":18,"count":1},{"name":"福岡堅樹","standardSymbol":"fukuoka-kenju","symbol":"963ac6c4","money":6100,"escapeRate":0.6466666666666666,"lastTime":49,"count":1},{"name":"フワちゃん","standardSymbol":"fuwachan","symbol":"57a7b869","money":0,"escapeRate":0.04230769230769231,"lastTime":56,"count":1},{"name":"ゴルゴ松本","standardSymbol":"Golgo-matsumoto","symbol":"b2eaad01","money":300000,"escapeRate":0.8747222222222222,"lastTime":3,"count":2},{"name":"ゴリ","standardSymbol":"Gori","symbol":"0ae51c51","money":0,"escapeRate":0.4816666666666667,"lastTime":35,"count":1},{"name":"後藤輝基","standardSymbol":"goto-terumoto","symbol":"cd22b3f2","money":0,"escapeRate":0.24416666666666667,"lastTime":17,"count":1},{"name":"具志堅用高","standardSymbol":"gushiken-youkada","symbol":"b82af64b","money":0,"escapeRate":0.6266666666666667,"lastTime":25,"count":1},{"name":"袴田吉彦","standardSymbol":"hakamada-yoshihiko","symbol":"b469d497","money":0,"escapeRate":0.6717222222222222,"lastTime":3,"count":2},{"name":"花田勝","standardSymbol":"hanata-kachi","symbol":"da245be7","money":0,"escapeRate":0.8909523809523809,"lastTime":7,"count":1},{"name":"塙宣之","standardSymbol":"hanawa-nobuyuki","symbol":"552268cf","money":0,"escapeRate":0.36690972222222223,"lastTime":18,"count":2},{"name":"狩野英孝","standardSymbol":"hano-hidetaka","symbol":"9752eec5","money":0,"escapeRate":0.7502510683760684,"lastTime":35,"count":3},{"name":"原史奈","standardSymbol":"hara-fumina","symbol":"c972164c","money":0,"escapeRate":0.20766666666666667,"lastTime":1,"count":1},{"name":"八重樫東","standardSymbol":"hashijuukashi-higashi","symbol":"fadcc21f","money":0,"escapeRate":0.7266666666666667,"lastTime":43,"count":1},{"name":"橋本良亮","standardSymbol":"hashimoto-yoakira","symbol":"decce74b","money":0,"escapeRate":0.9563333333333334,"lastTime":43,"count":1},{"name":"林修","standardSymbol":"hayashiomasu","symbol":"79496a81","money":0,"escapeRate":0.7684615384615384,"lastTime":35,"count":1},{"name":"東尾理子","standardSymbol":"higashio-satoko","symbol":"20500c7d","money":2160000,"escapeRate":0.5058333333333334,"lastTime":18,"count":1},{"name":"HIKAKIN","standardSymbol":"HIKAKIN","symbol":"e631dcf6","money":1512700,"escapeRate":0.4339259259259259,"lastTime":56,"count":3},{"name":"ヒコロヒー","standardSymbol":"hikurohii","symbol":"1a3794b5","money":0,"escapeRate":0.6343589743589744,"lastTime":56,"count":1},{"name":"雛形あきこ","standardSymbol":"hinagata-akiko","symbol":"a91c50fe","money":0,"escapeRate":0.5398958333333334,"lastTime":17,"count":2},{"name":"平畠啓史","standardSymbol":"hirahatake-hiroshi","symbol":"0a1661e2","money":600000,"escapeRate":1,"lastTime":2,"count":1},{"name":"保坂尚輝","standardSymbol":"hosaka-naoki","symbol":"48dc5c8f","money":390000,"escapeRate":1,"lastTime":1,"count":1},{"name":"ひょっこりはん","standardSymbol":"hyokkorihan","symbol":"cf5b1f0e","money":6600,"escapeRate":0.8316666666666667,"lastTime":46,"count":1},{"name":"市川知宏","standardSymbol":"ichikawa-tomohiro","symbol":"4eddf571","money":0,"escapeRate":0.7937179487179488,"lastTime":25,"count":1},{"name":"飯尾和樹","standardSymbol":"iio-kazuki","symbol":"071d8f6f","money":0,"escapeRate":0.07846153846153846,"lastTime":35,"count":1},{"name":"池田美優","standardSymbol":"ikeda-miyu","symbol":"df86607f","money":6600,"escapeRate":0.44533333333333336,"lastTime":46,"count":1},{"name":"今井華","standardSymbol":"imai-hana","symbol":"4cec3ec7","money":0,"escapeRate":0.6962820512820512,"lastTime":35,"count":1},{"name":"井森美幸","standardSymbol":"imori-miyuki","symbol":"13c64542","money":0,"escapeRate":0.7575,"lastTime":6,"count":1},{"name":"板野友美","standardSymbol":"inato-yumi","symbol":"b3134a46","money":0,"escapeRate":0.7297222222222223,"lastTime":18,"count":1},{"name":"石本沙織","standardSymbol":"ishimoto-saori","symbol":"5dad2b11","money":315000,"escapeRate":0.6875,"lastTime":4,"count":1},{"name":"磯野貴理子","standardSymbol":"isono-kiriko","symbol":"63454c90","money":0,"escapeRate":0.6446153846153846,"lastTime":25,"count":1},{"name":"磯山さやか","standardSymbol":"isoyama-sayaka","symbol":"f4072bbd","money":0,"escapeRate":0.5461111111111111,"lastTime":4,"count":1},{"name":"ISSA","standardSymbol":"ISSA","symbol":"97dc5bb3","money":960000,"escapeRate":1,"lastTime":6,"count":1},{"name":"板倉俊之","standardSymbol":"itakurato-shiyuki","symbol":"9819e5f2","money":0,"escapeRate":0.8625,"lastTime":4,"count":1},{"name":"伊藤一朗","standardSymbol":"itou-ichirou","symbol":"d03cb652","money":0,"escapeRate":0.3388333333333333,"lastTime":43,"count":1},{"name":"伊藤桃々","standardSymbol":"itou-momomomo","symbol":"5ca937ac","money":6100,"escapeRate":0.3774074074074074,"lastTime":49,"count":1},{"name":"伊藤俊介","standardSymbol":"itou-shunsuke","symbol":"f178d3a1","money":0,"escapeRate":0.3047435897435897,"lastTime":56,"count":1},{"name":"藤崎奈々子","standardSymbol":"itou-yuko","symbol":"916531c3","money":0,"escapeRate":0.14972222222222223,"lastTime":2,"count":1},{"name":"岩尾望","standardSymbol":"iwao-nozomu","symbol":"152baba7","money":0,"escapeRate":0.6009442307692309,"lastTime":35,"count":3},{"name":"いとうあさこ","standardSymbol":"iyou-asako","symbol":"7d0cf83c","money":0,"escapeRate":0.9172222222222223,"lastTime":18,"count":1},{"name":"和泉元彌","standardSymbol":"izumi-motoiya","symbol":"6bce71fe","money":0,"escapeRate":0.9999,"lastTime":7,"count":1},{"name":"陣内智則","standardSymbol":"jinnai-tomonori","symbol":"12745286","money":0,"escapeRate":0.47425925925925927,"lastTime":38,"count":1},{"name":"上地雄輔","standardSymbol":"jouchi-yuusuke","symbol":"36233b9a","money":0,"escapeRate":0.10642857142857143,"lastTime":7,"count":1},{"name":"城咲仁","standardSymbol":"jousaki-jin","symbol":"2d453cc6","money":0,"escapeRate":0.45,"lastTime":4,"count":1},{"name":"JOY","standardSymbol":"JOY","symbol":"c21977d1","money":0,"escapeRate":0.6304513888888889,"lastTime":18,"count":2},{"name":"KABA.ちゃん","standardSymbol":"KABA-chan","symbol":"8a3d3546","money":0,"escapeRate":0.7243333333333334,"lastTime":1,"count":1},{"name":"河北麻友子","standardSymbol":"kahoku-asayuuko","symbol":"19d2cc00","money":0,"escapeRate":0.5235897435897436,"lastTime":25,"count":1},{"name":"亀田大毅","standardSymbol":"kameda-daiatsushi","symbol":"ce4f3f14","money":0,"escapeRate":0.9947916666666666,"lastTime":17,"count":1},{"name":"亀田興毅","standardSymbol":"kameda-kyouatsushi","symbol":"c33386dc","money":0,"escapeRate":0.13958333333333334,"lastTime":17,"count":1},{"name":"金子昇","standardSymbol":"kaneko-nobori","symbol":"53fd13ba","money":0,"escapeRate":0.939375,"lastTime":6,"count":1},{"name":"金子貴俊","standardSymbol":"kaneko-takatoshi","symbol":"c1c45fe3","money":0,"escapeRate":0.8477777777777777,"lastTime":2,"count":1},{"name":"加藤諒","standardSymbol":"katou-ryou","symbol":"0b778100","money":0,"escapeRate":0.37866666666666665,"lastTime":43,"count":1},{"name":"川越達也","standardSymbol":"kawagoe-tatsuya","symbol":"dff7a034","money":0,"escapeRate":0.7694444444444445,"lastTime":18,"count":1},{"name":"川合俊一","standardSymbol":"kawai-shunichi","symbol":"365d19e8","money":0,"escapeRate":0.9999,"lastTime":7,"count":1},{"name":"川島邦裕","standardSymbol":"kawashima-kunihiro","symbol":"bbacf4ed","money":0,"escapeRate":0.9358333333333333,"lastTime":17,"count":1},{"name":"景井ひな","standardSymbol":"keiihina","symbol":"953f6994","money":0,"escapeRate":0.5191025641025641,"lastTime":56,"count":1},{"name":"ケンドーコバヤシ","standardSymbol":"kendou-kobayashi","symbol":"5a7c37a4","money":0,"escapeRate":0.20729166666666668,"lastTime":6,"count":1},{"name":"木下優樹菜","standardSymbol":"kinishita-yuukisai","symbol":"21b7b3ac","money":0,"escapeRate":0,"lastTime":7,"count":1},{"name":"木下ほうか","standardSymbol":"kinoshita-houka","symbol":"a0b1b1de","money":345200,"escapeRate":1,"lastTime":46,"count":1},{"name":"木下隆行","standardSymbol":"kinoshita-takayuki","symbol":"b3861ac3","money":0,"escapeRate":0.19625,"lastTime":18,"count":1},{"name":"鬼龍院翔","standardSymbol":"kiryuun-shou","symbol":"a3916dd8","money":6600,"escapeRate":0.6125,"lastTime":46,"count":1},{"name":"岸優太","standardSymbol":"kishi-yuuta","symbol":"53ea7f23","money":6100,"escapeRate":0.7207407407407408,"lastTime":49,"count":1},{"name":"国生さゆり","standardSymbol":"kokusho-sayuri","symbol":"21dabe41","money":0,"escapeRate":0.9226666666666666,"lastTime":3,"count":1},{"name":"小森純","standardSymbol":"komori-jun","symbol":"6fad25cd","money":0,"escapeRate":0.44277777777777777,"lastTime":18,"count":1},{"name":"近藤春菜","standardSymbol":"kondou-haruna","symbol":"3a6f2687","money":0,"escapeRate":0.9366666666666666,"lastTime":7,"count":1},{"name":"昂生","standardSymbol":"kosei","symbol":"d2a75fb7","money":1080000,"escapeRate":1,"lastTime":49,"count":1},{"name":"小杉竜一","standardSymbol":"kosugi-ryuuichi","symbol":"2b5e3d40","money":0,"escapeRate":0.6811904761904762,"lastTime":7,"count":1},{"name":"久保田かずのぶ","standardSymbol":"kubota-kazunobu","symbol":"d4c05671","money":6600,"escapeRate":0.5538012820512821,"lastTime":56,"count":2},{"name":"工藤阿須加","standardSymbol":"kudou-azuka","symbol":"0787de88","money":6100,"escapeRate":0.8087037037037037,"lastTime":49,"count":1},{"name":"くみっきー","standardSymbol":"kumikkii","symbol":"c91eb474","money":0,"escapeRate":0.9616666666666667,"lastTime":17,"count":1},{"name":"くわばたりえ","standardSymbol":"kuwabatarie","symbol":"8e3a0a61","money":0,"escapeRate":0.6342857142857142,"lastTime":7,"count":1},{"name":"まちゃまちゃ","standardSymbol":"machamacha","symbol":"a14e1467","money":0,"escapeRate":0.32,"lastTime":6,"count":1},{"name":"眞鍋かをり","standardSymbol":"manabe-kawori","symbol":"929649b6","money":1560000,"escapeRate":0.8317188034188034,"lastTime":35,"count":3},{"name":"村本大輔","standardSymbol":"maramoto-daisuke","symbol":"6ecb35d3","money":0,"escapeRate":0.5585,"lastTime":43,"count":1},{"name":"益子卓郎","standardSymbol":"mashiko-takorou","symbol":"1e77cdd4","money":0,"escapeRate":0.4434722222222222,"lastTime":18,"count":1},{"name":"増田英彦","standardSymbol":"masuda-hidehiko","symbol":"7b2022bd","money":0,"escapeRate":0.3097916666666667,"lastTime":6,"count":1},{"name":"又吉直樹","standardSymbol":"matayoshi-naoki","symbol":"f2c80f28","money":0,"escapeRate":0.10055555555555555,"lastTime":18,"count":1},{"name":"的場浩司","standardSymbol":"matoba-kouji","symbol":"91d3f413","money":1560000,"escapeRate":1,"lastTime":35,"count":1},{"name":"松田宣浩","standardSymbol":"matsuda-senhirosi","symbol":"55faf6f0","money":0,"escapeRate":0.9488461538461539,"lastTime":56,"count":1},{"name":"松丸亮吾","standardSymbol":"matsumaru-akiware","symbol":"a6c9d5f7","money":0,"escapeRate":0.9478205128205128,"lastTime":56,"count":1},{"name":"松島聡","standardSymbol":"matsushima-sato","symbol":"a0316808","money":6600,"escapeRate":0.6833333333333333,"lastTime":46,"count":1},{"name":"南明奈","standardSymbol":"minami-akina","symbol":"3635babc","money":0,"escapeRate":0.3479861111111111,"lastTime":18,"count":2},{"name":"見延和靖","standardSymbol":"minobe-kazuyasushi","symbol":"6c524365","money":0,"escapeRate":0.10525641025641026,"lastTime":56,"count":1},{"name":"箕輪はるか","standardSymbol":"minowa-haruka","symbol":"7f3d3c79","money":0,"escapeRate":0.3223809523809524,"lastTime":7,"count":1},{"name":"宮田俊哉","standardSymbol":"miyata-toshiya","symbol":"ec6e501c","money":6600,"escapeRate":0.3318333333333333,"lastTime":46,"count":1},{"name":"水谷隼","standardSymbol":"mizutani-hayabusa","symbol":"7c6086de","money":0,"escapeRate":0.5684166666666667,"lastTime":56,"count":2},{"name":"木本武宏","standardSymbol":"mokuhon-takehiro","symbol":"104771bf","money":0,"escapeRate":0.49805555555555553,"lastTime":18,"count":1},{"name":"森崎ウィン","standardSymbol":"morisaki-uin","symbol":"c4c38109","money":6600,"escapeRate":0.9271666666666667,"lastTime":46,"count":1},{"name":"森下千里","standardSymbol":"morishita-chisato","symbol":"6c604ba9","money":0,"escapeRate":0.2727777777777778,"lastTime":2,"count":1},{"name":"諸星和己","standardSymbol":"morohoshi-kazumi","symbol":"a745ac0a","money":300000,"escapeRate":1,"lastTime":3,"count":1},{"name":"村山輝星","standardSymbol":"murayama-teruboshi","symbol":"3255af50","money":6100,"escapeRate":0.7662962962962963,"lastTime":49,"count":1},{"name":"中尾明慶","standardSymbol":"nakao-meikei","symbol":"a9eeb711","money":0,"escapeRate":0.4573076923076923,"lastTime":56,"count":1},{"name":"中田敦彦","standardSymbol":"nakata-atsuhiko","symbol":"ed31fb07","money":0,"escapeRate":0.6561253561253562,"lastTime":38,"count":2},{"name":"NAOKI","standardSymbol":"NAOKI","symbol":"220c1ffb","money":1080000,"escapeRate":0.9817948717948718,"lastTime":25,"count":1},{"name":"NAOTO","standardSymbol":"NAOTO","symbol":"f3782e40","money":0,"escapeRate":0.7146153846153847,"lastTime":25,"count":1},{"name":"はるな愛","standardSymbol":"naruna-ai","symbol":"f1c58edb","money":0,"escapeRate":0.31722222222222224,"lastTime":38,"count":1},{"name":"ニコラス・ペタス","standardSymbol":"Nicholas-pettas","symbol":"63ca0a0e","money":0,"escapeRate":0.404,"lastTime":1,"count":1},{"name":"西畑大吾","standardSymbol":"nishigata-daigo","symbol":"0122b798","money":6100,"escapeRate":0.4703703703703704,"lastTime":49,"count":1},{"name":"錦野旦","standardSymbol":"nishikino-dan","symbol":"e75a0236","money":0,"escapeRate":0.77625,"lastTime":6,"count":1},{"name":"西山茉希","standardSymbol":"nishiyama-momare","symbol":"b56d6a3a","money":0,"escapeRate":0.981875,"lastTime":17,"count":1},{"name":"野久保直樹","standardSymbol":"nokuno-naoki","symbol":"90437f42","money":0,"escapeRate":0.06571428571428571,"lastTime":7,"count":1},{"name":"野々村真","standardSymbol":"nonomura-ma","symbol":"1738a24f","money":0,"escapeRate":0.3851851851851852,"lastTime":38,"count":1},{"name":"織田信成","standardSymbol":"oda-nobunari","symbol":"645ff0f0","money":0,"escapeRate":0.39,"lastTime":38,"count":1},{"name":"岡田義徳","standardSymbol":"okada-yoshinori","symbol":"8541d307","money":600000,"escapeRate":1,"lastTime":2,"count":1},{"name":"岡田結実","standardSymbol":"okada-yui","symbol":"cd5ac1a2","money":600000,"escapeRate":0.650448717948718,"lastTime":56,"count":2},{"name":"岡副麻希","standardSymbol":"okafuku-maki","symbol":"41495db4","money":6600,"escapeRate":0.019666666666666666,"lastTime":46,"count":1},{"name":"岡崎紗絵","standardSymbol":"okazaki-shae","symbol":"a2ca984c","money":6100,"escapeRate":0.9109259259259259,"lastTime":49,"count":1},{"name":"大久保佳代子","standardSymbol":"okubo-kayako","symbol":"dcc4d3d6","money":0,"escapeRate":0.7196314102564103,"lastTime":25,"count":2},{"name":"大沢あかね","standardSymbol":"oosawa-akane","symbol":"5fbf128a","money":0,"escapeRate":0.43885416666666666,"lastTime":6,"count":2},{"name":"小沢真珠","standardSymbol":"ozawa-shinju","symbol":"e25bde2f","money":0,"escapeRate":0.5329166666666667,"lastTime":6,"count":1},{"name":"ぺえ","standardSymbol":"pee","symbol":"33d6e11e","money":600000,"escapeRate":0.5191666666666667,"lastTime":43,"count":1},{"name":"レッド吉田","standardSymbol":"Red-shiyoda","symbol":"ceb70f3e","money":0,"escapeRate":0.176,"lastTime":3,"count":1},{"name":"梨花","standardSymbol":"rika","symbol":"61f223f1","money":0,"escapeRate":0.8973333333333333,"lastTime":1,"count":1},{"name":"りんごちゃん","standardSymbol":"ringochan","symbol":"9fc05812","money":6100,"escapeRate":0.5533333333333333,"lastTime":49,"count":1},{"name":"ルー大柴","standardSymbol":"ruu-ooshiba","symbol":"a296fb59","money":0,"escapeRate":0.580952380952381,"lastTime":7,"count":1},{"name":"りゅうちぇる","standardSymbol":"ryuucheru","symbol":"ee6336ad","money":0,"escapeRate":0.9846666666666667,"lastTime":43,"count":1},{"name":"定岡正二","standardSymbol":"sadaoka-shoji","symbol":"56fdc641","money":0,"escapeRate":0.237,"lastTime":1,"count":1},{"name":"斉藤舞子","standardSymbol":"saito-maiko","symbol":"e35698d1","money":128000,"escapeRate":0.4266666666666667,"lastTime":3,"count":1},{"name":"斉藤慎二","standardSymbol":"saito-shinji","symbol":"0b9405fe","money":0,"escapeRate":0.5514102564102564,"lastTime":35,"count":1},{"name":"佐藤勝利","standardSymbol":"saito-shouri","symbol":"a03f50ab","money":0,"escapeRate":0.98,"lastTime":56,"count":1},{"name":"斎藤司","standardSymbol":"saito-tsukasa","symbol":"936ad87d","money":6100,"escapeRate":0.19444444444444445,"lastTime":49,"count":1},{"name":"坂上忍","standardSymbol":"sakagami-shinobu","symbol":"99c105c7","money":0,"escapeRate":0.7928205128205128,"lastTime":35,"count":1},{"name":"酒井一圭","standardSymbol":"sakai-ichikei","symbol":"49227777","money":6100,"escapeRate":0.6411111111111111,"lastTime":49,"count":1},{"name":"桜庭和志","standardSymbol":"sakuraba-kazushi","symbol":"1df65886","money":0,"escapeRate":0.7564285714285715,"lastTime":7,"count":1},{"name":"佐々木健介","standardSymbol":"sasaki-kensuke","symbol":"5a88ec05","money":0,"escapeRate":0.9580555555555555,"lastTime":4,"count":1},{"name":"須﨑優衣","standardSymbol":"sasuki-yui","symbol":"e82f1fb3","money":0,"escapeRate":0.261025641025641,"lastTime":56,"count":1},{"name":"佐藤江梨子","standardSymbol":"satou-eriko","symbol":"1c239174","money":0,"escapeRate":0.7192592592592593,"lastTime":38,"count":1},{"name":"さとう珠緒","standardSymbol":"satou-tamao","symbol":"1cc5aaaf","money":0,"escapeRate":0.20916666666666667,"lastTime":4,"count":1},{"name":"澤部佑","standardSymbol":"sawabe-tasuku","symbol":"366e5ab1","money":0,"escapeRate":0.4539135802469136,"lastTime":43,"count":3},{"name":"SEIKIN","standardSymbol":"SEIKIN","symbol":"38eb71ed","money":0,"escapeRate":0.15102564102564103,"lastTime":56,"count":1},{"name":"セイン・カミュ","standardSymbol":"Sene-Camu","symbol":"13cb597d","money":0,"escapeRate":0.4175,"lastTime":2,"count":1},{"name":"千秋","standardSymbol":"senshuu","symbol":"cdd89d2b","money":0,"escapeRate":0.6826666666666666,"lastTime":43,"count":1},{"name":"千葉雄大","standardSymbol":"senyou-yuudai","symbol":"5a8933f3","money":0,"escapeRate":0.29012820512820514,"lastTime":35,"count":1},{"name":"柴田英嗣","standardSymbol":"shibata-hidetsugu","symbol":"659e6d94","money":0,"escapeRate":0.4065384615384615,"lastTime":56,"count":1},{"name":"嶋大輔","standardSymbol":"shima-daisuke","symbol":"4ccd1de8","money":0,"escapeRate":0.08444444444444445,"lastTime":2,"count":1},{"name":"島田秀平","standardSymbol":"shimada-shuuhei","symbol":"9dd5cf23","money":0,"escapeRate":0.654375,"lastTime":17,"count":1},{"name":"品川祐","standardSymbol":"shinagawa-yuu","symbol":"972b8f9d","money":600000,"escapeRate":1,"lastTime":4,"count":1},{"name":"真珠・野沢オークライヤー","standardSymbol":"shinju-nozawaoukutaiyaa","symbol":"380fcbba","money":6600,"escapeRate":0.7461666666666666,"lastTime":46,"count":1},{"name":"白洲迅","standardSymbol":"shirasu-jin","symbol":"d125fb07","money":0,"escapeRate":0.2375,"lastTime":43,"count":1},{"name":"白鳥久美子","standardSymbol":"shiratori-kumiko","symbol":"6baa2706","money":0,"escapeRate":0.9432051282051283,"lastTime":35,"count":1},{"name":"小峠英二","standardSymbol":"shoutouge-eini","symbol":"96424fd4","money":0,"escapeRate":0.17333333333333334,"lastTime":38,"count":1},{"name":"春日俊彰","standardSymbol":"shunjitsu-shun'akira","symbol":"172e8717","money":0,"escapeRate":0.575,"lastTime":56,"count":1},{"name":"須田亜香里","standardSymbol":"suda-akaori","symbol":"acaede3f","money":6600,"escapeRate":0.43283333333333335,"lastTime":46,"count":1},{"name":"杉村太蔵","standardSymbol":"sugimura-tazou","symbol":"fc4cead3","money":0,"escapeRate":0.34833333333333333,"lastTime":25,"count":1},{"name":"杉崎美香","standardSymbol":"sugisaki-mika","symbol":"e471d452","money":0,"escapeRate":0.8574358974358974,"lastTime":25,"count":1},{"name":"須賀健太","standardSymbol":"suka-kenta","symbol":"f18067df","money":0,"escapeRate":0.5445,"lastTime":43,"count":1},{"name":"マリエ","standardSymbol":"Sulie","symbol":"e5aed9e5","money":0,"escapeRate":0.4691666666666667,"lastTime":6,"count":1},{"name":"鈴木Q太郎","standardSymbol":"suzuki-Qtarou","symbol":"182e7b37","money":0,"escapeRate":0.5620833333333334,"lastTime":18,"count":1},{"name":"鈴木紗理奈","standardSymbol":"suzuki-sarina","symbol":"cf52297e","money":0,"escapeRate":0.4710416666666667,"lastTime":17,"count":1},{"name":"多田健二","standardSymbol":"tada-kenji","symbol":"bd7180cb","money":0,"escapeRate":0.1935897435897436,"lastTime":35,"count":1},{"name":"高橋真麻","standardSymbol":"takahashi-masa","symbol":"6cbecc33","money":0,"escapeRate":0.3691025641025641,"lastTime":25,"count":1},{"name":"高橋みなみ","standardSymbol":"takahashi-minami","symbol":"2006ab54","money":0,"escapeRate":0.9065277777777778,"lastTime":18,"count":1},{"name":"高橋茂雄","standardSymbol":"takahashi-shigeo","symbol":"79854266","money":6600,"escapeRate":0.5501381766381767,"lastTime":46,"count":3},{"name":"髙藤直寿","standardSymbol":"takato-naoisa","symbol":"d90e398a","money":0,"escapeRate":0.8982051282051282,"lastTime":56,"count":1},{"name":"たむらけんじ","standardSymbol":"tamurakenji","symbol":"1d7a8ae4","money":0,"escapeRate":0.19476190476190477,"lastTime":7,"count":1},{"name":"田中卓志","standardSymbol":"tanaka-takashi","symbol":"6839fce0","money":6600,"escapeRate":0.8568329772079772,"lastTime":56,"count":4},{"name":"樽美酒研二","standardSymbol":"tarubishu-kenni","symbol":"b6ff34cf","money":6600,"escapeRate":0.997,"lastTime":46,"count":1},{"name":"田崎佑一","standardSymbol":"tasaki-tasukuichi","symbol":"4e6c7f5c","money":0,"escapeRate":0,"lastTime":7,"count":1},{"name":"徳井義実","standardSymbol":"tokui-yoshizane","symbol":"9552ce1e","money":0,"escapeRate":0.85375,"lastTime":6,"count":1},{"name":"鳥居みゆき","standardSymbol":"torii-miyuki","symbol":"31f8572c","money":0,"escapeRate":0.6669444444444445,"lastTime":18,"count":1},{"name":"戸次重幸","standardSymbol":"totsugi-shigeyuki","symbol":"8d2def32","money":0,"escapeRate":0.6156410256410256,"lastTime":35,"count":1},{"name":"土屋伸之","standardSymbol":"tsuchiya-nobuyuki","symbol":"7f172902","money":0,"escapeRate":0.16520833333333335,"lastTime":17,"count":1},{"name":"塚田僚一","standardSymbol":"tukada-ryoichi","symbol":"bd7db140","money":0,"escapeRate":0.4365,"lastTime":43,"count":1},{"name":"植野行雄","standardSymbol":"ueno-yukio","symbol":"f59b03c4","money":0,"escapeRate":0.9468518518518518,"lastTime":38,"count":1},{"name":"和田正人","standardSymbol":"wada-masato","symbol":"e2a9fa46","money":6100,"escapeRate":0.8900925925925925,"lastTime":49,"count":2},{"name":"島崎和歌子","standardSymbol":"wakako-shimazaki","symbol":"0d4944cb","money":0,"escapeRate":0.3605555555555556,"lastTime":2,"count":1},{"name":"渡辺直美","standardSymbol":"watanabe-naomi","symbol":"c9166223","money":0,"escapeRate":0.375,"lastTime":17,"count":1},{"name":"ウエンツ瑛士","standardSymbol":"Wentz-eiji","symbol":"d1bab255","money":0,"escapeRate":0.8459166666666667,"lastTime":4,"count":2},{"name":"矢吹奈子","standardSymbol":"yabuki-nako","symbol":"1ba37dc5","money":0,"escapeRate":0.7424358974358974,"lastTime":56,"count":1},{"name":"矢口真里","standardSymbol":"yaguchi-mari","symbol":"77448897","money":2000000,"escapeRate":1,"lastTime":7,"count":1},{"name":"山本彩","standardSymbol":"yamamoto-aya","symbol":"eaa304bc","money":0,"escapeRate":0.9703703703703703,"lastTime":38,"count":1},{"name":"山本梓","standardSymbol":"yamamoto-azusa","symbol":"3c6b9919","money":0,"escapeRate":0.267,"lastTime":3,"count":1},{"name":"柳沢慎吾","standardSymbol":"yanagisawa-shingo","symbol":"6e88c00d","money":0,"escapeRate":0.7233333333333334,"lastTime":43,"count":1},{"name":"やしろ優","standardSymbol":"yashiro-yuu","symbol":"16241a16","money":0,"escapeRate":0.1758974358974359,"lastTime":35,"count":1},{"name":"泰葉","standardSymbol":"yasuha","symbol":"36010ee2","money":0,"escapeRate":0.4569047619047619,"lastTime":7,"count":1},{"name":"矢沢心","standardSymbol":"yazawa-kokoro","symbol":"0873b85c","money":230000,"escapeRate":0.7666666666666667,"lastTime":3,"count":1},{"name":"横山由依","standardSymbol":"yokoyama-yuui","symbol":"d3ef4cbd","money":0,"escapeRate":0.5944871794871794,"lastTime":35,"count":1},{"name":"四十住さくら","standardSymbol":"yonjuujuu-sakura","symbol":"3364bdfc","money":0,"escapeRate":0.22948717948717948,"lastTime":56,"count":1},{"name":"吉田敬","standardSymbol":"yoshida-takashi","symbol":"678d7573","money":0,"escapeRate":0.5435714285714286,"lastTime":7,"count":1},{"name":"優木まおみ","standardSymbol":"yuuki-maomi","symbol":"af5e6ea6","money":0,"escapeRate":0.46663194444444445,"lastTime":18,"count":2},{"name":"ざわちん","standardSymbol":"zawachin","symbol":"37ff71e1","money":0,"escapeRate":0.6933333333333334,"lastTime":38,"count":1}];
+    var getSearch=()=>new URL(window.location.href).searchParams;
+    const eachPage=50,defaultSorter="dictionary";
+    var Sorter={
+        escapeRate: (x,y)=>{
+            if(y.escapeRate-x.escapeRate)return y.escapeRate-x.escapeRate;
+            else return Sorter.money(x,y);
+        },
+        escapeRateBetter: (x,y)=>{
+            if(x.count==y.count||(x.count>=3&&y.count>=3))
+                return y.escapeRate-x.escapeRate;
+            if(y.count-x.count)return y.count-x.count;
+            else return Sorter.money(x,y);
+        },
+        dictionary: (x,y)=>{
+            if(x.symbol==x.standardSymbol&&y.symbol==y.standardSymbol)
+                return x.symbol.localeCompare(y.symbol);
+            if(x.symbol!=x.standardSymbol&&y.symbol!=y.standardSymbol)
+                return x.standardSymbol.localeCompare(y.standardSymbol);
+            return y.symbol==y.standardSymbol?-1:1;
+        },
+        money: (x,y)=>{
+            if(y.money-x.money)return y.money-x.money;
+            else return Sorter.dictionary(x,y);
+        },
+        lastpart: (x,y)=>{
+            if(y.lastTime-x.lastTime)return y.lastTime-x.lastTime;
+            else return Sorter.dictionary(x,y);
+        },
+        count: (x,y)=>{
+            if(y.count-x.count)return y.count-x.count;
+            else return Sorter.dictionary(x,y);
+        }
+    };
+    var movetoPage=(pageId)=>{
+        nowsearch.page=pageId;
+        show(search(nowsearch));
+    };
+    var show=(data)=>{
+        $('#sorttype').val(nowsearch.sort??defaultSorter);
+        var players=data.players;
+        var HTML=`<tr><th>Name</th><th>Count</th><th>Money</th><th>Last Part</th><th>Rate of Escape</th></tr>`;
+        players.forEach(player=>{
+            HTML+=`
+                <tr>
+                    <td>
+                        <a href="/wiki/player/${player.standardSymbol}.html">${player.name}</a>
+                        ${(player.standardSymbol!=player.symbol&&player.name!=player.standardSymbol)?`
+                            <span class="player-note">(${player.standardSymbol})</span>
+                        `:''}
+                    </td>
+                    <td><i class="fa fa-solid fa-fire"></i>&nbsp;${player.count}</td>
+                    <td>${player.money} yen</td>
+                    <td><a href="/wiki/game/${player.lastTime}.html">${player.lastTime}</a></td>
+                    <td>${(player.escapeRate*100).toFixed(2)}%</td>
+                </tr>
+            `;
+        });
+        $('table').html(HTML);
+        HTML=``;
+        var pageCount=data.pageCount,minPageId,maxPageId,pageId=data.pageId;
+        if(pageCount<=11)minPageId=1,maxPageId=pageCount;
+        else{
+            if(pageId>pageCount-5)minPageId=pageCount-10,maxPageId=pageCount;
+            else if(pageId<=5)minPageId=1,maxPageId=11;
+            else minPageId=pageId-5,maxPageId=pageId+5;
+        }
+        if(pageId>=3)HTML+=`<li onclick="movetoPage(1);">« 第一页</li>`;
+        if(pageId>=2)HTML+=`<li onclick="movetoPage(${pageId-1});">‹ 前一页</li>`;
+        if(minPageId>1)HTML+=`<span>...</span>`
+        for(var i=minPageId;i<=maxPageId;i++)
+            if(i==pageId)HTML+=`<li class="topan-tab-showed">${i}</li>`;
+            else HTML+=`<li onclick="movetoPage(${i});">${i}</li>`;
+        if(maxPageId<pageCount)HTML+=`<span>...</span>`;
+        if(pageId<=pageCount-1)HTML+=`<li onclick="movetoPage(${pageId+1});">下一页 ›</li>`;
+        if(pageId<=pageCount-2)HTML+=`<li onclick="movetoPage(${pageCount});">末页 »</li>`;
+        $('.page-select-up>ul').html(HTML);
+        $('.page-select-down>ul').html(HTML);
+    };
+    var search=(rules)=>{
+        var res=new Array();
+        if(!rules.page)rules.page=1;
+        if(!rules.sort)rules.sort=defaultSorter;
+        UiContext.forEach(player=>res.push(player));
+        res.sort(Sorter[rules.sort]);
+        if(res.length&&(rules.page-1)*eachPage>=res.length)rules.page=1;
+        var RES=new Array();
+        for(var i=(rules.page-1)*eachPage;i<rules.page*eachPage;i++)
+            if(i<res.length)RES.push(res[i]);
+        nowsearch=rules;
+        var _return={
+            players: RES, pageId: rules.page,
+            pageCount: Math.max(Math.ceil(res.length/eachPage),1)
+        };
+        if(nowsearch.page==1)delete nowsearch.page;
+        if(nowsearch.sort==defaultSorter)delete nowsearch.sort;
+        if(JSON.stringify(nowsearch)=='{}')window.history.pushState(null,null,`/wiki/player/`);
+        else if(nowsearch.page&&!nowsearch.sort)
+            window.history.pushState(null,null,`/wiki/player/?page=${nowsearch.page}`);
+        else if(!nowsearch.page&&nowsearch.sort)
+            window.history.pushState(null,null,`/wiki/player/?sort=${nowsearch.sort}`);
+        else window.history.pushState(null,null,`/wiki/player/?sort=${nowsearch.sort}&page=${nowsearch.page}`);
+        return _return;
+    }
+    $(document).ready(()=>{
+        show(search({page: getSearch().get('page')??1,
+            sort: getSearch().get('sort')??defaultSorter}));
+        $('#sorttype').change(()=>{
+            nowsearch.sort=$('#sorttype').val();
+            nowsearch.page=1;
+            show(search(nowsearch));
+        });
+    });
+</script>
+
+<p>
+    排序方式：
+    <select name="sorttype" id="sorttype">
+        <option value="escapeRateBetter">Rate of Escape (Upgraded version)</option>
+        <option value="escapeRate">Rate of Escape</option>
+        <option value="dictionary">Dictionary</option>
+        <option value="money">Money</option>
+        <option value="lastpart">Last Part</option>
+        <option value="count">Count</option>
+    </select>
+</p>
+<div class="page-select-up"><ul>
+    <li class="topan-tab-showed">1</li>
+</ul></div>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Count</th>
+        <th>Money</th>
+        <th>Last Part</th>
+        <th>Rate of Escape</th>
+    </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/andou-biki.html">安藤美姫</a>
+                
+                    <span class="player-note">(andou-biki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>35.24%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/asahi-nao.html">朝日奈央</a>
+                
+                    <span class="player-note">(asahi-nao)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>57.37%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/asaka-ta.html">浅香唯</a>
+                
+                    <span class="player-note">(asaka-ta)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>129200 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>34.22%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/asei.html">亜生</a>
+                
+                    <span class="player-note">(asei)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>23.30%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ayabe-yuuji.html">綾部祐二</a>
+                
+                    <span class="player-note">(ayabe-yuuji)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>59.93%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ayamankantoku.html">あやまん監督</a>
+                
+                    <span class="player-note">(ayamankantoku)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>74.46%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Barbie.html">バービー</a>
+                
+                    <span class="player-note">(Barbie)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>91.28%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/chiba-maichi.html">千葉真一</a>
+                
+                    <span class="player-note">(chiba-maichi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>60.85%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Creas-matsumura.html">クリス松村</a>
+                
+                    <span class="player-note">(Creas-matsumura)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>59.24%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/dagewa-tetsuro.html">出川哲朗</a>
+                
+                    <span class="player-note">(dagewa-tetsuro)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>58.03%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/DAIGO.html">DAIGO</a>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>95.89%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Darenogare-akemi.html">ダレノガレ明美</a>
+                
+                    <span class="player-note">(Darenogare-akemi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>80.91%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ebisu-yoshikazu.html">蛭子能収</a>
+                
+                    <span class="player-note">(ebisu-yoshikazu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>3.72%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/edo-harumi.html">エド・はるみ</a>
+                
+                    <span class="player-note">(edo-harumi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>0.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/enako.html">えなこ</a>
+                
+                    <span class="player-note">(enako)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>19.15%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/enari-kazuki.html">えなりかずき</a>
+                
+                    <span class="player-note">(enari-kazuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>1080000 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/endo-kumiko.html">遠藤久美子</a>
+                
+                    <span class="player-note">(endo-kumiko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/1.html">1</a></td>
+            <td>57.30%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/endou-shouzou.html">遠藤章造</a>
+                
+                    <span class="player-note">(endou-shouzou)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>43.85%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/fujimori-shingo.html">藤森慎吾</a>
+                
+                    <span class="player-note">(fujimori-shingo)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>1080000 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>87.17%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/fujita-Nicole.html">藤田ニコル</a>
+                
+                    <span class="player-note">(fujita-Nicole)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>74.38%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/fujiwara-toki.html">藤原時</a>
+                
+                    <span class="player-note">(fujiwara-toki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>0.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/fukawaryou.html">ふかわりょう</a>
+                
+                    <span class="player-note">(fukawaryou)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/1.html">1</a></td>
+            <td>52.70%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/fukuda-kaoru.html">福田薫</a>
+                
+                    <span class="player-note">(fukuda-kaoru)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>9.56%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/fukuoka-kenju.html">福岡堅樹</a>
+                
+                    <span class="player-note">(fukuoka-kenju)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>64.67%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/fuwachan.html">フワちゃん</a>
+                
+                    <span class="player-note">(fuwachan)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>4.23%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Golgo-matsumoto.html">ゴルゴ松本</a>
+                
+                    <span class="player-note">(Golgo-matsumoto)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>300000 yen</td>
+            <td><a href="/wiki/game/3.html">3</a></td>
+            <td>87.47%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Gori.html">ゴリ</a>
+                
+                    <span class="player-note">(Gori)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>48.17%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/goto-terumoto.html">後藤輝基</a>
+                
+                    <span class="player-note">(goto-terumoto)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>24.42%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/gushiken-youkada.html">具志堅用高</a>
+                
+                    <span class="player-note">(gushiken-youkada)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>62.67%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hakamada-yoshihiko.html">袴田吉彦</a>
+                
+                    <span class="player-note">(hakamada-yoshihiko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/3.html">3</a></td>
+            <td>67.17%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hanata-kachi.html">花田勝</a>
+                
+                    <span class="player-note">(hanata-kachi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>89.10%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hanawa-nobuyuki.html">塙宣之</a>
+                
+                    <span class="player-note">(hanawa-nobuyuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>36.69%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hano-hidetaka.html">狩野英孝</a>
+                
+                    <span class="player-note">(hano-hidetaka)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>75.03%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hara-fumina.html">原史奈</a>
+                
+                    <span class="player-note">(hara-fumina)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/1.html">1</a></td>
+            <td>20.77%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hashijuukashi-higashi.html">八重樫東</a>
+                
+                    <span class="player-note">(hashijuukashi-higashi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>72.67%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hashimoto-yoakira.html">橋本良亮</a>
+                
+                    <span class="player-note">(hashimoto-yoakira)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>95.63%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hayashiomasu.html">林修</a>
+                
+                    <span class="player-note">(hayashiomasu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>76.85%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/higashio-satoko.html">東尾理子</a>
+                
+                    <span class="player-note">(higashio-satoko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>2160000 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>50.58%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/HIKAKIN.html">HIKAKIN</a>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
+            <td>1512700 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>43.39%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hikurohii.html">ヒコロヒー</a>
+                
+                    <span class="player-note">(hikurohii)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>63.44%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hinagata-akiko.html">雛形あきこ</a>
+                
+                    <span class="player-note">(hinagata-akiko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>53.99%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hirahatake-hiroshi.html">平畠啓史</a>
+                
+                    <span class="player-note">(hirahatake-hiroshi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>600000 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hosaka-naoki.html">保坂尚輝</a>
+                
+                    <span class="player-note">(hosaka-naoki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>390000 yen</td>
+            <td><a href="/wiki/game/1.html">1</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/hyokkorihan.html">ひょっこりはん</a>
+                
+                    <span class="player-note">(hyokkorihan)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>83.17%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ichikawa-tomohiro.html">市川知宏</a>
+                
+                    <span class="player-note">(ichikawa-tomohiro)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>79.37%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/iio-kazuki.html">飯尾和樹</a>
+                
+                    <span class="player-note">(iio-kazuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>7.85%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ikeda-miyu.html">池田美優</a>
+                
+                    <span class="player-note">(ikeda-miyu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>44.53%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/imai-hana.html">今井華</a>
+                
+                    <span class="player-note">(imai-hana)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>69.63%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/imori-miyuki.html">井森美幸</a>
+                
+                    <span class="player-note">(imori-miyuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>75.75%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/inato-yumi.html">板野友美</a>
+                
+                    <span class="player-note">(inato-yumi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>72.97%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ishimoto-saori.html">石本沙織</a>
+                
+                    <span class="player-note">(ishimoto-saori)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>315000 yen</td>
+            <td><a href="/wiki/game/4.html">4</a></td>
+            <td>68.75%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/isono-kiriko.html">磯野貴理子</a>
+                
+                    <span class="player-note">(isono-kiriko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>64.46%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/isoyama-sayaka.html">磯山さやか</a>
+                
+                    <span class="player-note">(isoyama-sayaka)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/4.html">4</a></td>
+            <td>54.61%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ISSA.html">ISSA</a>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>960000 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/itakurato-shiyuki.html">板倉俊之</a>
+                
+                    <span class="player-note">(itakurato-shiyuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/4.html">4</a></td>
+            <td>86.25%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/itou-ichirou.html">伊藤一朗</a>
+                
+                    <span class="player-note">(itou-ichirou)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>33.88%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/itou-momomomo.html">伊藤桃々</a>
+                
+                    <span class="player-note">(itou-momomomo)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>37.74%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/itou-shunsuke.html">伊藤俊介</a>
+                
+                    <span class="player-note">(itou-shunsuke)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>30.47%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/itou-yuko.html">藤崎奈々子</a>
+                
+                    <span class="player-note">(itou-yuko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>14.97%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/iwao-nozomu.html">岩尾望</a>
+                
+                    <span class="player-note">(iwao-nozomu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>60.09%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/iyou-asako.html">いとうあさこ</a>
+                
+                    <span class="player-note">(iyou-asako)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>91.72%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/izumi-motoiya.html">和泉元彌</a>
+                
+                    <span class="player-note">(izumi-motoiya)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>99.99%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/jinnai-tomonori.html">陣内智則</a>
+                
+                    <span class="player-note">(jinnai-tomonori)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>47.43%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/jouchi-yuusuke.html">上地雄輔</a>
+                
+                    <span class="player-note">(jouchi-yuusuke)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>10.64%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/jousaki-jin.html">城咲仁</a>
+                
+                    <span class="player-note">(jousaki-jin)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/4.html">4</a></td>
+            <td>45.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/JOY.html">JOY</a>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>63.05%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/KABA-chan.html">KABA.ちゃん</a>
+                
+                    <span class="player-note">(KABA-chan)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/1.html">1</a></td>
+            <td>72.43%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kahoku-asayuuko.html">河北麻友子</a>
+                
+                    <span class="player-note">(kahoku-asayuuko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>52.36%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kameda-daiatsushi.html">亀田大毅</a>
+                
+                    <span class="player-note">(kameda-daiatsushi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>99.48%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kameda-kyouatsushi.html">亀田興毅</a>
+                
+                    <span class="player-note">(kameda-kyouatsushi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>13.96%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kaneko-nobori.html">金子昇</a>
+                
+                    <span class="player-note">(kaneko-nobori)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>93.94%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kaneko-takatoshi.html">金子貴俊</a>
+                
+                    <span class="player-note">(kaneko-takatoshi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>84.78%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/katou-ryou.html">加藤諒</a>
+                
+                    <span class="player-note">(katou-ryou)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>37.87%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kawagoe-tatsuya.html">川越達也</a>
+                
+                    <span class="player-note">(kawagoe-tatsuya)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>76.94%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kawai-shunichi.html">川合俊一</a>
+                
+                    <span class="player-note">(kawai-shunichi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>99.99%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kawashima-kunihiro.html">川島邦裕</a>
+                
+                    <span class="player-note">(kawashima-kunihiro)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>93.58%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/keiihina.html">景井ひな</a>
+                
+                    <span class="player-note">(keiihina)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>51.91%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kendou-kobayashi.html">ケンドーコバヤシ</a>
+                
+                    <span class="player-note">(kendou-kobayashi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>20.73%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kinishita-yuukisai.html">木下優樹菜</a>
+                
+                    <span class="player-note">(kinishita-yuukisai)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>0.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kinoshita-houka.html">木下ほうか</a>
+                
+                    <span class="player-note">(kinoshita-houka)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>345200 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kinoshita-takayuki.html">木下隆行</a>
+                
+                    <span class="player-note">(kinoshita-takayuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>19.63%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kiryuun-shou.html">鬼龍院翔</a>
+                
+                    <span class="player-note">(kiryuun-shou)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>61.25%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kishi-yuuta.html">岸優太</a>
+                
+                    <span class="player-note">(kishi-yuuta)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>72.07%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kokusho-sayuri.html">国生さゆり</a>
+                
+                    <span class="player-note">(kokusho-sayuri)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/3.html">3</a></td>
+            <td>92.27%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/komori-jun.html">小森純</a>
+                
+                    <span class="player-note">(komori-jun)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>44.28%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kondou-haruna.html">近藤春菜</a>
+                
+                    <span class="player-note">(kondou-haruna)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>93.67%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kosei.html">昂生</a>
+                
+                    <span class="player-note">(kosei)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>1080000 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kosugi-ryuuichi.html">小杉竜一</a>
+                
+                    <span class="player-note">(kosugi-ryuuichi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>68.12%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kubota-kazunobu.html">久保田かずのぶ</a>
+                
+                    <span class="player-note">(kubota-kazunobu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>55.38%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kudou-azuka.html">工藤阿須加</a>
+                
+                    <span class="player-note">(kudou-azuka)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>80.87%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kumikkii.html">くみっきー</a>
+                
+                    <span class="player-note">(kumikkii)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>96.17%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/kuwabatarie.html">くわばたりえ</a>
+                
+                    <span class="player-note">(kuwabatarie)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>63.43%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/machamacha.html">まちゃまちゃ</a>
+                
+                    <span class="player-note">(machamacha)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>32.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/manabe-kawori.html">眞鍋かをり</a>
+                
+                    <span class="player-note">(manabe-kawori)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
+            <td>1560000 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>83.17%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/maramoto-daisuke.html">村本大輔</a>
+                
+                    <span class="player-note">(maramoto-daisuke)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>55.85%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/mashiko-takorou.html">益子卓郎</a>
+                
+                    <span class="player-note">(mashiko-takorou)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>44.35%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/masuda-hidehiko.html">増田英彦</a>
+                
+                    <span class="player-note">(masuda-hidehiko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>30.98%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/matayoshi-naoki.html">又吉直樹</a>
+                
+                    <span class="player-note">(matayoshi-naoki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>10.06%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/matoba-kouji.html">的場浩司</a>
+                
+                    <span class="player-note">(matoba-kouji)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>1560000 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/matsuda-senhirosi.html">松田宣浩</a>
+                
+                    <span class="player-note">(matsuda-senhirosi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>94.88%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/matsumaru-akiware.html">松丸亮吾</a>
+                
+                    <span class="player-note">(matsumaru-akiware)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>94.78%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/matsushima-sato.html">松島聡</a>
+                
+                    <span class="player-note">(matsushima-sato)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>68.33%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/minami-akina.html">南明奈</a>
+                
+                    <span class="player-note">(minami-akina)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>34.80%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/minobe-kazuyasushi.html">見延和靖</a>
+                
+                    <span class="player-note">(minobe-kazuyasushi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>10.53%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/minowa-haruka.html">箕輪はるか</a>
+                
+                    <span class="player-note">(minowa-haruka)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>32.24%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/miyata-toshiya.html">宮田俊哉</a>
+                
+                    <span class="player-note">(miyata-toshiya)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>33.18%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/mizutani-hayabusa.html">水谷隼</a>
+                
+                    <span class="player-note">(mizutani-hayabusa)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>56.84%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/mokuhon-takehiro.html">木本武宏</a>
+                
+                    <span class="player-note">(mokuhon-takehiro)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>49.81%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/morisaki-uin.html">森崎ウィン</a>
+                
+                    <span class="player-note">(morisaki-uin)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>92.72%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/morishita-chisato.html">森下千里</a>
+                
+                    <span class="player-note">(morishita-chisato)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>27.28%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/morohoshi-kazumi.html">諸星和己</a>
+                
+                    <span class="player-note">(morohoshi-kazumi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>300000 yen</td>
+            <td><a href="/wiki/game/3.html">3</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/murayama-teruboshi.html">村山輝星</a>
+                
+                    <span class="player-note">(murayama-teruboshi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>76.63%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/nakao-meikei.html">中尾明慶</a>
+                
+                    <span class="player-note">(nakao-meikei)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>45.73%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/nakata-atsuhiko.html">中田敦彦</a>
+                
+                    <span class="player-note">(nakata-atsuhiko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>65.61%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/NAOKI.html">NAOKI</a>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>1080000 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>98.18%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/NAOTO.html">NAOTO</a>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>71.46%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/naruna-ai.html">はるな愛</a>
+                
+                    <span class="player-note">(naruna-ai)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>31.72%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Nicholas-pettas.html">ニコラス・ペタス</a>
+                
+                    <span class="player-note">(Nicholas-pettas)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/1.html">1</a></td>
+            <td>40.40%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/nishigata-daigo.html">西畑大吾</a>
+                
+                    <span class="player-note">(nishigata-daigo)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>47.04%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/nishikino-dan.html">錦野旦</a>
+                
+                    <span class="player-note">(nishikino-dan)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>77.63%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/nishiyama-momare.html">西山茉希</a>
+                
+                    <span class="player-note">(nishiyama-momare)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>98.19%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/nokuno-naoki.html">野久保直樹</a>
+                
+                    <span class="player-note">(nokuno-naoki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>6.57%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/nonomura-ma.html">野々村真</a>
+                
+                    <span class="player-note">(nonomura-ma)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>38.52%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/oda-nobunari.html">織田信成</a>
+                
+                    <span class="player-note">(oda-nobunari)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>39.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/okada-yoshinori.html">岡田義徳</a>
+                
+                    <span class="player-note">(okada-yoshinori)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>600000 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/okada-yui.html">岡田結実</a>
+                
+                    <span class="player-note">(okada-yui)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>600000 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>65.04%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/okafuku-maki.html">岡副麻希</a>
+                
+                    <span class="player-note">(okafuku-maki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>1.97%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/okazaki-shae.html">岡崎紗絵</a>
+                
+                    <span class="player-note">(okazaki-shae)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>91.09%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/okubo-kayako.html">大久保佳代子</a>
+                
+                    <span class="player-note">(okubo-kayako)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>71.96%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/oosawa-akane.html">大沢あかね</a>
+                
+                    <span class="player-note">(oosawa-akane)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>43.89%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ozawa-shinju.html">小沢真珠</a>
+                
+                    <span class="player-note">(ozawa-shinju)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>53.29%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/pee.html">ぺえ</a>
+                
+                    <span class="player-note">(pee)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>600000 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>51.92%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Red-shiyoda.html">レッド吉田</a>
+                
+                    <span class="player-note">(Red-shiyoda)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/3.html">3</a></td>
+            <td>17.60%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/rika.html">梨花</a>
+                
+                    <span class="player-note">(rika)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/1.html">1</a></td>
+            <td>89.73%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ringochan.html">りんごちゃん</a>
+                
+                    <span class="player-note">(ringochan)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>55.33%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ruu-ooshiba.html">ルー大柴</a>
+                
+                    <span class="player-note">(ruu-ooshiba)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>58.10%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ryuucheru.html">りゅうちぇる</a>
+                
+                    <span class="player-note">(ryuucheru)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>98.47%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sadaoka-shoji.html">定岡正二</a>
+                
+                    <span class="player-note">(sadaoka-shoji)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/1.html">1</a></td>
+            <td>23.70%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/saito-maiko.html">斉藤舞子</a>
+                
+                    <span class="player-note">(saito-maiko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>128000 yen</td>
+            <td><a href="/wiki/game/3.html">3</a></td>
+            <td>42.67%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/saito-shinji.html">斉藤慎二</a>
+                
+                    <span class="player-note">(saito-shinji)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>55.14%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/saito-shouri.html">佐藤勝利</a>
+                
+                    <span class="player-note">(saito-shouri)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>98.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/saito-tsukasa.html">斎藤司</a>
+                
+                    <span class="player-note">(saito-tsukasa)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>19.44%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sakagami-shinobu.html">坂上忍</a>
+                
+                    <span class="player-note">(sakagami-shinobu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>79.28%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sakai-ichikei.html">酒井一圭</a>
+                
+                    <span class="player-note">(sakai-ichikei)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>64.11%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sakuraba-kazushi.html">桜庭和志</a>
+                
+                    <span class="player-note">(sakuraba-kazushi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>75.64%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sasaki-kensuke.html">佐々木健介</a>
+                
+                    <span class="player-note">(sasaki-kensuke)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/4.html">4</a></td>
+            <td>95.81%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sasuki-yui.html">須﨑優衣</a>
+                
+                    <span class="player-note">(sasuki-yui)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>26.10%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/satou-eriko.html">佐藤江梨子</a>
+                
+                    <span class="player-note">(satou-eriko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>71.93%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/satou-tamao.html">さとう珠緒</a>
+                
+                    <span class="player-note">(satou-tamao)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/4.html">4</a></td>
+            <td>20.92%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sawabe-tasuku.html">澤部佑</a>
+                
+                    <span class="player-note">(sawabe-tasuku)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>45.39%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/SEIKIN.html">SEIKIN</a>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>15.10%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Sene-Camu.html">セイン・カミュ</a>
+                
+                    <span class="player-note">(Sene-Camu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>41.75%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/senshuu.html">千秋</a>
+                
+                    <span class="player-note">(senshuu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>68.27%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/senyou-yuudai.html">千葉雄大</a>
+                
+                    <span class="player-note">(senyou-yuudai)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>29.01%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shibata-hidetsugu.html">柴田英嗣</a>
+                
+                    <span class="player-note">(shibata-hidetsugu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>40.65%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shima-daisuke.html">嶋大輔</a>
+                
+                    <span class="player-note">(shima-daisuke)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>8.44%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shimada-shuuhei.html">島田秀平</a>
+                
+                    <span class="player-note">(shimada-shuuhei)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>65.44%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shinagawa-yuu.html">品川祐</a>
+                
+                    <span class="player-note">(shinagawa-yuu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>600000 yen</td>
+            <td><a href="/wiki/game/4.html">4</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shinju-nozawaoukutaiyaa.html">真珠・野沢オークライヤー</a>
+                
+                    <span class="player-note">(shinju-nozawaoukutaiyaa)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>74.62%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shirasu-jin.html">白洲迅</a>
+                
+                    <span class="player-note">(shirasu-jin)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>23.75%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shiratori-kumiko.html">白鳥久美子</a>
+                
+                    <span class="player-note">(shiratori-kumiko)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>94.32%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shoutouge-eini.html">小峠英二</a>
+                
+                    <span class="player-note">(shoutouge-eini)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>17.33%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/shunjitsu-shun&#39;akira.html">春日俊彰</a>
+                
+                    <span class="player-note">(shunjitsu-shun&#39;akira)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>57.50%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/suda-akaori.html">須田亜香里</a>
+                
+                    <span class="player-note">(suda-akaori)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>43.28%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sugimura-tazou.html">杉村太蔵</a>
+                
+                    <span class="player-note">(sugimura-tazou)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>34.83%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/sugisaki-mika.html">杉崎美香</a>
+                
+                    <span class="player-note">(sugisaki-mika)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>85.74%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/suka-kenta.html">須賀健太</a>
+                
+                    <span class="player-note">(suka-kenta)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>54.45%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Sulie.html">マリエ</a>
+                
+                    <span class="player-note">(Sulie)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>46.92%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/suzuki-Qtarou.html">鈴木Q太郎</a>
+                
+                    <span class="player-note">(suzuki-Qtarou)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>56.21%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/suzuki-sarina.html">鈴木紗理奈</a>
+                
+                    <span class="player-note">(suzuki-sarina)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>47.10%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/tada-kenji.html">多田健二</a>
+                
+                    <span class="player-note">(tada-kenji)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>19.36%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/takahashi-masa.html">高橋真麻</a>
+                
+                    <span class="player-note">(takahashi-masa)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/25.html">25</a></td>
+            <td>36.91%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/takahashi-minami.html">高橋みなみ</a>
+                
+                    <span class="player-note">(takahashi-minami)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>90.65%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/takahashi-shigeo.html">高橋茂雄</a>
+                
+                    <span class="player-note">(takahashi-shigeo)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>55.01%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/takato-naoisa.html">髙藤直寿</a>
+                
+                    <span class="player-note">(takato-naoisa)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>89.82%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/tamurakenji.html">たむらけんじ</a>
+                
+                    <span class="player-note">(tamurakenji)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>19.48%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/tanaka-takashi.html">田中卓志</a>
+                
+                    <span class="player-note">(tanaka-takashi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;4</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>85.68%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/tarubishu-kenni.html">樽美酒研二</a>
+                
+                    <span class="player-note">(tarubishu-kenni)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>6600 yen</td>
+            <td><a href="/wiki/game/46.html">46</a></td>
+            <td>99.70%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/tasaki-tasukuichi.html">田崎佑一</a>
+                
+                    <span class="player-note">(tasaki-tasukuichi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>0.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/tokui-yoshizane.html">徳井義実</a>
+                
+                    <span class="player-note">(tokui-yoshizane)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/6.html">6</a></td>
+            <td>85.38%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/torii-miyuki.html">鳥居みゆき</a>
+                
+                    <span class="player-note">(torii-miyuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>66.69%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/totsugi-shigeyuki.html">戸次重幸</a>
+                
+                    <span class="player-note">(totsugi-shigeyuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>61.56%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/tsuchiya-nobuyuki.html">土屋伸之</a>
+                
+                    <span class="player-note">(tsuchiya-nobuyuki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>16.52%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/tukada-ryoichi.html">塚田僚一</a>
+                
+                    <span class="player-note">(tukada-ryoichi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>43.65%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/ueno-yukio.html">植野行雄</a>
+                
+                    <span class="player-note">(ueno-yukio)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>94.69%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/wada-masato.html">和田正人</a>
+                
+                    <span class="player-note">(wada-masato)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>6100 yen</td>
+            <td><a href="/wiki/game/49.html">49</a></td>
+            <td>89.01%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/wakako-shimazaki.html">島崎和歌子</a>
+                
+                    <span class="player-note">(wakako-shimazaki)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/2.html">2</a></td>
+            <td>36.06%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/watanabe-naomi.html">渡辺直美</a>
+                
+                    <span class="player-note">(watanabe-naomi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/17.html">17</a></td>
+            <td>37.50%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/Wentz-eiji.html">ウエンツ瑛士</a>
+                
+                    <span class="player-note">(Wentz-eiji)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/4.html">4</a></td>
+            <td>84.59%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yabuki-nako.html">矢吹奈子</a>
+                
+                    <span class="player-note">(yabuki-nako)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>74.24%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yaguchi-mari.html">矢口真里</a>
+                
+                    <span class="player-note">(yaguchi-mari)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>2000000 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>100.00%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yamamoto-aya.html">山本彩</a>
+                
+                    <span class="player-note">(yamamoto-aya)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>97.04%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yamamoto-azusa.html">山本梓</a>
+                
+                    <span class="player-note">(yamamoto-azusa)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/3.html">3</a></td>
+            <td>26.70%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yanagisawa-shingo.html">柳沢慎吾</a>
+                
+                    <span class="player-note">(yanagisawa-shingo)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/43.html">43</a></td>
+            <td>72.33%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yashiro-yuu.html">やしろ優</a>
+                
+                    <span class="player-note">(yashiro-yuu)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>17.59%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yasuha.html">泰葉</a>
+                
+                    <span class="player-note">(yasuha)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>45.69%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yazawa-kokoro.html">矢沢心</a>
+                
+                    <span class="player-note">(yazawa-kokoro)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>230000 yen</td>
+            <td><a href="/wiki/game/3.html">3</a></td>
+            <td>76.67%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yokoyama-yuui.html">横山由依</a>
+                
+                    <span class="player-note">(yokoyama-yuui)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/35.html">35</a></td>
+            <td>59.45%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yonjuujuu-sakura.html">四十住さくら</a>
+                
+                    <span class="player-note">(yonjuujuu-sakura)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/56.html">56</a></td>
+            <td>22.95%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yoshida-takashi.html">吉田敬</a>
+                
+                    <span class="player-note">(yoshida-takashi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/7.html">7</a></td>
+            <td>54.36%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/yuuki-maomi.html">優木まおみ</a>
+                
+                    <span class="player-note">(yuuki-maomi)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/18.html">18</a></td>
+            <td>46.66%</td>
+        </tr>
+    
+        <tr>
+            <td>
+                <a href="/wiki/player/zawachin.html">ざわちん</a>
+                
+                    <span class="player-note">(zawachin)</span>
+                
+            </td>
+            <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
+            <td>0 yen</td>
+            <td><a href="/wiki/game/38.html">38</a></td>
+            <td>69.33%</td>
+        </tr>
+    
+</table>
+<div class="page-select-down"><ul>
+    <li class="topan-tab-showed">1</li>
+</ul></div>
+                    <br>
+                </div>
+                <footer class="topan-footer">
+                    <p></p>
+                    <p style="text-align: center; color: #555; font-size: 12px;">
+                        Powered by <a href="https://github.com/tosochu/wiki.git">tosochu/wiki</a>&nbsp;&nbsp;&nbsp;
+                        © 2023 <a href="https://github.com/Molmin/">Milmon</a> & <a href="https://github.com/hexuben/">hexuben</a>
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+    

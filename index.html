@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title id="title">Home - Tosochu Wiki</title>
+        <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
+        <link rel="stylesheet" href="https://topan-dev.github.io/TopanUI/topan.css">
+        <script src="https://topan-dev.github.io/TopanUI/topan.js"></script>
+        <script src="https://kit.fontawesome.com/0d8081718e.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div class="topan-header">
+            <div class="topan-header-home">
+                <a href="/wiki">
+                    <button class="topan-button-ordinary topan-button-commonly topan-button-header-round-left">
+                        <i class="fa fa-home"></i>
+                    </button>
+                </a>
+            </div>
+            <div class="topan-header-left">
+                <span class="topan-header-text">Tosochu Wiki&nbsp;</span>
+                <a href="/wiki/game">
+                    <span class="topan-button-ordinary topan-button-commonly topan-button-header-block">
+                        <i class="fa fa-solid fa-fire"></i>
+                        <span>&nbsp;Games</span>
+                    </span>
+                </a>
+                <a href="/wiki/player">
+                    <span class="topan-button-ordinary topan-button-commonly topan-button-header-block">
+                        <i class="fa fa-solid fa-user"></i>
+                        <span>&nbsp;Players</span>
+                    </span>
+                </a>
+            </div>
+            <div class="topan-header-right">
+            </div>
+        </div>
+        <div class="topan-outer">
+            <div class="topan-page">
+                <div class="topan-mainpage-auto">
+                    <br>
+                    <div class="topan-section-shadow">
+    <h2>Tosochu Wiki</h2>
+<p>这里是 <a href="https://www.fujitv.co.jp/tosochu/top.html"><strong>《全员逃走中》</strong></a> 的<strong>非官方</strong> Wiki。收录了每一回的数据，并给每个玩家计算了<strong>总钱数、逃走率</strong>等，您可以点击上方按钮查看。</p>
+<p><strong>《全员逃走中》</strong>（原文：Run for money 逃走中，简称：RFM / 逃走中）是<strong>日本富士电视台</strong>著作出品的<strong>生存类实景综艺</strong>游戏节目，自 2004 年起季间不定期放送。</p>
+<p><strong>本项目的代码仓库：</strong> <a href="https://github.com/tosochu/wiki.git">https://github.com/tosochu/wiki.git</a></p>
+<p>本项目主要由 <a href="https://github.com/Molmin">Milmon</a> 和 <a href="https://github.com/hexuben">hexuben</a> 维护。如果你喜欢本项目，欢迎给我们点亮 Star！如果您愿意帮助我们搜集数据，也可以进行 <a href="https://github.com/tosochu/wiki/compare">Pull Request</a>。</p>
+<h3>逃走率</h3>
+<p>Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，并提供逃走率排序。每个玩家的平均逃走率是他（她）在参与的每个回合中的逃走率的平均值。</p>
+<p>注：在排序方式中，<a href="https://tosochu.github.io/wiki/player/?sort=escapeRate">Rate of Escape</a> 是按照玩家平均逃走率排名，而 <a href="https://tosochu.github.io/wiki/player/?sort=escapeRateBetter">Rate of Escape (Upgraded version)”</a> 是先按照<strong>参与回合数</strong>排序，再对<strong>分别</strong>对参与回合数为 1，2，以及大于等于 3 的玩家的逃走率排序（<a href="https://github.com/tosochu/wiki/blob/master/src/templates/player_list.html#L89-L94">对应源码部分</a>）。（我们提供这种排序方式，是因为参与回合数<strong>过少</strong>时，平均逃走率<strong>并不准确</strong>。）</p>
+<p>下面是玩家在单个回合中的逃走率计算方式（<a href="https://github.com/tosochu/wiki/blob/master/src/build/main.js#L150-L175">源代码</a>）：</p>
+<ul>
+<li>
+<p>列出该玩家在该回合中的 <a href="https://github.com/tosochu/wiki/blob/master/src/build/main.js#L72-L74">活动事件列表</a>；</p>
+</li>
+<li>
+<p>遇到 Caught（被抓）或自首事件时，将其时间戳与上一次复活或游戏开始事件差值加入总和中；</p>
+</li>
+<li>
+<p>将总和除以游戏总时长，就得到逃走率；</p>
+</li>
+<li>
+<p>在 Money Game（<a href="https://tosochu.github.io/wiki/game/7.html">Round #7</a>）中失败的玩家的逃走率记为 99.99%。（因为他们并没有完美地完成游戏。）</p>
+</li>
+</ul>
+
+</div>
+                    <br>
+                </div>
+                <footer class="topan-footer">
+                    <p></p>
+                    <p style="text-align: center; color: #555; font-size: 12px;">
+                        Powered by <a href="https://github.com/tosochu/wiki.git">tosochu/wiki</a>&nbsp;&nbsp;&nbsp;
+                        © 2023 <a href="https://github.com/Molmin/">Milmon</a> & <a href="https://github.com/hexuben/">hexuben</a>
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+    
