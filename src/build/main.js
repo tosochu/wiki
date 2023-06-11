@@ -175,7 +175,7 @@ Config.games.forEach((game,index)=>{
     }
     if(detail.video)
         detail.videohtml=`
-        <iframe src="//player.bilibili.com/player.html?${detail.video.startsWith('BV')?'bvid':'aid'}=${detail.video}"
+        <iframe src="//player.bilibili.com/player.html?${detail.video.startsWith('BV')?'bvid':'aid'}=${detail.video}&autoplay=0"
             scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"></iframe>
         `;
     game.detail=detail;
