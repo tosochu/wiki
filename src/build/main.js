@@ -41,15 +41,6 @@ var secondsToString=(time)=>{
     if(displaySecond)res+=String(second)+" s";
     return res;
 }
-var secondesToShortString=(time)=>{
-    var minute=parseInt(time/60),
-        second=time%60;
-    var displaySecond=String(second);
-    while(displaySecond.length<2)
-        displaySecond='0'+displaySecond;
-    if(second==0)return `${minute} min`;
-    else return `${minute}:${displaySecond}`;
-}
 
 deleteDir("dist");
 fs.mkdirSync("dist");
@@ -212,14 +203,14 @@ Config.games.forEach((game,index)=>{
             title: { enabled: false }
         },
         series: [{
-            name: 'Sum Money',
+            name: 'Money',
             data: new Array()
         }],
         display: true
     };
     if(game.detail.chart){
         game.detail.chart.forEach(node=>{
-            chart.xAxis.categories.push(secondesToShortString(node.time));
+            chart.xAxis.categories.push(node.time);
             chart.series[0].data.push(node.money);
         });
     }
