@@ -100,7 +100,6 @@ message:
     time: 5:42
     type: catched
   - person: 野々村真
-    time: 0:00
     type: catched
   - person: [クリス松村, 小峠英二, 佐藤江梨子, ざわちん, 陣内智則, 千葉真一, 中田敦彦, バービー, 藤森慎吾, 和田正人]
     type: companion-win
