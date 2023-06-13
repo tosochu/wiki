@@ -60,7 +60,7 @@ message:
   - person: えなりかずき
     time: 35:06
     type: revive
-    reviver: [植野行雄, 織田信成, ダレノガレ明美, 野々村真, はるな愛, 山本彩]
+    reviver: 織田信成
   - person: ダレノガレ明美
     time: 32:01
     type: catched
@@ -88,7 +88,7 @@ message:
   - person: 野々村真
     time: 0:00
     type: catched
-  - person: [クリス松村, 小峠英二(バイきんぐ), 佐藤江梨子, ざわちん, 陣内智則, 千葉真一, 中田敦彦, バービー, 藤森慎吾, 和田正人]
+  - person: [クリス松村, 小峠英二, 佐藤江梨子, ざわちん, 陣内智則, 千葉真一, 中田敦彦, バービー, 藤森慎吾, 和田正人]
     type: companion-win
     money: 2000000
     rely: 小峠英二
