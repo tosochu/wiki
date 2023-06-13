@@ -41,6 +41,15 @@ var secondsToString=(time)=>{
     if(displaySecond)res+=String(second)+" s";
     return res;
 }
+var secondesToShortString=(time)=>{
+    var minute=parseInt(time/60),
+        second=time%60;
+    var displaySecond=String(second);
+    while(displaySecond.length<2)
+        displaySecond='0'+displaySecond;
+    if(second==0)return `${minute} min`;
+    else return `${minute}:${displaySecond}`;
+}
 
 deleteDir("dist");
 fs.mkdirSync("dist");
@@ -179,9 +188,50 @@ Config.games.forEach((game,index)=>{
             scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"></iframe>
         `;
     game.detail=detail;
+    var chart={
+        chart: { type: 'area' },
+        title: { text: 'Money Changing' },
+        subtitle: { text: `第 ${game.id} 回 — ${game.detail.title}` },
+        tooltip: { shared: true, valueSuffix: ' yen' },
+        credits: { enabled: false },
+        plotOptions: { area: {
+            stacking: 'normal',
+            lineColor: '#666666',
+            lineWidth: 1,
+            marker: {
+                lineWidth: 1,
+                lineColor: '#666666'
+            }
+        } },
+        xAxis: {
+            categories: new Array(),
+            title: { enabled: false },
+            tickmarkPlacement: 'on'
+        },
+        yAxis: {
+            title: { enabled: false }
+            // ,labels: {
+            //     formatter: function () {
+            //        return this.value / 1000;
+            //     }
+            // }
+        },
+        series: [{
+            name: 'Sum Money',
+            data: new Array()
+        }],
+        display: true
+    };
+    if(game.detail.chart){
+        game.detail.chart.forEach(node=>{
+            chart.xAxis.categories.push(secondesToShortString(node.time));
+            chart.series[0].data.push(node.money);
+        });
+    }
+    else chart={display: false};
     ejs.renderFile("./src/templates/game_detail.html",{
-        data: Config.games[index],
-        description: MarkdownIt.render(game.detail.description)
+        data: Config.games[index], chart,
+        description: MarkdownIt.render(game.detail.description),
     },(err,HTML)=>{
         fs.writeFileSync(`./dist/game/${game.id}.html`,
             Template({title: `第 ${game.id} 回：${game.detail.title}`,
@@ -236,8 +286,8 @@ Config.player.forEach(player=>{
     });
 });
 
-console.log(Config);
-console.log(JSON.stringify(Config,null,"  "));
+// console.log(Config);
+// console.log(JSON.stringify(Config,null,"  "));
 
 ejs.renderFile("./src/templates/player_list.html",{
     data: Config

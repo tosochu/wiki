@@ -23,7 +23,24 @@
     .round-starter{
         text-align: center;
     }
+    
+    #chart-money{
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+    }
 </style>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script>
+    var ChartData=<%- JSON.stringify(chart) %>;
+    $(document).ready(()=>{
+        if(ChartData.display){
+            delete ChartData.display;
+            $('#chart-money').highcharts(ChartData);
+        }
+    });
+</script>
+
 <div class="topan-section-shadow">
     <h2>第 <%= data.id %> 回 - <%= data.detail.title %></h2>
     <p class="messages-display">
@@ -39,7 +56,14 @@
     <br>
     <%- data.detail.videohtml %>
 <% } %>
-<br>
+
+<% if(chart.display){ %>
+    <br>
+    <div class="topan-section-shadow">
+        <div id="chart-money"></div>
+    </div>
+<% } %>
+
 <h3>Catch Records</h3>
 <table>
     <tr>

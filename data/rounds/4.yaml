@@ -3,6 +3,11 @@ length: 60
 date: 2006-09-26
 description: description
 people: 9
+chart:
+  - time: 0 min
+    money: 0
+  - time: 60 min
+    money: 600000
 message:
   - type: catched
     time: 51:21
