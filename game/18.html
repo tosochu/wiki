@@ -76,7 +76,7 @@
 </style>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
-    var ChartData={"display":false};
+    var ChartData={"chart":{"type":"area"},"title":{"text":"Money Changing"},"subtitle":{"text":"第 18 回 — 信長と忍者の里"},"tooltip":{"shared":true,"valueSuffix":" yen"},"credits":{"enabled":false},"plotOptions":{"area":{"stacking":"normal","lineColor":"#666666","lineWidth":1,"marker":{"lineWidth":1,"lineColor":"#666666"}}},"xAxis":{"categories":["0 min","120 min"],"title":{"enabled":false},"tickmarkPlacement":"on"},"yAxis":{"title":{"enabled":false}},"series":[{"name":"Money","data":[0,2160000]}],"display":true};
     $(document).ready(()=>{
         if(ChartData.display){
             delete ChartData.display;
@@ -105,6 +105,11 @@
         
 
 
+
+    <br>
+    <div class="topan-section-shadow">
+        <div id="chart-money"></div>
+    </div>
 
 
 <h3>Catch Records</h3>
@@ -340,7 +345,7 @@
         <tr>
             <td>End of the Game</td>
             <td><a href="/wiki/player/higashio-satoko.html">東尾理子</a></td>
-            <td>Caught! Got 2160000 yen.</td>
+            <td>Escaped! Got 2160000 yen.</td>
         </tr>
     
 </table>
