@@ -210,11 +210,6 @@ Config.games.forEach((game,index)=>{
         },
         yAxis: {
             title: { enabled: false }
-            // ,labels: {
-            //     formatter: function () {
-            //        return this.value / 1000;
-            //     }
-            // }
         },
         series: [{
             name: 'Sum Money',
@@ -286,8 +281,8 @@ Config.player.forEach(player=>{
     });
 });
 
-// console.log(Config);
-// console.log(JSON.stringify(Config,null,"  "));
+console.log(Config);
+console.log(JSON.stringify(Config,null,"  "));
 
 ejs.renderFile("./src/templates/player_list.html",{
     data: Config
