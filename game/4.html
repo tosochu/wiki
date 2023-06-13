@@ -67,7 +67,24 @@
     .round-starter{
         text-align: center;
     }
+    
+    #chart-money{
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+    }
 </style>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script>
+    var ChartData={"chart":{"type":"area"},"title":{"text":"Money Changing"},"subtitle":{"text":"第 4 回 — お台場"},"tooltip":{"shared":true,"valueSuffix":" yen"},"credits":{"enabled":false},"plotOptions":{"area":{"stacking":"normal","lineColor":"#666666","lineWidth":1,"marker":{"lineWidth":1,"lineColor":"#666666"}}},"xAxis":{"categories":["NaN:NaN","NaN:NaN"],"title":{"enabled":false},"tickmarkPlacement":"on"},"yAxis":{"title":{"enabled":false}},"series":[{"name":"Sum Money","data":[0,600000]}],"display":true};
+    $(document).ready(()=>{
+        if(ChartData.display){
+            delete ChartData.display;
+            $('#chart-money').highcharts(ChartData);
+        }
+    });
+</script>
+
 <div class="topan-section-shadow">
     <h2>第 4 回 - お台場</h2>
     <p class="messages-display">
@@ -81,7 +98,14 @@
 
 </div>
 
-<br>
+
+
+    <br>
+    <div class="topan-section-shadow">
+        <div id="chart-money"></div>
+    </div>
+
+
 <h3>Catch Records</h3>
 <table>
     <tr>

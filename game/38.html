@@ -67,7 +67,24 @@
     .round-starter{
         text-align: center;
     }
+    
+    #chart-money{
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+    }
 </style>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script>
+    var ChartData={"display":false};
+    $(document).ready(()=>{
+        if(ChartData.display){
+            delete ChartData.display;
+            $('#chart-money').highcharts(ChartData);
+        }
+    });
+</script>
+
 <div class="topan-section-shadow">
     <h2>第 38 回 - 時空を超える決戦(前編)</h2>
     <p class="messages-display">
@@ -93,7 +110,9 @@
 
 </div>
 
-<br>
+
+
+
 <h3>Catch Records</h3>
 <table>
     <tr>

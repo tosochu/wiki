@@ -67,7 +67,24 @@
     .round-starter{
         text-align: center;
     }
+    
+    #chart-money{
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+    }
 </style>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script>
+    var ChartData={"display":false};
+    $(document).ready(()=>{
+        if(ChartData.display){
+            delete ChartData.display;
+            $('#chart-money').highcharts(ChartData);
+        }
+    });
+</script>
+
 <div class="topan-section-shadow">
     <h2>第 35 回 - 奥様はかぐや姫</h2>
     <p class="messages-display">
@@ -87,7 +104,9 @@
             scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"></iframe>
         
 
-<br>
+
+
+
 <h3>Catch Records</h3>
 <table>
     <tr>
