@@ -2,10 +2,13 @@ title: お台場
 length: 60
 date: 2006-09-26
 description: description
-people: 9
 chart:
   - time: 0 min
     money: 0
+  - time: 30 min
+    money: 300000
+  - time: 50 min
+    money: 540000
   - time: 60 min
     money: 600000
 message:

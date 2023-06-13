@@ -3,6 +3,11 @@ description: description
 length: 120
 date: 2010-10-10
 video: BV1CB4y1T7UG
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 120 min
+    money: 2160000
 message: 
   - person: 東尾理子
     time: 119:32
@@ -120,4 +125,4 @@ message:
     type: catched
   - person: 東尾理子
     money: 2160000
-    type: catched
+    type: win

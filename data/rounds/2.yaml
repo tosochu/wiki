@@ -2,8 +2,12 @@ title: 渋谷 2
 length: 60
 description: description
 date: 2004-12-28
-people: 12
 video: BV1Bs411S7jB
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 60 min
+    money: 600000
 message:
   - type: catched
     time: 54:56

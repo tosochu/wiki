@@ -2,8 +2,12 @@ title: 江戸の町
 length: 50
 date: 2006-04-01
 description: description
-people: 8
 video: BV1QK4y197se
+chart:
+  - time: 0 min
+    money: 0
+  - time: 50 min
+    money: 300000
 message: 
   - type: catched
     time: 41:12
