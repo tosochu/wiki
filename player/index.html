@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title id="title">Players List - Tosochu Wiki</title>
+        <title id="title">プレイヤー - 逃走中 wiki</title>
         <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
         <link rel="stylesheet" href="https://topan-dev.github.io/TopanUI/topan.css">
         <script src="https://topan-dev.github.io/TopanUI/topan.js"></script>
@@ -21,17 +21,17 @@
                 </a>
             </div>
             <div class="topan-header-left">
-                <span class="topan-header-text">Tosochu Wiki&nbsp;</span>
+                <span class="topan-header-text">逃走中 wiki&nbsp;</span>
                 <a href="/wiki/game">
                     <span class="topan-button-ordinary topan-button-commonly topan-button-header-block">
                         <i class="fa fa-solid fa-fire"></i>
-                        <span>&nbsp;Games</span>
+                        <span>&nbsp;ゲーム</span>
                     </span>
                 </a>
                 <a href="/wiki/player">
                     <span class="topan-button-ordinary topan-button-commonly topan-button-header-block-showed">
                         <i class="fa fa-solid fa-user"></i>
-                        <span>&nbsp;Players</span>
+                        <span>&nbsp;プレイヤー</span>
                     </span>
                 </a>
             </div>
@@ -160,7 +160,7 @@
     var show=(data)=>{
         $('#sorttype').val(nowsearch.sort??defaultSorter);
         var players=data.players;
-        var HTML=`<tr><th>Name</th><th>Count</th><th>Money</th><th>Last Part</th><th>Rate of Escape</th></tr>`;
+        var HTML=`<tr><th>逃走者</th><th>参戦の回数</th><th>賞金獲得</th><th>最後の参戦</th><th>逃走率</th></tr>`;
         players.forEach(player=>{
             HTML+=`
                 <tr>
@@ -171,7 +171,7 @@
                         `:''}
                     </td>
                     <td><i class="fa fa-solid fa-fire"></i>&nbsp;${player.count}</td>
-                    <td>${player.money} yen</td>
+                    <td>${player.money} 円</td>
                     <td><a href="/wiki/game/${player.lastTime}.html">${player.lastTime}</a></td>
                     <td>${(player.escapeRate*100).toFixed(2)}%</td>
                 </tr>
@@ -186,15 +186,15 @@
             else if(pageId<=5)minPageId=1,maxPageId=11;
             else minPageId=pageId-5,maxPageId=pageId+5;
         }
-        if(pageId>=3)HTML+=`<li onclick="movetoPage(1);">« 第一页</li>`;
-        if(pageId>=2)HTML+=`<li onclick="movetoPage(${pageId-1});">‹ 前一页</li>`;
+        if(pageId>=3)HTML+=`<li onclick="movetoPage(1);"> « </li>`;
+        if(pageId>=2)HTML+=`<li onclick="movetoPage(${pageId-1});"> ‹ </li>`;
         if(minPageId>1)HTML+=`<span>...</span>`
         for(var i=minPageId;i<=maxPageId;i++)
             if(i==pageId)HTML+=`<li class="topan-tab-showed">${i}</li>`;
             else HTML+=`<li onclick="movetoPage(${i});">${i}</li>`;
         if(maxPageId<pageCount)HTML+=`<span>...</span>`;
-        if(pageId<=pageCount-1)HTML+=`<li onclick="movetoPage(${pageId+1});">下一页 ›</li>`;
-        if(pageId<=pageCount-2)HTML+=`<li onclick="movetoPage(${pageCount});">末页 »</li>`;
+        if(pageId<=pageCount-1)HTML+=`<li onclick="movetoPage(${pageId+1});"> › </li>`;
+        if(pageId<=pageCount-2)HTML+=`<li onclick="movetoPage(${pageCount});"> » </li>`;
         $('.page-select-up>ul').html(HTML);
         $('.page-select-down>ul').html(HTML);
     };
@@ -235,14 +235,14 @@
 </script>
 
 <p>
-    排序方式：
+    ソート方法：
     <select name="sorttype" id="sorttype">
-        <option value="escapeRateBetter">Rate of Escape (Upgraded version)</option>
-        <option value="escapeRate">Rate of Escape</option>
-        <option value="dictionary">Dictionary</option>
-        <option value="money">Money</option>
-        <option value="lastpart">Last Part</option>
-        <option value="count">Count</option>
+        <option value="escapeRateBetter">逃走率 (Upgraded version)</option>
+        <option value="escapeRate">逃走率</option>
+        <option value="dictionary">五十音序</option>
+        <option value="money">賞金</option>
+        <option value="lastpart">最後の参戦</option>
+        <option value="count">参戦の回数</option>
     </select>
 </p>
 <div class="page-select-up"><ul>
@@ -250,11 +250,11 @@
 </ul></div>
 <table>
     <tr>
-        <th>Name</th>
-        <th>Count</th>
-        <th>Money</th>
-        <th>Last Part</th>
-        <th>Rate of Escape</th>
+        <th>逃走者</th>
+        <th>参戦の回数</th>
+        <th>賞金獲得</th>
+        <th>最後の参戦</th>
+        <th>逃走率</th>
     </tr>
     
         <tr>
@@ -265,7 +265,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>35.24%</td>
         </tr>
@@ -278,7 +278,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>57.37%</td>
         </tr>
@@ -291,7 +291,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>129200 yen</td>
+            <td>129200 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>34.22%</td>
         </tr>
@@ -304,7 +304,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>23.30%</td>
         </tr>
@@ -317,7 +317,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>59.93%</td>
         </tr>
@@ -330,7 +330,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>74.46%</td>
         </tr>
@@ -343,7 +343,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>200000 yen</td>
+            <td>200000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>48.18%</td>
         </tr>
@@ -356,7 +356,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>200000 yen</td>
+            <td>200000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>72.05%</td>
         </tr>
@@ -369,7 +369,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>200000 yen</td>
+            <td>200000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>57.79%</td>
         </tr>
@@ -382,7 +382,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>58.03%</td>
         </tr>
@@ -393,7 +393,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>95.89%</td>
         </tr>
@@ -406,7 +406,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>75.41%</td>
         </tr>
@@ -419,7 +419,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>11.13%</td>
         </tr>
@@ -432,7 +432,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>0.00%</td>
         </tr>
@@ -445,7 +445,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>19.15%</td>
         </tr>
@@ -458,7 +458,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>1080000 yen</td>
+            <td>1080000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>77.29%</td>
         </tr>
@@ -471,7 +471,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/1.html">1</a></td>
             <td>57.30%</td>
         </tr>
@@ -484,7 +484,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>43.85%</td>
         </tr>
@@ -497,7 +497,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>1280000 yen</td>
+            <td>1280000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>87.52%</td>
         </tr>
@@ -510,7 +510,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>74.38%</td>
         </tr>
@@ -523,7 +523,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>0.00%</td>
         </tr>
@@ -536,7 +536,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/1.html">1</a></td>
             <td>52.70%</td>
         </tr>
@@ -549,7 +549,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>9.56%</td>
         </tr>
@@ -562,7 +562,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>64.67%</td>
         </tr>
@@ -575,7 +575,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>4.23%</td>
         </tr>
@@ -588,7 +588,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>300000 yen</td>
+            <td>300000 円</td>
             <td><a href="/wiki/game/3.html">3</a></td>
             <td>87.47%</td>
         </tr>
@@ -601,7 +601,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>48.17%</td>
         </tr>
@@ -614,7 +614,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>24.42%</td>
         </tr>
@@ -627,7 +627,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>62.67%</td>
         </tr>
@@ -640,7 +640,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/3.html">3</a></td>
             <td>67.17%</td>
         </tr>
@@ -653,7 +653,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>89.10%</td>
         </tr>
@@ -666,7 +666,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>36.69%</td>
         </tr>
@@ -679,7 +679,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>75.03%</td>
         </tr>
@@ -692,7 +692,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/1.html">1</a></td>
             <td>20.77%</td>
         </tr>
@@ -705,7 +705,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>72.67%</td>
         </tr>
@@ -718,7 +718,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>95.63%</td>
         </tr>
@@ -731,7 +731,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>76.85%</td>
         </tr>
@@ -744,7 +744,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>2160000 yen</td>
+            <td>2160000 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>50.58%</td>
         </tr>
@@ -755,7 +755,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>1512700 yen</td>
+            <td>1512700 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>43.39%</td>
         </tr>
@@ -768,7 +768,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>63.44%</td>
         </tr>
@@ -781,7 +781,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>53.99%</td>
         </tr>
@@ -794,7 +794,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>600000 yen</td>
+            <td>600000 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>100.00%</td>
         </tr>
@@ -807,7 +807,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>390000 yen</td>
+            <td>390000 円</td>
             <td><a href="/wiki/game/1.html">1</a></td>
             <td>100.00%</td>
         </tr>
@@ -820,7 +820,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>83.17%</td>
         </tr>
@@ -833,7 +833,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>79.37%</td>
         </tr>
@@ -846,7 +846,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>7.85%</td>
         </tr>
@@ -859,7 +859,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>44.53%</td>
         </tr>
@@ -872,7 +872,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>69.63%</td>
         </tr>
@@ -885,7 +885,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>75.75%</td>
         </tr>
@@ -898,7 +898,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>72.97%</td>
         </tr>
@@ -911,7 +911,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>315000 yen</td>
+            <td>315000 円</td>
             <td><a href="/wiki/game/4.html">4</a></td>
             <td>68.75%</td>
         </tr>
@@ -924,7 +924,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>64.46%</td>
         </tr>
@@ -937,7 +937,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/4.html">4</a></td>
             <td>54.61%</td>
         </tr>
@@ -948,7 +948,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>960000 yen</td>
+            <td>960000 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>100.00%</td>
         </tr>
@@ -961,7 +961,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/4.html">4</a></td>
             <td>86.25%</td>
         </tr>
@@ -974,7 +974,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>33.88%</td>
         </tr>
@@ -987,7 +987,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>37.74%</td>
         </tr>
@@ -1000,7 +1000,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>30.47%</td>
         </tr>
@@ -1013,7 +1013,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>14.97%</td>
         </tr>
@@ -1026,7 +1026,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>60.09%</td>
         </tr>
@@ -1039,7 +1039,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>91.72%</td>
         </tr>
@@ -1052,7 +1052,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>99.99%</td>
         </tr>
@@ -1065,7 +1065,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>200000 yen</td>
+            <td>200000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>31.40%</td>
         </tr>
@@ -1078,7 +1078,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>10.64%</td>
         </tr>
@@ -1091,7 +1091,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/4.html">4</a></td>
             <td>45.00%</td>
         </tr>
@@ -1102,7 +1102,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>63.05%</td>
         </tr>
@@ -1115,7 +1115,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/1.html">1</a></td>
             <td>72.43%</td>
         </tr>
@@ -1128,7 +1128,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>52.36%</td>
         </tr>
@@ -1141,7 +1141,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>99.48%</td>
         </tr>
@@ -1154,7 +1154,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>13.96%</td>
         </tr>
@@ -1167,7 +1167,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>93.94%</td>
         </tr>
@@ -1180,7 +1180,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>84.78%</td>
         </tr>
@@ -1193,7 +1193,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>37.87%</td>
         </tr>
@@ -1206,7 +1206,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>76.94%</td>
         </tr>
@@ -1219,7 +1219,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>99.99%</td>
         </tr>
@@ -1232,7 +1232,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>93.58%</td>
         </tr>
@@ -1245,7 +1245,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>51.91%</td>
         </tr>
@@ -1258,7 +1258,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>20.73%</td>
         </tr>
@@ -1271,7 +1271,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>0.00%</td>
         </tr>
@@ -1284,7 +1284,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>345200 yen</td>
+            <td>345200 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>100.00%</td>
         </tr>
@@ -1297,7 +1297,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>19.63%</td>
         </tr>
@@ -1310,7 +1310,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>61.25%</td>
         </tr>
@@ -1323,7 +1323,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>72.07%</td>
         </tr>
@@ -1336,7 +1336,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/3.html">3</a></td>
             <td>92.27%</td>
         </tr>
@@ -1349,7 +1349,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>44.28%</td>
         </tr>
@@ -1362,7 +1362,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>93.67%</td>
         </tr>
@@ -1375,7 +1375,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>1080000 yen</td>
+            <td>1080000 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>100.00%</td>
         </tr>
@@ -1388,7 +1388,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>68.12%</td>
         </tr>
@@ -1401,7 +1401,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>55.38%</td>
         </tr>
@@ -1414,7 +1414,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>80.87%</td>
         </tr>
@@ -1427,7 +1427,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>96.17%</td>
         </tr>
@@ -1440,7 +1440,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>63.43%</td>
         </tr>
@@ -1453,7 +1453,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>32.00%</td>
         </tr>
@@ -1466,7 +1466,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>1560000 yen</td>
+            <td>1560000 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>83.17%</td>
         </tr>
@@ -1479,7 +1479,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>55.85%</td>
         </tr>
@@ -1492,7 +1492,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>44.35%</td>
         </tr>
@@ -1505,7 +1505,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>30.98%</td>
         </tr>
@@ -1518,7 +1518,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>10.06%</td>
         </tr>
@@ -1531,7 +1531,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>1560000 yen</td>
+            <td>1560000 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>100.00%</td>
         </tr>
@@ -1544,7 +1544,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>94.88%</td>
         </tr>
@@ -1557,7 +1557,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>94.78%</td>
         </tr>
@@ -1570,7 +1570,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>68.33%</td>
         </tr>
@@ -1583,7 +1583,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>45.08%</td>
         </tr>
@@ -1596,7 +1596,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>10.53%</td>
         </tr>
@@ -1609,7 +1609,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>32.24%</td>
         </tr>
@@ -1622,7 +1622,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>33.18%</td>
         </tr>
@@ -1635,7 +1635,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>56.84%</td>
         </tr>
@@ -1648,7 +1648,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>49.81%</td>
         </tr>
@@ -1661,7 +1661,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>92.72%</td>
         </tr>
@@ -1674,7 +1674,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>27.28%</td>
         </tr>
@@ -1687,7 +1687,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>300000 yen</td>
+            <td>300000 円</td>
             <td><a href="/wiki/game/3.html">3</a></td>
             <td>100.00%</td>
         </tr>
@@ -1700,7 +1700,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>76.63%</td>
         </tr>
@@ -1713,7 +1713,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>45.73%</td>
         </tr>
@@ -1726,7 +1726,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>200000 yen</td>
+            <td>200000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>49.78%</td>
         </tr>
@@ -1737,7 +1737,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>1080000 yen</td>
+            <td>1080000 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>98.18%</td>
         </tr>
@@ -1748,7 +1748,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>71.46%</td>
         </tr>
@@ -1761,7 +1761,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>61.38%</td>
         </tr>
@@ -1774,7 +1774,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/1.html">1</a></td>
             <td>40.40%</td>
         </tr>
@@ -1787,7 +1787,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>47.04%</td>
         </tr>
@@ -1800,7 +1800,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>77.63%</td>
         </tr>
@@ -1813,7 +1813,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>98.19%</td>
         </tr>
@@ -1826,7 +1826,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>6.57%</td>
         </tr>
@@ -1839,7 +1839,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>69.26%</td>
         </tr>
@@ -1852,7 +1852,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/38.html">38</a></td>
             <td>39.00%</td>
         </tr>
@@ -1865,7 +1865,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>600000 yen</td>
+            <td>600000 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>100.00%</td>
         </tr>
@@ -1878,7 +1878,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>600000 yen</td>
+            <td>600000 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>65.04%</td>
         </tr>
@@ -1891,7 +1891,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>1.97%</td>
         </tr>
@@ -1904,7 +1904,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>91.09%</td>
         </tr>
@@ -1917,7 +1917,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>71.96%</td>
         </tr>
@@ -1930,7 +1930,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>53.58%</td>
         </tr>
@@ -1943,7 +1943,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>53.29%</td>
         </tr>
@@ -1956,7 +1956,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>600000 yen</td>
+            <td>600000 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>51.92%</td>
         </tr>
@@ -1969,7 +1969,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/3.html">3</a></td>
             <td>17.60%</td>
         </tr>
@@ -1982,7 +1982,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/1.html">1</a></td>
             <td>89.73%</td>
         </tr>
@@ -1995,7 +1995,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>55.33%</td>
         </tr>
@@ -2008,7 +2008,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>58.10%</td>
         </tr>
@@ -2021,7 +2021,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>98.47%</td>
         </tr>
@@ -2034,7 +2034,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/1.html">1</a></td>
             <td>23.70%</td>
         </tr>
@@ -2047,7 +2047,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>128000 yen</td>
+            <td>128000 円</td>
             <td><a href="/wiki/game/3.html">3</a></td>
             <td>42.67%</td>
         </tr>
@@ -2060,7 +2060,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>55.14%</td>
         </tr>
@@ -2073,7 +2073,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>98.00%</td>
         </tr>
@@ -2086,7 +2086,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>19.44%</td>
         </tr>
@@ -2099,7 +2099,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>79.28%</td>
         </tr>
@@ -2112,7 +2112,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6100 yen</td>
+            <td>6100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>64.11%</td>
         </tr>
@@ -2125,7 +2125,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>75.64%</td>
         </tr>
@@ -2138,7 +2138,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/4.html">4</a></td>
             <td>95.81%</td>
         </tr>
@@ -2151,7 +2151,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>26.10%</td>
         </tr>
@@ -2164,7 +2164,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>200000 yen</td>
+            <td>200000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>64.62%</td>
         </tr>
@@ -2177,7 +2177,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/4.html">4</a></td>
             <td>20.92%</td>
         </tr>
@@ -2190,7 +2190,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;4</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>40.34%</td>
         </tr>
@@ -2201,7 +2201,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>15.10%</td>
         </tr>
@@ -2214,7 +2214,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>41.75%</td>
         </tr>
@@ -2227,7 +2227,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>68.27%</td>
         </tr>
@@ -2240,7 +2240,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>29.01%</td>
         </tr>
@@ -2253,7 +2253,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>40.65%</td>
         </tr>
@@ -2266,7 +2266,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>8.44%</td>
         </tr>
@@ -2279,7 +2279,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>65.44%</td>
         </tr>
@@ -2292,7 +2292,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>600000 yen</td>
+            <td>600000 円</td>
             <td><a href="/wiki/game/4.html">4</a></td>
             <td>100.00%</td>
         </tr>
@@ -2305,7 +2305,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>74.62%</td>
         </tr>
@@ -2318,7 +2318,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>23.75%</td>
         </tr>
@@ -2331,7 +2331,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>94.32%</td>
         </tr>
@@ -2344,7 +2344,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>200000 yen</td>
+            <td>200000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>8.67%</td>
         </tr>
@@ -2357,7 +2357,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>57.50%</td>
         </tr>
@@ -2370,7 +2370,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>43.28%</td>
         </tr>
@@ -2383,7 +2383,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>34.83%</td>
         </tr>
@@ -2396,7 +2396,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>85.74%</td>
         </tr>
@@ -2409,7 +2409,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>54.45%</td>
         </tr>
@@ -2422,7 +2422,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>46.92%</td>
         </tr>
@@ -2435,7 +2435,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>35.99%</td>
         </tr>
@@ -2448,7 +2448,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>47.10%</td>
         </tr>
@@ -2461,7 +2461,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>19.36%</td>
         </tr>
@@ -2474,7 +2474,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/25.html">25</a></td>
             <td>36.91%</td>
         </tr>
@@ -2487,7 +2487,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>90.65%</td>
         </tr>
@@ -2500,7 +2500,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>55.01%</td>
         </tr>
@@ -2513,7 +2513,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>89.82%</td>
         </tr>
@@ -2526,7 +2526,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>19.48%</td>
         </tr>
@@ -2539,7 +2539,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;5</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>76.29%</td>
         </tr>
@@ -2552,7 +2552,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>6600 yen</td>
+            <td>6600 円</td>
             <td><a href="/wiki/game/46.html">46</a></td>
             <td>99.70%</td>
         </tr>
@@ -2565,7 +2565,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>0.00%</td>
         </tr>
@@ -2578,7 +2578,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/6.html">6</a></td>
             <td>85.38%</td>
         </tr>
@@ -2591,7 +2591,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>66.69%</td>
         </tr>
@@ -2604,7 +2604,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>61.56%</td>
         </tr>
@@ -2617,7 +2617,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>16.52%</td>
         </tr>
@@ -2630,7 +2630,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>43.65%</td>
         </tr>
@@ -2643,7 +2643,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>92.87%</td>
         </tr>
@@ -2656,7 +2656,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;3</td>
-            <td>206100 yen</td>
+            <td>206100 円</td>
             <td><a href="/wiki/game/49.html">49</a></td>
             <td>90.56%</td>
         </tr>
@@ -2669,7 +2669,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/2.html">2</a></td>
             <td>36.06%</td>
         </tr>
@@ -2682,7 +2682,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/17.html">17</a></td>
             <td>37.50%</td>
         </tr>
@@ -2695,7 +2695,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/4.html">4</a></td>
             <td>84.59%</td>
         </tr>
@@ -2708,7 +2708,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>74.24%</td>
         </tr>
@@ -2721,7 +2721,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>2000000 yen</td>
+            <td>2000000 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>100.00%</td>
         </tr>
@@ -2734,7 +2734,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>89.05%</td>
         </tr>
@@ -2747,7 +2747,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/3.html">3</a></td>
             <td>26.70%</td>
         </tr>
@@ -2760,7 +2760,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/43.html">43</a></td>
             <td>72.33%</td>
         </tr>
@@ -2773,7 +2773,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>17.59%</td>
         </tr>
@@ -2786,7 +2786,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>45.69%</td>
         </tr>
@@ -2799,7 +2799,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>230000 yen</td>
+            <td>230000 円</td>
             <td><a href="/wiki/game/3.html">3</a></td>
             <td>76.67%</td>
         </tr>
@@ -2812,7 +2812,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/35.html">35</a></td>
             <td>59.45%</td>
         </tr>
@@ -2825,7 +2825,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/56.html">56</a></td>
             <td>22.95%</td>
         </tr>
@@ -2838,7 +2838,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/7.html">7</a></td>
             <td>54.36%</td>
         </tr>
@@ -2851,7 +2851,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/18.html">18</a></td>
             <td>46.66%</td>
         </tr>
@@ -2864,7 +2864,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;2</td>
-            <td>200000 yen</td>
+            <td>200000 円</td>
             <td><a href="/wiki/game/39.html">39</a></td>
             <td>56.45%</td>
         </tr>
@@ -2875,7 +2875,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>439800 yen</td>
+            <td>439800 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>63.92%</td>
         </tr>
@@ -2886,7 +2886,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>29.67%</td>
         </tr>
@@ -2897,7 +2897,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>92.17%</td>
         </tr>
@@ -2908,7 +2908,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>61.31%</td>
         </tr>
@@ -2919,7 +2919,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>94.47%</td>
         </tr>
@@ -2930,7 +2930,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>82.14%</td>
         </tr>
@@ -2941,7 +2941,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>98.61%</td>
         </tr>
@@ -2952,7 +2952,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>44.33%</td>
         </tr>
@@ -2963,7 +2963,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>79.83%</td>
         </tr>
@@ -2974,7 +2974,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>1080000 yen</td>
+            <td>1080000 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>100.00%</td>
         </tr>
@@ -2985,7 +2985,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>87.67%</td>
         </tr>
@@ -2996,7 +2996,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>0.75%</td>
         </tr>
@@ -3007,7 +3007,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>540000 yen</td>
+            <td>540000 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>100.00%</td>
         </tr>
@@ -3018,7 +3018,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>48.89%</td>
         </tr>
@@ -3029,7 +3029,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>30.28%</td>
         </tr>
@@ -3040,7 +3040,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>15.78%</td>
         </tr>
@@ -3051,7 +3051,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>6.81%</td>
         </tr>
@@ -3062,7 +3062,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>540000 yen</td>
+            <td>540000 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>100.00%</td>
         </tr>
@@ -3073,7 +3073,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>48.47%</td>
         </tr>
@@ -3084,7 +3084,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/8.html">8</a></td>
             <td>58.44%</td>
         </tr>
@@ -3095,7 +3095,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>24.56%</td>
         </tr>
@@ -3106,7 +3106,7 @@
                 
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;1</td>
-            <td>0 yen</td>
+            <td>0 円</td>
             <td><a href="/wiki/game/5.html">5</a></td>
             <td>3.83%</td>
         </tr>
