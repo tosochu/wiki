@@ -32,31 +32,31 @@
         <% } %>
     </h2>
     <p class="messages-display">
-        <strong>Counts:</strong> <i class="fa fa-solid fa-fire"></i> <%= data.record.length %>
+        <strong>参戦の回数:</strong> <i class="fa fa-solid fa-fire"></i> <%= data.record.length %>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>Money:</strong> <i class="fa fa-solid fa-coins"></i> <%= data.money %> yen
+        <strong>賞金獲得:</strong> <i class="fa fa-solid fa-coins"></i> <%= data.money %> yen
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>Rate of Escape:</strong> <%= (data.escapeRate*100).toFixed(2) %>%
+        <strong>逃走率:</strong> <%= (data.escapeRate*100).toFixed(2) %>%
     </p>
 </div>
 <br>
 <h3>Game Records</h3>
 <table>
     <tr>
-        <th>Round</th>
-        <th>Title</th>
-        <th>Money</th>
-        <th>Escape Rate</th>
-        <th>Count</th>
-        <th>Date</th>
-        <th>Length</th>
+        <th>回数</th>
+        <th>タイトル</th>
+        <th>賞金獲得</th>
+        <th>逃走率</th>
+        <th>参戦の回数</th>
+        <th>あの回の放送日</th>
+        <th>あの回の時間</th>
     </tr>
     <% data.record.forEach(record=>{
         var game=games[record.id]; %>
         <tr>
             <td><%= game.id %></td>
             <td><a href="/<%= on %>/game/<%= game.id %>.html"><%= game.detail.title %></a></td>
-            <td><%= record.money %> yen</td>
+            <td><%= record.money %> 円</td>
             <td><%= (record.escapeRate*100).toFixed(2) %>%</td>
             <td><i class="fa fa-solid fa-user"></i>&nbsp;<%= game.detail.player.length %></td>
             <td><%= game.detail.date %></td>

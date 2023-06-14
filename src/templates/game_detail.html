@@ -44,11 +44,11 @@
 <div class="topan-section-shadow">
     <h2>第 <%= data.id %> 回 - <%= data.detail.title %></h2>
     <p class="messages-display">
-        <strong>Date:</strong> <%= data.detail.date %>
+        <strong>放送日:</strong> <%= data.detail.date %>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>Length:</strong> <%= data.detail.length %>
+        <strong>ゲーム時間:</strong> <%= data.detail.length %>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>Count:</strong> <i class="fa fa-solid fa-user"></i> <%= data.detail.player.length %>
+        <strong>逃走者の人数:</strong> <i class="fa fa-solid fa-user"></i> <%= data.detail.player.length %>
     </p>
     <%- description %>
 </div>
@@ -68,12 +68,12 @@
     </div>
 <% } %>
 
-<h3>Catch Records</h3>
+<h3>ゲームの行方</h3>
 <table>
     <tr>
-        <th>Time</th>
-        <th>Player</th>
-        <th>Message</th>
+        <th>時間</th>
+        <th>プレイヤー</th>
+        <th>メッセージ</th>
     </tr>
     <% data.detail.message.forEach((message,index)=>{ %>
         <tr>
