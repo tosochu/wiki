@@ -1,7 +1,7 @@
 on: wiki
 readme: index.md
 dictionary: dictionary.yaml
-title: Tosochu Wiki
+title: 逃走中 wiki
 games:
   - id: 1
     file: rounds/1.yaml

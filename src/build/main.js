@@ -36,9 +36,9 @@ var secondsToString=(time)=>{
     var res="";
     var displayMinute=minute!=0,
         displaySecond=second!=0;
-    if(displayMinute)res+=String(minute)+" m";
+    if(displayMinute)res+=String(minute)+" 分";
     if(displayMinute&&displaySecond)res+=" ";
-    if(displaySecond)res+=String(second)+" s";
+    if(displaySecond)res+=String(second)+" 秒";
     return res;
 }
 
@@ -51,7 +51,7 @@ ejs.renderFile("./src/templates/home.html",{
     README: MarkdownIt.render(fs.readFileSync(`./data/${Config.readme}`,{encoding:'utf8',flag:'r'}))
 },(err,HTML)=>{
     fs.writeFileSync("./dist/index.html",
-        Template({title: `Home`,
+        Template({title: `トップ`,
                   header: ``
                  },HTML));
 });
@@ -88,33 +88,32 @@ Config.games.forEach((game,index)=>{
         });
         if(!message.time)message.time=0;
         if(!message.money)message.money=0;
-        if(message.time==0)message.time="End of the Game",message.numberTime=0;
+        if(message.time==0)message.time="ゲーム終了時",message.numberTime=0;
         else if(toStandardTime(message.time)==detail.length*60) // Round #7
-            message.time="Openning Game",message.numberTime=toStandardTime(message.time),
-            message.display=`Caught! `;
+            message.time="オペニーングゲーム 確保",message.numberTime=toStandardTime(message.time),
+            message.display=`確保`;
         else message.numberTime=toStandardTime(message.time),
             message.time=secondsToString(toStandardTime(message.time));
 
-        if(message.type=="catched")    message.display=`Caught! `;
-        if(message.type=="win")        message.display=`Escaped! `;
-        if(message.type=="revive")     message.display=`Revived by ${message.reviver}. `;
-        if(message.type=="waiver")     message.display=`Waiver! `;
+        if(message.type=="catched")    message.display=`確保。`;
+        if(message.type=="win")        message.display=`逃走成功。`;
+        if(message.type=="revive")     message.display=`${message.reviver} を復活。`;
+        if(message.type=="waiver")     message.display=`自首成立。`;
 
         // Round #43
-        if(message.type=="companion-save") message.display=`Saved by ${message.saver}. `;
         if(message.type=="companion-win")  message.display=``;
 
         // Round #49 ~ #51
         if(message.type=="money-game"){
-            message.display=`<strong>Money Game!</strong>&#10;`;
-            message.display+="The bolds won the money game.&#10;";
+            message.display=`<strong>賞金ゲーム！</strong>&#10;`;
+            message.display+="<strong>黑体</strong>は代表者&#10;";
         }
 
         // Round #7
         if(message.type=="money-game-catched")
-            message.display=`Lose the money game! Confiscate ${-message.money} yen!`
+            message.display=`賞金ゲームは敗北 ${message.money} 円没収！`
         if(message.type=="money-game-win")
-            message.display=`Win the money game! `;
+            message.display=`賞金ゲームは成功！`;
 
         var temp="";
         message.person.forEach((player,playerIndex)=>{
@@ -134,19 +133,19 @@ Config.games.forEach((game,index)=>{
 
         if(message.money>0){
             if(message.type=="companion-win")
-                message.display+=`Got ${message.money} yen because of ${message.rely}'s success.`;
+                message.display+=`${message.money} 円獲得 (${message.rely} 逃走成功)`;
             else if(message.type=="money-game-win")
-                message.display+=`Got another ${message.money}.`;
+                message.display+=`また ${message.money} 円獲得`;
             else if(message.person.split(",").length>1)
-                message.display+=`Got ${message.money} yen together.`;
-            else message.display+=`Got ${message.money} yen.`;
+                message.display+=`一緒に ${message.money} 円獲得`;
+            else message.display+=`${message.money} 円獲得`;
         }
     });
     for(var player of playerset)players.push(player);
     detail.player=players;
     detail.date=require('dayjs')(detail.date).format("M / D / YYYY");
     var gameLength=toStandardTime(detail.length);
-    detail.length=`${gameLength} m`;
+    detail.length=`${gameLength} 分`;
     for(var person in timeline){
         var i=0; while(Config.player[i].name!=person)i++;
         var line=timeline[person],res=0;
@@ -181,9 +180,9 @@ Config.games.forEach((game,index)=>{
     game.detail=detail;
     var chart={
         chart: { type: 'area' },
-        title: { text: 'Money Changing' },
+        title: { text: '賞金変更' },
         subtitle: { text: `第 ${game.id} 回 — ${game.detail.title}` },
-        tooltip: { shared: true, valueSuffix: ' yen' },
+        tooltip: { shared: true, valueSuffix: ' 円' },
         credits: { enabled: false },
         plotOptions: { area: {
             stacking: 'normal',
@@ -203,7 +202,7 @@ Config.games.forEach((game,index)=>{
             title: { enabled: false }
         },
         series: [{
-            name: 'Money',
+            name: '当前時点の賞金',
             data: new Array()
         }],
         display: true
@@ -231,7 +230,7 @@ ejs.renderFile("./src/templates/game_list.html",{
     data: Config
 },(err,HTML)=>{
     fs.writeFileSync("./dist/game/index.html",
-        Template({title: `Games List`,
+        Template({title: `ゲーム`,
                   header: ``,
                   ongame: true
                  },HTML));
@@ -279,7 +278,7 @@ ejs.renderFile("./src/templates/player_list.html",{
     data: Config
 },(err,HTML)=>{
     fs.writeFileSync("./dist/player/index.html",
-        Template({title: `Players List`,
+        Template({title: `プレイヤー`,
                   header: ``,
                   onplayer: true
                  },HTML));

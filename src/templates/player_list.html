@@ -119,7 +119,7 @@
     var show=(data)=>{
         $('#sorttype').val(nowsearch.sort??defaultSorter);
         var players=data.players;
-        var HTML=`<tr><th>Name</th><th>Count</th><th>Money</th><th>Last Part</th><th>Rate of Escape</th></tr>`;
+        var HTML=`<tr><th>逃走者</th><th>参戦の回数</th><th>賞金獲得</th><th>最後の参戦</th><th>逃走率</th></tr>`;
         players.forEach(player=>{
             HTML+=`
                 <tr>
@@ -130,7 +130,7 @@
                         `:''}
                     </td>
                     <td><i class="fa fa-solid fa-fire"></i>&nbsp;${player.count}</td>
-                    <td>${player.money} yen</td>
+                    <td>${player.money} 円</td>
                     <td><a href="/<%= data.on %>/game/${player.lastTime}.html">${player.lastTime}</a></td>
                     <td>${(player.escapeRate*100).toFixed(2)}%</td>
                 </tr>
@@ -145,15 +145,15 @@
             else if(pageId<=5)minPageId=1,maxPageId=11;
             else minPageId=pageId-5,maxPageId=pageId+5;
         }
-        if(pageId>=3)HTML+=`<li onclick="movetoPage(1);">« 第一页</li>`;
-        if(pageId>=2)HTML+=`<li onclick="movetoPage(${pageId-1});">‹ 前一页</li>`;
+        if(pageId>=3)HTML+=`<li onclick="movetoPage(1);"> « </li>`;
+        if(pageId>=2)HTML+=`<li onclick="movetoPage(${pageId-1});"> ‹ </li>`;
         if(minPageId>1)HTML+=`<span>...</span>`
         for(var i=minPageId;i<=maxPageId;i++)
             if(i==pageId)HTML+=`<li class="topan-tab-showed">${i}</li>`;
             else HTML+=`<li onclick="movetoPage(${i});">${i}</li>`;
         if(maxPageId<pageCount)HTML+=`<span>...</span>`;
-        if(pageId<=pageCount-1)HTML+=`<li onclick="movetoPage(${pageId+1});">下一页 ›</li>`;
-        if(pageId<=pageCount-2)HTML+=`<li onclick="movetoPage(${pageCount});">末页 »</li>`;
+        if(pageId<=pageCount-1)HTML+=`<li onclick="movetoPage(${pageId+1});"> › </li>`;
+        if(pageId<=pageCount-2)HTML+=`<li onclick="movetoPage(${pageCount});"> » </li>`;
         $('.page-select-up>ul').html(HTML);
         $('.page-select-down>ul').html(HTML);
     };
@@ -194,14 +194,14 @@
 </script>
 
 <p>
-    排序方式：
+    ソート方法：
     <select name="sorttype" id="sorttype">
-        <option value="escapeRateBetter">Rate of Escape (Upgraded version)</option>
-        <option value="escapeRate">Rate of Escape</option>
-        <option value="dictionary">Dictionary</option>
-        <option value="money">Money</option>
-        <option value="lastpart">Last Part</option>
-        <option value="count">Count</option>
+        <option value="escapeRateBetter">逃走率 (Upgraded version)</option>
+        <option value="escapeRate">逃走率</option>
+        <option value="dictionary">五十音序</option>
+        <option value="money">賞金</option>
+        <option value="lastpart">最後の参戦</option>
+        <option value="count">参戦の回数</option>
     </select>
 </p>
 <div class="page-select-up"><ul>
@@ -209,11 +209,11 @@
 </ul></div>
 <table>
     <tr>
-        <th>Name</th>
-        <th>Count</th>
-        <th>Money</th>
-        <th>Last Part</th>
-        <th>Rate of Escape</th>
+        <th>逃走者</th>
+        <th>参戦の回数</th>
+        <th>賞金獲得</th>
+        <th>最後の参戦</th>
+        <th>逃走率</th>
     </tr>
     <% data.player.forEach(player=>{ %>
         <tr>
@@ -224,7 +224,7 @@
                 <% } %>
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.count %></td>
-            <td><%= player.money %> yen</td>
+            <td><%= player.money %> 円</td>
             <td><a href="/<%= data.on %>/game/<%= player.lastTime %>.html"><%= player.lastTime %></a></td>
             <td><%= (player.escapeRate*100).toFixed(2) %>%</td>
         </tr>

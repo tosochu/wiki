@@ -30,13 +30,13 @@ module.exports=(config,HTML)=>{
                 <a href="/${Config.on}/game">
                     <span class="topan-button-ordinary topan-button-commonly topan-button-header-block${config.ongame?"-showed":""}">
                         <i class="fa fa-solid fa-fire"></i>
-                        <span>&nbsp;Games</span>
+                        <span>&nbsp;ゲーム</span>
                     </span>
                 </a>
                 <a href="/${Config.on}/player">
                     <span class="topan-button-ordinary topan-button-commonly topan-button-header-block${config.onplayer?"-showed":""}">
                         <i class="fa fa-solid fa-user"></i>
-                        <span>&nbsp;Players</span>
+                        <span>&nbsp;プレイヤー</span>
                     </span>
                 </a>
             </div>
