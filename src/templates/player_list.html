@@ -209,11 +209,11 @@
 </ul></div>
 <table>
     <tr>
-        <th>Name</th>
-        <th>Count</th>
-        <th>Money</th>
-        <th>Last Part</th>
-        <th>Rate of Escape</th>
+        <th>逃走者</th>
+        <th>参戦の回数</th>
+        <th>賞金獲得</th>
+        <th>最後の参戦</th>
+        <th>逃走率</th>
     </tr>
     <% data.player.forEach(player=>{ %>
         <tr>
@@ -224,7 +224,7 @@
                 <% } %>
             </td>
             <td><i class="fa fa-solid fa-fire"></i>&nbsp;<%= player.count %></td>
-            <td><%= player.money %> yen</td>
+            <td><%= player.money %> 円</td>
             <td><a href="/<%= data.on %>/game/<%= player.lastTime %>.html"><%= player.lastTime %></a></td>
             <td><%= (player.escapeRate*100).toFixed(2) %>%</td>
         </tr>
