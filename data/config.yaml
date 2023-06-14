@@ -17,6 +17,8 @@ games:
     file: rounds/6.yaml
   - id: 7
     file: rounds/7.yaml
+  - id: 8
+    file: rounds/8.yaml
   - id: 17
     file: rounds/17.yaml
   - id: 18
