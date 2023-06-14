@@ -22,4 +22,8 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 
 - 将总和除以游戏总时长，就得到逃走率；
 
-- 在 Money Game（[Round #7](https://tosochu.github.io/wiki/game/7.html)）中失败的玩家的逃走率记为 99.99%。（因为他们并没有完美地完成游戏。）
+- 部分玩家虽然整场游戏中都未被抓捕甚至获得了赏金，但由于游戏中的特殊规则，他们的奖金会被没收或者得到了 99.99% 的逃走率，下面将一一列举：
+
+  - [第七回 お台場2](https://tosochu.github.io/wiki/game/7.html) 中，[眞鍋かをり](https://tosochu.github.io/wiki/player/manabe-kawori.html)、[川合俊一](https://tosochu.github.io/wiki/player/kawai-shunichi.html) 等玩家在附加环节中失利，导致他们先前获得的 1,260,000 日元奖金全部没收。这里的原因是他们并没有完美地完成游戏。
+
+  - [第三十九回 時空を超える決戦(後編)](https://tosochu.github.io/wiki/game/39.html) 中，[えなりかずき](https://tosochu.github.io/wiki/player/enari-kazuki.html) 由于参加了后半战并且战败，导致他在[前半战](https://tosochu.github.io/wiki/game/38.html)中收获的 1,080,000 日元奖金全部没收。
