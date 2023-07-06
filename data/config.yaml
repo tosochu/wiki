@@ -39,3 +39,5 @@ games:
     file: rounds/49.yaml
   - id: 56
     file: rounds/56.yaml
+  - id: 60
+    file: rounds/60.yaml
