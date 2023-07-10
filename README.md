@@ -34,32 +34,33 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 
 $$\large\textbf{每回数据进度}$$
 $$\begin{aligned}
-&\colorbox{green}{Comp.}&\colorbox{green}{Completed}&&
-&\colorbox{orange}{Collec.}&\colorbox{orange}{Collecting data}\\
-&\colorbox{yellow}{Inpt.}&\colorbox{yellow}{Inputing data}&&
-&\colorbox{grey}{Empt.}&\colorbox{grey}{Empty data}\end{aligned}\\
+&\text{Co.}&\text{Completed}&&
+&\text{Cl.}&\text{Collecting data}\\
+&\text{In.}&\text{Inputing data}&&
+&\text{Em.}&\text{Empty data}\end{aligned}\\
 $$
 
 $$
 \begin{array}{|c:c|c:c|c:c|c:c|}\hline
 回数&状态&回数&状态&回数&状态&回数&状态\\\hline
-第一回&\colorbox{green}{Comp.}&第二回&\colorbox{green}{Comp.}&第三回&\colorbox{green}{Comp.}&第四回&\colorbox{green}{Comp.}\\\hline
-第五回&\colorbox{green}{Comp.}&第六回&\colorbox{green}{Comp.}&第七回&\colorbox{green}{Comp.}&第八回&\colorbox{green}{Comp.}\\\hline
-第九回&\colorbox{grey}{Empt.}&第十回&\colorbox{grey}{Empt.}&第十一回&\colorbox{grey}{Empt.}&第十二回&\colorbox{grey}{Empt.}\\\hline
-第十三回&\colorbox{grey}{Empt.}&第十四回&\colorbox{grey}{Empt.}&第十五回&\colorbox{grey}{Empt.}&第十六回&\colorbox{grey}{Empt.}\\\hline
-第十七回&\colorbox{green}{Comp.}&第十八回&\colorbox{green}{Comp.}&第十九回&\colorbox{grey}{Empt.}&第二十回&\colorbox{grey}{Empt.}\\\hline
-第二十一回&\colorbox{grey}{Empt.}&第二十二回&\colorbox{grey}{Empt.}&第二十三回&\colorbox{grey}{Empt.}&第二十四回&\colorbox{grey}{Empt.}\\\hline
-第二十五回&\colorbox{green}{Comp.}&第二十六回&\colorbox{grey}{Empt.}&第二十七回&\colorbox{grey}{Empt.}&第二十八回&\colorbox{grey}{Empt.}\\\hline
-第二十九回&\colorbox{grey}{Empt.}&第三十回&\colorbox{grey}{Empt.}&第三十一回&\colorbox{orange}{Collec.}&第三十二回&\colorbox{grey}{Empt.}\\\hline
-第三十三回&\colorbox{grey}{Empt.}&第三十四回&\colorbox{grey}{Empt.}&第三十五回&\colorbox{green}{Comp.}&第三十六回&\colorbox{grey}{Empt.}\\\hline
-第三十七回&\colorbox{grey}{Empt.}&第三十八回&\colorbox{green}{Comp.}&第三十九回&\colorbox{green}{Comp.}&第四十回&\colorbox{grey}{Empt.}\\\hline
-第四十一回&\colorbox{grey}{Empt.}&第四十二回&\colorbox{grey}{Empt.}&第四十三回&\colorbox{green}{Comp.}&第四十四回&\colorbox{grey}{Empt.}\\\hline
-第四十五回&\colorbox{grey}{Empt.}&第四十六回&\colorbox{green}{Comp.}&第四十七回&\colorbox{grey}{Empt.}&第四十八回&\colorbox{grey}{Empt.}\\\hline
-第四十九回&\colorbox{green}{Comp.}&第五十回&\colorbox{grey}{Empt.}&第五十一回&\colorbox{grey}{Empt.}&第五十二回&\colorbox{grey}{Empt.}\\\hline
-第五十三回&\colorbox{grey}{Empt.}&第五十四回&\colorbox{grey}{Empt.}&第五十五回&\colorbox{grey}{Empt.}&第五十六回&\colorbox{green}{Comp.}\\\hline
-第五十七回&\colorbox{grey}{Empt.}&第五十八回&\colorbox{grey}{Empt.}&第五十九回&\colorbox{grey}{Empt.}&第六十回&\colorbox{green}{Comp.}\\\hline
+第一回&\text{Cp.}&第二回&\text{Cp.}&第三回&\text{Cp.}&第四回&\text{Cp.}\\\hline
+第五回&\text{Cp.}&第六回&\text{Cp.}&第七回&\text{Cp.}&第八回&\text{Cp.}\\\hline
+第九回&\text{Em.}&第十回&\text{Em.}&第十一回&\text{Em.}&第十二回&\text{Em.}\\\hline
+第十三回&\text{Em.}&第十四回&\text{Em.}&第十五回&\text{Em.}&第十六回&\text{Em.}\\\hline
+第十七回&\text{Cp.}&第十八回&\text{Cp.}&第十九回&\text{Em.}&第二十回&\text{Em.}\\\hline
+第二十一回&\text{Em.}&第二十二回&\text{Em.}&第二十三回&\text{Em.}&第二十四回&\text{Em.}\\\hline
+第二十五回&\text{Cp.}&第二十六回&\text{Em.}&第二十七回&\text{Em.}&第二十八回&\text{Em.}\\\hline
+第二十九回&\text{Em.}&第三十回&\text{Em.}&第三十一回&\text{Cl.}&第三十二回&\text{Em.}\\\hline
+第三十三回&\text{Em.}&第三十四回&\text{Em.}&第三十五回&\text{Cp.}&第三十六回&\text{Em.}\\\hline
+第三十七回&\text{Em.}&第三十八回&\text{Cp.}&第三十九回&\text{Cp.}&第四十回&\text{Em.}\\\hline
+第四十一回&\text{Em.}&第四十二回&\text{Em.}&第四十三回&\text{Cp.}&第四十四回&\text{Em.}\\\hline
+第四十五回&\text{Em.}&第四十六回&\text{Cp.}&第四十七回&\text{Em.}&第四十八回&\text{Em.}\\\hline
+第四十九回&\text{Cp.}&第五十回&\text{Em.}&第五十一回&\text{Em.}&第五十二回&\text{Em.}\\\hline
+第五十三回&\text{Em.}&第五十四回&\text{Em.}&第五十五回&\text{Em.}&第五十六回&\text{Cp.}\\\hline
+第五十七回&\text{Em.}&第五十八回&\text{Em.}&第五十九回&\text{Em.}&第六十回&\text{Cp.}\\\hline
 \end{array}
 $$
+
 $$
 下回播出日期：第六十一回\quad2023.07.23\enspace7:30\enspace a.m.
 $$
