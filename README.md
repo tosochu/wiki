@@ -27,3 +27,41 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
   - [第七回 お台場2](https://tosochu.github.io/wiki/game/7.html) 中，[眞鍋かをり](https://tosochu.github.io/wiki/player/manabe-kawori.html)、[川合俊一](https://tosochu.github.io/wiki/player/kawai-shunichi.html) 等玩家在附加环节中失利，导致他们先前获得的 1,260,000 日元奖金全部没收。这里的原因是他们并没有完美地完成游戏。
 
   - [第三十九回 時空を超える決戦(後編)](https://tosochu.github.io/wiki/game/39.html) 中，[えなりかずき](https://tosochu.github.io/wiki/player/enari-kazuki.html) 由于参加了后半战并且战败，导致他在[前半战](https://tosochu.github.io/wiki/game/38.html)中收获的 1,080,000 日元奖金全部没收。
+
+## Wiki 数据进度
+
+由于人数不多，本 wiki 的数据未完善，也就是说，本 wiki 处于**未完成**阶段，可能存在**数据缺漏**。当然，我们也会加快进度。
+
+$$\large\textbf{每回数据进度}$$
+$$\begin{aligned}
+&\colorbox{green}{Comp.}&\colorbox{green}{Completed}&&
+&\colorbox{orange}{Collec.}&\colorbox{orange}{Collecting data}\\
+&\colorbox{yellow}{Inpt.}&\colorbox{yellow}{Inputing data}&&
+&\colorbox{grey}{Empt.}&\colorbox{grey}{Empty data}\end{aligned}\\
+$$
+
+$$
+\begin{array}{|c:c|c:c|c:c|c:c|}\hline
+回数&状态&回数&状态&回数&状态&回数&状态\\\hline
+第一回&\colorbox{green}{Comp.}&第二回&\colorbox{green}{Comp.}&第三回&\colorbox{green}{Comp.}&第四回&\colorbox{green}{Comp.}\\\hline
+第五回&\colorbox{green}{Comp.}&第六回&\colorbox{green}{Comp.}&第七回&\colorbox{green}{Comp.}&第八回&\colorbox{green}{Comp.}\\\hline
+第九回&\colorbox{grey}{Empt.}&第十回&\colorbox{grey}{Empt.}&第十一回&\colorbox{grey}{Empt.}&第十二回&\colorbox{grey}{Empt.}\\\hline
+第十三回&\colorbox{grey}{Empt.}&第十四回&\colorbox{grey}{Empt.}&第十五回&\colorbox{grey}{Empt.}&第十六回&\colorbox{grey}{Empt.}\\\hline
+第十七回&\colorbox{green}{Comp.}&第十八回&\colorbox{green}{Comp.}&第十九回&\colorbox{grey}{Empt.}&第二十回&\colorbox{grey}{Empt.}\\\hline
+第二十一回&\colorbox{grey}{Empt.}&第二十二回&\colorbox{grey}{Empt.}&第二十三回&\colorbox{grey}{Empt.}&第二十四回&\colorbox{grey}{Empt.}\\\hline
+第二十五回&\colorbox{green}{Comp.}&第二十六回&\colorbox{grey}{Empt.}&第二十七回&\colorbox{grey}{Empt.}&第二十八回&\colorbox{grey}{Empt.}\\\hline
+第二十九回&\colorbox{grey}{Empt.}&第三十回&\colorbox{grey}{Empt.}&第三十一回&\colorbox{orange}{Collec.}&第三十二回&\colorbox{grey}{Empt.}\\\hline
+第三十三回&\colorbox{grey}{Empt.}&第三十四回&\colorbox{grey}{Empt.}&第三十五回&\colorbox{green}{Comp.}&第三十六回&\colorbox{grey}{Empt.}\\\hline
+第三十七回&\colorbox{grey}{Empt.}&第三十八回&\colorbox{green}{Comp.}&第三十九回&\colorbox{green}{Comp.}&第四十回&\colorbox{grey}{Empt.}\\\hline
+第四十一回&\colorbox{grey}{Empt.}&第四十二回&\colorbox{grey}{Empt.}&第四十三回&\colorbox{green}{Comp.}&第四十四回&\colorbox{grey}{Empt.}\\\hline
+第四十五回&\colorbox{grey}{Empt.}&第四十六回&\colorbox{green}{Comp.}&第四十七回&\colorbox{grey}{Empt.}&第四十八回&\colorbox{grey}{Empt.}\\\hline
+第四十九回&\colorbox{green}{Comp.}&第五十回&\colorbox{grey}{Empt.}&第五十一回&\colorbox{grey}{Empt.}&第五十二回&\colorbox{grey}{Empt.}\\\hline
+第五十三回&\colorbox{grey}{Empt.}&第五十四回&\colorbox{grey}{Empt.}&第五十五回&\colorbox{grey}{Empt.}&第五十六回&\colorbox{green}{Comp.}\\\hline
+第五十七回&\colorbox{grey}{Empt.}&第五十八回&\colorbox{grey}{Empt.}&第五十九回&\colorbox{grey}{Empt.}&第六十回&\colorbox{green}{Comp.}\\\hline
+\end{array}
+$$
+$$
+下回播出日期：第六十一回\quad2023.07.23\enspace7:30\enspace a.m.
+$$
+
+
