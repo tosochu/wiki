@@ -28,42 +28,6 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 
   - [第三十九回 時空を超える決戦(後編)](https://tosochu.github.io/wiki/game/39.html) 中，[えなりかずき](https://tosochu.github.io/wiki/player/enari-kazuki.html) 由于参加了后半战并且战败，导致他在[前半战](https://tosochu.github.io/wiki/game/38.html)中收获的 1,080,000 日元奖金全部没收。
 
-## Wiki 数据进度
-
-由于人数不多，本 wiki 的数据未完善，也就是说，本 wiki 处于**未完成**阶段，可能存在**数据缺漏**。当然，我们也会加快进度。
-
-$$\large\textbf{每回数据进度}$$
-$$\begin{aligned}
-&\text{Co.}&\text{Completed}&&
-&\text{Cl.}&\text{Collecting data}\\
-&\text{In.}&\text{Inputing data}&&
-&\text{Em.}&\text{Empty data}\end{aligned}\\
-$$
-
-$$
-\begin{array}{|c:c|c:c|c:c|c:c|}\hline
-回数&状态&回数&状态&回数&状态&回数&状态\\\hline
-第一回&\text{Cp.}&第二回&\text{Cp.}&第三回&\text{Cp.}&第四回&\text{Cp.}\\\hline
-第五回&\text{Cp.}&第六回&\text{Cp.}&第七回&\text{Cp.}&第八回&\text{Cp.}\\\hline
-第九回&\text{Em.}&第十回&\text{Em.}&第十一回&\text{Em.}&第十二回&\text{Em.}\\\hline
-第十三回&\text{Em.}&第十四回&\text{Em.}&第十五回&\text{Em.}&第十六回&\text{Em.}\\\hline
-第十七回&\text{Cp.}&第十八回&\text{Cp.}&第十九回&\text{Em.}&第二十回&\text{Em.}\\\hline
-第二十一回&\text{Em.}&第二十二回&\text{Em.}&第二十三回&\text{Em.}&第二十四回&\text{Em.}\\\hline
-第二十五回&\text{Cp.}&第二十六回&\text{Em.}&第二十七回&\text{Em.}&第二十八回&\text{Em.}\\\hline
-第二十九回&\text{Em.}&第三十回&\text{Em.}&第三十一回&\text{Cl.}&第三十二回&\text{Em.}\\\hline
-第三十三回&\text{Em.}&第三十四回&\text{Em.}&第三十五回&\text{Cp.}&第三十六回&\text{Em.}\\\hline
-第三十七回&\text{Em.}&第三十八回&\text{Cp.}&第三十九回&\text{Cp.}&第四十回&\text{Em.}\\\hline
-第四十一回&\text{Em.}&第四十二回&\text{Em.}&第四十三回&\text{Cp.}&第四十四回&\text{Em.}\\\hline
-第四十五回&\text{Em.}&第四十六回&\text{Cp.}&第四十七回&\text{Em.}&第四十八回&\text{Em.}\\\hline
-第四十九回&\text{Cp.}&第五十回&\text{Em.}&第五十一回&\text{Em.}&第五十二回&\text{Em.}\\\hline
-第五十三回&\text{Em.}&第五十四回&\text{Em.}&第五十五回&\text{Em.}&第五十六回&\text{Cp.}\\\hline
-第五十七回&\text{Em.}&第五十八回&\text{Em.}&第五十九回&\text{Em.}&第六十回&\text{Cp.}\\\hline
-\end{array}
-$$
-
-$$
-下回播出日期：第六十一回\quad2023.07.23\enspace7:30\enspace a.m.
-$$
 
 
 
