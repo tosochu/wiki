@@ -108,5 +108,6 @@ message:
     money: 2000000
     rely: 小峠英二
   - person: えなりかずき
+    type: win
     description: special-rule
     money: -1080000
