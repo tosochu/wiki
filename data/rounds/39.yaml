@@ -107,6 +107,6 @@ message:
     type: companion-win
     money: 2000000
     rely: 小峠英二
-  # - person: えなりかずき
-    # type: special-rule
-    # money: -1080000
+  - person: えなりかずき
+    description: special-rule
+    money: -1080000
