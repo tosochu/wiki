@@ -109,5 +109,5 @@ message:
     rely: 小峠英二
   - person: えなりかずき
     type: win
-    description: special-rule
+    description: チーム戦は敗北、賞金没収
     money: -1080000
