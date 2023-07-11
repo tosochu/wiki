@@ -1,0 +1,58 @@
+title: 横浜中華街
+length: 70
+date: 2009-01-04
+# video: 
+description: description
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 70 min
+    money: 840000
+message:
+  - time: 89:35
+    person: 優木まおみ
+    type: catched
+  - time: 85:11
+    person: 柳原可奈子
+    type: catched
+  - time: 53:53
+    person: 木村卓寛
+    type: catched
+  - time: 48:18
+    person: 陣内智則
+    type: catched
+  - time: 35:32
+    person: はるな愛
+    type: catched
+  - time: 40:05
+    person: 若槻千夏
+    type: waiver
+    money: 481000
+  - time: 24:17
+    person: しずちゃん
+    type: catched
+  - time: 21:03
+    person: 有吉弘行
+    type: catched
+  - time: 16:37
+    person: 武田修宏
+    type: catched
+  - time: 13:39
+    person: マリエ
+    type: waiver
+    money: 688200
+  - time: 8:49
+    person: 鳥居みゆき
+    type: catched
+  - time: 2:52
+    person: パンツェッタ・ジローラモ
+    type: catched
+  - money: 840000
+    person: 姜暢雄
+    type: win
+  - money: 840000
+    person: 小島よしお
+    type: win
+  - money: 840000
+    person: 高田延彦
+    type: win
