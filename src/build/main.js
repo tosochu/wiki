@@ -140,7 +140,7 @@ Config.games.forEach((game,index)=>{
                 message.display+=`一緒に ${message.money} 円獲得`;
             else message.display+=`${message.money} 円獲得`;
         }
-        if(message.discription)message.display=message.discription;
+        if(message.description)message.display=message.description;
     });
     for(var player of playerset)players.push(player);
     detail.player=players;
