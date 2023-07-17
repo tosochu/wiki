@@ -37,20 +37,20 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 <table style="text-align: left; margin: 30px; font-family: 宋体;">
 	<tr>
 		<th style="padding: 5px 8px; background-color: yellowgreen; border-size: 0px;">​Comp.</th>
-		<th style="padding: 5px 8px; background-color: white; border-size: 0px;">​​Completed</th>
+		<th style="padding: 5px 8px; background-color: white; border-size: 0px; color: white;">​​Completed</th>
 		<th style="padding: 5px 8px; background-color: orange; border-size: 0px;">​Inpt.</th>
-		<th style="padding: 5px 8px; background-color: white; border-size: 0px;">​Inputing data</th>
+		<th style="padding: 5px 8px; background-color: white; border-size: 0px; color: white;">​Inputing data</th>
 	</tr>
 	<tr>
 		<th style="padding: 5px 8px; background-color: orangered; border-size: 0px;">​Coll.</th>
-		<th style="padding: 5px 8px; background-color: white; border-size: 0px;">​​Collecting data</th>
+		<th style="padding: 5px 8px; background-color: white; border-size: 0px; color: white;">​​Collecting data</th>
 		<th style="padding: 5px 8px; background-color: grey; border-size: 0px;">Empt.</th>
-		<th style="padding: 5px 8px; background-color: white; border-size: 0px;">Empty data</th>
+		<th style="padding: 5px 8px; background-color: white; border-size: 0px; color: white;">Empty data</th>
 	</tr>
 </table>
 </center>
 <center>
-	<table style="text-align: center; border-collapse: collapse; border: 1px solid black; font-family: 宋体;">
+	<table style="text-align: center; border-collapse: collapse; border: 1px solid black;">
 		<thead style="border: 1px solid black;">
 			<tr>
 				<th style="padding: 5px 8px; border: 1px solid black;">回数</th> <th style="padding: 5px 8px; border: 1px solid black;">状态</th>
@@ -59,7 +59,7 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 				<th style="padding: 5px 8px; border: 1px solid black;">回数</th> <th style="padding: 5px 8px; border: 1px solid black;">状态</th>
 			</tr>
 		</thead>
-		<tdody>
+		<tdody style="font-family: 楷体; font-size: 18px">
 			<tr>
 				<td style="padding: 3px 5px; border: 1px solid black">第一回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
 				<td style="padding: 3px 5px; border: 1px solid black">第二回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
