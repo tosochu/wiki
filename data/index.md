@@ -34,18 +34,18 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 
 <p><h2 style="font-family: 宋体;"><center>每回数据进度</center></h2></p>
 <center>
-<table style="text-align: left; margin: 30px; font-family: 宋体;">
+<table style="text-align: left; margin: 30px; font-family: 宋体; border: none;">
 	<tr>
-		<th style="padding: 5px 8px; background-color: yellowgreen; border-size: 0px;">​Comp.</th>
-		<th style="padding: 5px 8px; background-color: white; border-size: 0px; color: white;">​​Completed</th>
-		<th style="padding: 5px 8px; background-color: orange; border-size: 0px;">​Inpt.</th>
-		<th style="padding: 5px 8px; background-color: white; border-size: 0px; color: white;">​Inputing data</th>
+		<th style="padding: 5px 8px; background-color: yellowgreen; border: none;">​Comp.</th>
+		<th style="padding: 5px 8px; background-color: white; border: none; color: black;">​​Completed</th>
+		<th style="padding: 5px 8px; background-color: orange; border: none;">​Inpt.</th>
+		<th style="padding: 5px 8px; background-color: white; border: none; color: black;">​Inputing data</th>
 	</tr>
 	<tr>
-		<th style="padding: 5px 8px; background-color: orangered; border-size: 0px;">​Coll.</th>
-		<th style="padding: 5px 8px; background-color: white; border-size: 0px; color: white;">​​Collecting data</th>
-		<th style="padding: 5px 8px; background-color: grey; border-size: 0px;">Empt.</th>
-		<th style="padding: 5px 8px; background-color: white; border-size: 0px; color: white;">Empty data</th>
+		<th style="padding: 5px 8px; background-color: orangered; border: none;">​Coll.</th>
+		<th style="padding: 5px 8px; background-color: white; border: none; color: black;">​​Collecting data</th>
+		<th style="padding: 5px 8px; background-color: grey; border: none;">Empt.</th>
+		<th style="padding: 5px 8px; background-color: white; border: none; color: black;">Empty data</th>
 	</tr>
 </table>
 </center>
