@@ -51,105 +51,105 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 </center>
 
 <center>
-	<table style="text-align: center; border-collapse: collapse; border: 1px solid black;">
-		<thead style="border: 1px solid black;">
+	<table class="data-process-detail">
+		<thead>
 			<tr>
-				<th style="padding: 5px 8px; border: 1px solid black;">回数</th> <th style="padding: 5px 8px; border: 1px solid black;">状态</th>
-				<th style="padding: 5px 8px; border: 1px solid black;">回数</th> <th style="padding: 5px 8px; border: 1px solid black;">状态</th>
-				<th style="padding: 5px 8px; border: 1px solid black;">回数</th> <th style="padding: 5px 8px; border: 1px solid black;">状态</th>
-				<th style="padding: 5px 8px; border: 1px solid black;">回数</th> <th style="padding: 5px 8px; border: 1px solid black;">状态</th>
+				<th>回数</th><th>状态</th>
+				<th>回数</th><th>状态</th>
+				<th>回数</th><th>状态</th>
+				<th>回数</th><th>状态</th>
 			</tr>
 		</thead>
-		<tdody style="font-family: 楷体; font-size: 18px">
+		<tdody>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第一回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第二回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第四回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第一回</td><td class="completed">Comp.</td>
+				<td>第二回</td><td class="completed">Comp.</td>
+				<td>第三回</td><td class="completed">Comp.</td>
+				<td>第四回</td><td class="completed">Comp.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第五回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第六回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第七回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第八回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第五回</td><td class="completed">Comp.</td>
+				<td>第六回</td><td class="completed">Comp.</td>
+				<td>第七回</td><td class="completed">Comp.</td>
+				<td>第八回</td><td class="completed">Comp.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第九回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第十回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第十一回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第十二回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: orange;">Inpt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第九回</td><td class="completed">Comp.</td>
+				<td>第十回</td><td class="completed">Comp.</td>
+				<td>第十一回</td><td class="completed">Comp.</td>
+				<td>第十二回</td><td class="inputing">Inpt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第十三回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第十四回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第十五回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第十六回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第十三回</td><td class="empty">Empt.</td>
+				<td>第十四回</td><td class="empty">Empt.</td>
+				<td>第十五回</td><td class="empty">Empt.</td>
+				<td>第十六回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第十七回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第十八回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第十九回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第二十回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第十七回</td><td class="completed">Comp.</td>
+				<td>第十八回</td><td class="completed">Comp.</td>
+				<td>第十九回</td><td class="empty">Empt.</td>
+				<td>第二十回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第二十一回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第二十二回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第二十三回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第二十四回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第二十一回</td><td class="empty">Empt.</td>
+				<td>第二十二回</td><td class="empty">Empt.</td>
+				<td>第二十三回</td><td class="empty">Empt.</td>
+				<td>第二十四回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第二十五回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第二十六回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第二十七回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第二十八回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第二十五回</td><td class="completed">Comp.</td>
+				<td>第二十六回</td><td class="empty">Empt.</td>
+				<td>第二十七回</td><td class="empty">Empt.</td>
+				<td>第二十八回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第二十九回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三十回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三十一回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: orangered;">Coll.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三十二回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第二十九回</td><td class="empty">Empt.</td>
+				<td>第三十回</td><td class="empty">Empt.</td>
+				<td>第三十一回</td><td class="collecting">Coll.</td>
+				<td>第三十二回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第三十三回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三十四回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三十五回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三十六回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第三十三回</td><td class="empty">Empt.</td>
+				<td>第三十四回</td><td class="empty">Empt.</td>
+				<td>第三十五回</td><td class="completed">Comp.</td>
+				<td>第三十六回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第三十七回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三十八回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第三十九回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第四十回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第三十七回</td><td class="empty">Empt.</td>
+				<td>第三十八回</td><td class="completed">Comp.</td>
+				<td>第三十九回</td><td class="completed">Comp.</td>
+				<td>第四十回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第四十一回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第四十二回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第四十三回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第四十四回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第四十一回</td><td class="empty">Empt.</td>
+				<td>第四十二回</td><td class="empty">Empt.</td>
+				<td>第四十三回</td><td class="completed">Comp.</td>
+				<td>第四十四回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第四十五回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第四十六回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第四十七回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第四十八回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第四十五回</td><td class="empty">Empt.</td>
+				<td>第四十六回</td><td class="completed">Comp.</td>
+				<td>第四十七回</td><td class="empty">Empt.</td>
+				<td>第四十八回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第四十九回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第五十回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第五十一回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第五十二回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第四十九回</td><td class="completed">Comp.</td>
+				<td>第五十回</td><td class="empty">Empt.</td>
+				<td>第五十一回</td><td class="empty">Empt.</td>
+				<td>第五十二回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第五十三回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第五十四回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第五十五回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第五十六回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第五十三回</td><td class="empty">Empt.</td>
+				<td>第五十四回</td><td class="empty">Empt.</td>
+				<td>第五十五回</td><td class="empty">Empt.</td>
+				<td>第五十六回</td><td class="completed">Comp.</td>
 			</tr>
 			<tr>
-				<td style="padding: 3px 5px; border: 1px solid black">第五十七回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第五十八回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第五十九回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: grey;">Empt.</td style="padding: 3px 5px; border: 1px solid black">
-				<td style="padding: 3px 5px; border: 1px solid black">第六十回</td style="padding: 3px 5px; border: 1px solid black"> <td style="padding: 3px 5px; border: 1px solid black; background-color: yellowgreen;">Comp.</td style="padding: 3px 5px; border: 1px solid black">
+				<td>第五十七回</td><td class="empty">Empt.</td>
+				<td>第五十八回</td><td class="empty">Empt.</td>
+				<td>第五十九回</td><td class="empty">Empt.</td>
+				<td>第六十回</td><td class="completed">Comp.</td>
 			</tr>
 		</tdody>
 	</table>
