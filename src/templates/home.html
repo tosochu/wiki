@@ -1,3 +1,77 @@
 <div class="topan-section-shadow">
     <%- README %>
 </div>
+
+<style>
+    table.data-process-tip {
+        text-align: left;
+        margin: 30px;
+        font-family: 宋体;
+        border: none;
+    }
+
+    table .data-process-tip-text {
+        padding: 5px 8px !important;
+        background-color: white;
+        border: none !important;
+        color: black;
+    }
+
+    table .data-process-tip-block {
+        padding: 5px 8px !important;
+        border: none;
+    }
+
+    table.data-process-detail {
+        text-align: center;
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+
+    table.data-process-detail>thead {
+        border: 1px solid black;
+    }
+
+    table.data-process-detail>thead>tr>th {
+        padding: 5px 8px;
+        border: 1px solid black;
+    }
+
+    table.data-process-detail>tbody {
+        font-family: 楷体;
+        font-size: 18px;
+    }
+
+    table.data-process-detail>tbody>tr>td {
+        padding: 3px 5px;
+        border: 1px solid black;
+    }
+
+    .data-process-detail a {
+        color: black !important;
+    }
+
+    .data-process-detail a::after {
+        background-color: black !important;
+    }
+
+    .data-process-tip .completed,
+    .data-process-detail .completed {
+        background-color: yellowgreen;
+    }
+
+    .data-process-tip .inputing,
+    .data-process-detail .inputing {
+        background-color: orange;
+    }
+
+    .data-process-tip .collecting,
+    .data-process-detail .collecting {
+        background-color: orangered;
+    }
+
+    .data-process-tip .empty,
+    .data-process-detail .empty {
+        background-color: grey;
+    }
+</style>
