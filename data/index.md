@@ -44,7 +44,7 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 	<tr>
 		<th class="data-process-tip-block ​collecting">​Coll.</th>
 		<th class="data-process-tip-text">​​Collecting data</th>
-		<th style="data-process-tip-block ​collecting">Empt.</th>
+		<th class="data-process-tip-block empty">Empt.</th>
 		<th class="data-process-tip-text">Empty data</th>
 	</tr>
 </table>
@@ -60,7 +60,7 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 				<th>回数</th><th>状态</th>
 			</tr>
 		</thead>
-		<tdody>
+		<tbody>
 			<tr>
 				<td><a href="/wiki/game/1.html">第一回</a></td><td class="completed">Comp.</td>
 				<td><a href="/wiki/game/2.html">第二回</a></td><td class="completed">Comp.</td>
@@ -151,6 +151,8 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 				<td>第五十九回</td><td class="empty">Empt.</td>
 				<td><a href="/wiki/game/60.html">第六十回</a></td><td class="completed">Comp.</td>
 			</tr>
-		</tdody>
+		</tbody>
 	</table>
 </center>
+
+[]()
