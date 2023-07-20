@@ -34,21 +34,22 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 
 <p><h2 style="font-family: 宋体;"><center>每回数据进度</center></h2></p>
 <center>
-<table style="text-align: left; margin: 30px; font-family: 宋体; border: none;">
+<table class="data-process-tip">
 	<tr>
-		<th style="padding: 5px 8px; background-color: yellowgreen; border: none;">​Comp.</th>
-		<th style="padding: 5px 8px; background-color: white; border: none; color: black;">​​Completed</th>
-		<th style="padding: 5px 8px; background-color: orange; border: none;">​Inpt.</th>
-		<th style="padding: 5px 8px; background-color: white; border: none; color: black;">​Inputing data</th>
+		<th class="data-process-tip-block completed">​Comp.</th>
+		<th class="data-process-tip-text">​​Completed</th>
+		<th class="data-process-tip-block inputing">​Inpt.</th>
+		<th class="data-process-tip-text">​Inputing data</th>
 	</tr>
 	<tr>
-		<th style="padding: 5px 8px; background-color: orangered; border: none;">​Coll.</th>
-		<th style="padding: 5px 8px; background-color: white; border: none; color: black;">​​Collecting data</th>
-		<th style="padding: 5px 8px; background-color: grey; border: none;">Empt.</th>
-		<th style="padding: 5px 8px; background-color: white; border: none; color: black;">Empty data</th>
+		<th class="data-process-tip-block ​collecting">​Coll.</th>
+		<th class="data-process-tip-text">​​Collecting data</th>
+		<th style="data-process-tip-block ​collecting">Empt.</th>
+		<th class="data-process-tip-text">Empty data</th>
 	</tr>
 </table>
 </center>
+
 <center>
 	<table style="text-align: center; border-collapse: collapse; border: 1px solid black;">
 		<thead style="border: 1px solid black;">
