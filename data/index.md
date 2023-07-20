@@ -62,21 +62,21 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 		</thead>
 		<tdody>
 			<tr>
-				<td>第一回</td><td class="completed">Comp.</td>
-				<td>第二回</td><td class="completed">Comp.</td>
-				<td>第三回</td><td class="completed">Comp.</td>
-				<td>第四回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/1.html">第一回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/2.html">第二回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/3.html">第三回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/4.html">第四回</a></td><td class="completed">Comp.</td>
 			</tr>
 			<tr>
-				<td>第五回</td><td class="completed">Comp.</td>
-				<td>第六回</td><td class="completed">Comp.</td>
-				<td>第七回</td><td class="completed">Comp.</td>
-				<td>第八回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/5.html">第五回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/6.html">第六回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/7.html">第七回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/8.html">第八回</a></td><td class="completed">Comp.</td>
 			</tr>
 			<tr>
-				<td>第九回</td><td class="completed">Comp.</td>
-				<td>第十回</td><td class="completed">Comp.</td>
-				<td>第十一回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/9.html">第九回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/10.html">第十回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/11.html">第十一回</a></td><td class="completed">Comp.</td>
 				<td>第十二回</td><td class="inputing">Inpt.</td>
 			</tr>
 			<tr>
@@ -86,8 +86,8 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 				<td>第十六回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td>第十七回</td><td class="completed">Comp.</td>
-				<td>第十八回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/17.html">第十七回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/18.html">第十八回</a></td><td class="completed">Comp.</td>
 				<td>第十九回</td><td class="empty">Empt.</td>
 				<td>第二十回</td><td class="empty">Empt.</td>
 			</tr>
@@ -98,7 +98,7 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 				<td>第二十四回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td>第二十五回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/25.html">第二十五回</a></td><td class="completed">Comp.</td>
 				<td>第二十六回</td><td class="empty">Empt.</td>
 				<td>第二十七回</td><td class="empty">Empt.</td>
 				<td>第二十八回</td><td class="empty">Empt.</td>
@@ -112,29 +112,29 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 			<tr>
 				<td>第三十三回</td><td class="empty">Empt.</td>
 				<td>第三十四回</td><td class="empty">Empt.</td>
-				<td>第三十五回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/35.html">第三十五回</a></td><td class="completed">Comp.</td>
 				<td>第三十六回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
 				<td>第三十七回</td><td class="empty">Empt.</td>
-				<td>第三十八回</td><td class="completed">Comp.</td>
-				<td>第三十九回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/38.html">第三十八回</a></td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/39.html">第三十九回</a></td><td class="completed">Comp.</td>
 				<td>第四十回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
 				<td>第四十一回</td><td class="empty">Empt.</td>
 				<td>第四十二回</td><td class="empty">Empt.</td>
-				<td>第四十三回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/43.html">第四十三回</a></td><td class="completed">Comp.</td>
 				<td>第四十四回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
 				<td>第四十五回</td><td class="empty">Empt.</td>
-				<td>第四十六回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/46.html">第四十六回</a></td><td class="completed">Comp.</td>
 				<td>第四十七回</td><td class="empty">Empt.</td>
 				<td>第四十八回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
-				<td>第四十九回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/49.html">第四十九回</a></td><td class="completed">Comp.</td>
 				<td>第五十回</td><td class="empty">Empt.</td>
 				<td>第五十一回</td><td class="empty">Empt.</td>
 				<td>第五十二回</td><td class="empty">Empt.</td>
@@ -143,13 +143,13 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 				<td>第五十三回</td><td class="empty">Empt.</td>
 				<td>第五十四回</td><td class="empty">Empt.</td>
 				<td>第五十五回</td><td class="empty">Empt.</td>
-				<td>第五十六回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/56.html">第五十六回</a></td><td class="completed">Comp.</td>
 			</tr>
 			<tr>
 				<td>第五十七回</td><td class="empty">Empt.</td>
 				<td>第五十八回</td><td class="empty">Empt.</td>
 				<td>第五十九回</td><td class="empty">Empt.</td>
-				<td>第六十回</td><td class="completed">Comp.</td>
+				<td><a href="/wiki/game/60.html">第六十回</a></td><td class="completed">Comp.</td>
 			</tr>
 		</tdody>
 	</table>
