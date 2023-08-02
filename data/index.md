@@ -42,7 +42,7 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 		<th class="data-process-tip-text">​Inputing data</th>
 	</tr>
 	<tr>
-		<th class="data-process-tip-block ​collecting">​Coll.</th>
+		<th class="data-process-tip-block collecting">​Coll.</th>
 		<th class="data-process-tip-text">​​Collecting data</th>
 		<th class="data-process-tip-block empty">Empt.</th>
 		<th class="data-process-tip-text">Empty data</th>
