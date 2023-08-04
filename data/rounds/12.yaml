@@ -4,6 +4,11 @@ data: 2009-09-26
 # video: 
 description: description
 chart: 
+  - time: 0 min
+    money: 0
+  - time: 80 min
+    money: 960000
+message: 
   - person: misono
     time: 79:40
     type: catched
@@ -31,7 +36,8 @@ chart:
   - person: 設楽統
     time: 45:01
     type: win
-    description: guess the players who complete the mission correctly.
+    money: 10000
+    description: ミッションをクリアした二人の逃走者を当てたので10万円を獲得。
   - person: コカドケンタロウ
     time: 34:50
     type: revive
