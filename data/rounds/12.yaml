@@ -1,0 +1,62 @@
+title: USJ
+length: 80
+data: 2009-09-26
+# video: 
+description: description
+chart: 
+  - person: misono
+    time: 79:40
+    type: catched
+  - person: エリック・ワイナイナ
+    time: 71:06
+    type: catched
+  - person: 村上健志
+    time: 66:53
+    type: catched
+  - person: 設楽統
+    time: 63:33
+    type: catched
+  - person: コカドケンタロウ
+    time: 61:09
+    type: catched
+  - person: ローラ・チャン
+    time: 56:22
+    type: catched
+  - person: 神戸蘭子
+    time: 50:01
+    type: catched
+  - person: 石井慧
+    time: 48:52
+    type: catched
+  - person: 設楽統
+    time: 45:01
+    type: win
+    description: guess the players who complete the mission correctly.
+  - person: コカドケンタロウ
+    time: 34:50
+    type: revive
+    reviver: 田中卓志
+  - person: 亘健太郎
+    time: 31:31
+    type: catched
+  - person: コカドケンタロウ
+    time: 25:21
+    type: catched
+  - person: 北斗晶
+    time: 20:11
+    type: catched
+  - person: 内藤大助
+    time: 15:19
+    type: catched
+  - person: 木下隆行
+    time: 12:32
+    type: catched
+  - person: 田中卓志
+    time: 7:30
+    type: catched
+  - person: 西山茉希
+    time: 3:04
+    type: catched
+  - person: 中岡創一
+    money: 960000
+    type: win
