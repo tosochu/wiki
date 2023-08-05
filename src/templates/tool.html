@@ -77,21 +77,57 @@
                 });
                 window.editor=editor;
 
-                window.nowFileRoundId=<%= data.games[0].id %>;
+                window.rounds=[<%= data.games.map(x=>x.id).toString() %>];
+                for(var key in localStorage){
+                    if(/^tosochuwiki\/round\/[1-9][0-9]*$/.test(key)){
+                        const rid=/^tosochuwiki\/round\/([1-9][0-9]*)$/.exec(key)[1];
+                        if(!window.rounds.includes(Number(rid)))
+                            window.rounds.push(Number(rid));
+                    }
+                }
+                function buildSelector(){
+                    var html=window.rounds.map(x=>`<option value="${x}">第 ${x} 回</option>`);
+                    html=`<option value="new">添加新回合</option>`+html;
+                    $('.round-selector').html(html);
+                }
+
+                buildSelector();
+                $('.round-selector').val(String(window.rounds[0]));
+
+                window.nowFileRoundId=window.rounds[0];
                 await LoadRound(window.nowFileRoundId);
 
                 $('#round-selector').change(async()=>{
-                    window.nowFileRoundId=Number($('#round-selector').val());
-                    await LoadRound(window.nowFileRoundId);
+                    if($('#round-selector').val()=='new'){
+                        const rid=window.prompt(`请输入回数`);
+                        if(!/^[1-9][0-9]*$/.test(rid)||rid.length>10)window.alert('请输入正整数');
+                        else if(window.rounds.includes(Number(rid)))window.alert('该回合已存在。');
+                        else{
+                            window.rounds.push(Number(rid));
+                            buildSelector();
+                            $('.round-selector').val(rid);
+                            localStorage.setItem(`tosochuwiki/round/${rid}`,`title: Title
+length: 60
+date: 2023-01-01
+message: 
+  - person: Person
+    type: win
+    money: 100`);
+                            window.nowFileRoundId=Number(rid);
+                            await LoadRound(window.nowFileRoundId);
+                        }
+                    }
+                    else{
+                        window.nowFileRoundId=Number($('#round-selector').val());
+                        await LoadRound(window.nowFileRoundId);
+                    }
                 });
             });
         </script>
     </head>
     <body>
         <select name="round-selector" id="round-selector" class="round-selector">
-        <% data.games.forEach(game=>{ %>
-            <option value="<%= game.id %>">第 <%= game.id %> 回</option>
-        <% }); %>
+            <option value="new">添加新回合</option>
         </select>
         <pre id="yaml-file" class="ace_editor" style="min-height: 400px;">
             <textarea class="ace_text-input"></textarea>
