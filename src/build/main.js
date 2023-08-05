@@ -224,6 +224,10 @@ Config.games.forEach((game,index)=>{
                       header: ``,
                       ongame: true
                      },HTML));
+        fs.writeFileSync(
+            `./dist/game/${game.id}.yaml`,
+            fs.readFileSync(`./data/${game.file}`,'utf8')
+        );
     });
 });
 
@@ -283,6 +287,12 @@ ejs.renderFile("./src/templates/player_list.html",{
                   header: ``,
                   onplayer: true
                  },HTML));
+});
+
+ejs.renderFile("./src/templates/tool.html",{
+    data: Config
+},(err,HTML)=>{
+    fs.writeFileSync("./dist/tool.html",HTML);
 });
 
 if(process.argv.slice(2).includes("-github")){
