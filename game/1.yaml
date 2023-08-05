@@ -1,0 +1,38 @@
+title: 渋谷
+length: 50
+description: description
+date: 2004-10-01
+video: BV1my4y1p73p
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 50 min
+    money: 390000
+message: 
+  - person: 定岡正二
+    type: catched
+    time: 2289
+  - person: 原史奈
+    type: catched
+    time: 2377
+  - person: ニコラス・ペタス
+    type: catched
+    time: 1788
+  - person: ふかわりょう
+    type: catched
+    time: 1419
+  - person: 遠藤久美子
+    type: catched
+    time: 1281
+  - person: KABA.ちゃん
+    type: catched
+    time: 827
+  - person: 梨花
+    type: catched
+    time: 308
+  - person: ウエンツ瑛士
+    type: catched
+    time: 92
+  - person: 保坂尚輝
+    type: win
+    money: 390000

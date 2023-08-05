@@ -1,0 +1,69 @@
+title: どうぶつ島を攻略せよ！
+description: description
+length: 100
+date: 2016-03-05
+video: BV1P3411H73s
+message: 
+  - person: [澤部佑, 白洲迅, ぺえ, 橋本良亮, 村本大輔, 八重樫東, 須賀健太, 伊藤一朗]
+    type: companion-save
+    time: 80:53
+    saver: 水谷隼
+  - person: 白洲迅
+    type: catched
+    time: 76:15
+  - person: ぺえ
+    type: catched
+    time: 69:05
+  - person: 伊藤一朗
+    type: catched
+    time: 66:07
+  - person: 加藤諒
+    type: catched
+    time: 62:08
+  - person: 塚田僚一
+    type: catched
+    time: 56:21
+  - person: 須賀健太
+    type: catched
+    time: 45:33
+  - person: 村本大輔
+    type: catched
+    time: 44:09
+  - person: 澤部佑
+    type: catched
+    time: 39:14
+  - person: ぺえ
+    type: revive
+    time: 36:03
+    reviver: 岡田結実
+  - person: 千秋
+    type: catched
+    time: 31:44
+  - person: 柳沢慎吾
+    type: catched
+    time: 27:40
+  - person: 八重樫東
+    type: catched
+    time: 27:20
+  - person: 水谷隼
+    type: catched
+    time: 25:29
+  - person: ぺえ
+    type: catched
+    time: 15:03
+  - person: 橋本良亮
+    type: catched
+    time: 4:22
+  - person: 藤田ニコル
+    type: catched
+    time: 1:59
+  - person: りゅうちぇる
+    type: catched
+    time: 1:32
+  - person: 岡田結実
+    type: win
+    money: 600000
+  - person: ぺえ
+    type: companion-win
+    money: 600000
+    rely: 岡田結実

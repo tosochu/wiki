@@ -1,0 +1,48 @@
+title: 渋谷2
+length: 60
+description: description
+date: 2004-12-28
+video: BV1Bs411S7jB
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 60 min
+    money: 600000
+message:
+  - type: catched
+    time: 54:56
+    person: 嶋大輔
+  - type: catched
+    time: 51:01
+    person: 藤崎奈々子
+  - type: catched
+    time: 43:38
+    person: 森下千里
+  - type: waiver
+    time: 39:28
+    person: 浅香唯
+    money: 129200
+  - type: catched
+    time: 38:22
+    person: 島崎和歌子
+  - type: catched
+    time: 34:57
+    person: セイン・カミュ
+  - type: catched
+    time: 25:11
+    person: 出川哲朗
+  - type: catched
+    time: 15:02
+    person: ゴルゴ松本
+  - type: catched
+    time: 9:08
+    person: 金子貴俊
+  - type: catched
+    time: 0:50
+    person: 袴田吉彦
+  - type: win
+    money: 600000
+    person: 岡田義徳
+  - type: win
+    money: 600000
+    person: 平畠啓史

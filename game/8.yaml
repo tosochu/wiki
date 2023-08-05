@@ -1,0 +1,56 @@
+title: 浅草
+length: 60
+date: 2008-10-02
+# video: 
+description: description
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 30 min
+    money: 180000
+  - time: 60 min
+    money: 540000
+message: 
+  - time: 59:33
+    person: 山田ルイ53世
+    type: catched
+  - time: 55:55
+    person: 原西孝幸
+    type: catched
+  - time: 50:32
+    person: 鈴木Q太郎
+    type: catched
+  - time: 42:12
+    person: ひぐち君
+    type: catched
+  - time: 33:24
+    person: 鼠先輩
+    type: catched
+  - time: 30:40
+    person: 石川梨華
+    type: catched
+  - time: 24:56
+    person: 五十嵐隼士
+    type: catched
+  - time: 20:37
+    person: 南明奈
+    type: catched
+  - time: 14:14
+    person: はるな愛
+    type: catched
+  - time: 12:06
+    person: 藤本敏史
+    type: catched
+  - time: 21:39
+    person: misono
+    type: waiver
+    money: 439800
+  - time: 3:19
+    person: 内藤大助
+    type: catched
+  - money: 540000
+    person: 宮川大輔
+    type: win
+  - money: 540000
+    person: 吉澤ひとみ
+    type: win

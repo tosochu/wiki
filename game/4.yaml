@@ -1,0 +1,42 @@
+title: お台場
+length: 60
+date: 2006-09-26
+description: description
+chart:
+  - time: 0 min
+    money: 0
+  - time: 30 min
+    money: 300000
+  - time: 50 min
+    money: 540000
+  - time: 60 min
+    money: 600000
+message:
+  - type: catched
+    time: 51:21
+    person: 大沢あかね
+  - type: catched
+    time: 47:27
+    person: さとう珠緒
+  - type: catched
+    time: 33:00
+    person: 城咲仁
+  - type: catched
+    time: 27:14
+    person: 磯山さやか
+  - type: waiver
+    time: 18:45
+    person: 石本沙織
+    money: 315000
+  - type: catched
+    time: 16:39
+    person: ウエンツ瑛士
+  - type: catched
+    time: 8:15
+    person: 板倉俊之
+  - type: catched
+    time: 2:31
+    person: 佐々木健介
+  - type: win
+    money: 600000
+    person: 品川祐

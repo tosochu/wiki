@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title id="title">开发者工具</title>
+        <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
+        <script src="https://molmin.github.io/yaml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+        <style>
+            .round-selector{
+                position: fixed;
+                top: 5px; left: 5px;
+                width: 100px; height: 20px;
+            }
+            .tip{
+                position: fixed;
+                top: 5px; left: 110px;
+                margin: 0;
+            }
+            #yaml-file{
+                position: fixed;
+                top: 30px; left: 5px;
+                width: 600px; height: calc(100% - 35px);
+                margin: 0;
+            }
+        </style>
+        <script>
+            async function CheckFile(){
+                $('.tip').text(`正在检查……`);
+                try{
+                    var json=window.yaml_parser(window.editor.getValue());
+                    if(!json.title||!json.date||!json.length||!json.message)
+                        throw "必须包含 title，date，length 和 message 字段。";
+                    json.message.forEach(m=>{
+                        if(!m.person)throw "每条记录必须包含玩家信息。";
+                    });
+                    $('.tip').text("检查通过。");
+                    localStorage.setItem(`tosochuwiki/round/${window.nowFileRoundId}`,window.editor.getValue());
+                }catch(err){
+                    $('.tip').text(err.message || String(err));
+                }
+            }
+
+            var timer;
+
+            async function LoadRound(id){
+                if(timer)clearInterval(timer);
+                var file;
+                if(localStorage.getItem(`tosochuwiki/round/${id}`))
+                    file=localStorage.getItem(`tosochuwiki/round/${id}`);
+                else{
+                    var response=await fetch(`/wiki/game/${id}.yaml`);
+                    if(response.status!=200)return;
+                    file=await response.text();
+                }
+                window.editor.setValue(file);
+                await CheckFile();
+                setInterval(CheckFile,1000);
+            }
+
+            $(document).ready(async()=>{
+                editor = ace.edit("yaml-file");
+                theme = "clouds"
+                language = "yaml"
+                editor.setTheme("ace/theme/" + theme);
+                editor.session.setMode("ace/mode/" + language);
+                editor.setFontSize(18);
+                editor.setReadOnly(false); 
+                editor.setOption("wrap", "free")
+                ace.require("ace/ext/language_tools");
+                editor.setOptions({
+                    enableBasicAutocompletion: true,
+                    enableSnippets: true,
+                    enableLiveAutocompletion: true
+                });
+                window.editor=editor;
+
+                window.rounds=[1,2,3,4,5,6,7,8,9,10,11,12,17,18,25,35,38,39,43,46,49,56,60];
+                for(var key in localStorage){
+                    if(/^tosochuwiki\/round\/[1-9][0-9]*$/.test(key)){
+                        const rid=/^tosochuwiki\/round\/([1-9][0-9]*)$/.exec(key)[1];
+                        if(!window.rounds.includes(Number(rid)))
+                            window.rounds.push(Number(rid));
+                    }
+                }
+                function buildSelector(){
+                    var html=window.rounds.map(x=>`<option value="${x}">第 ${x} 回</option>`);
+                    html=`<option value="new">添加新回合</option>`+html;
+                    $('.round-selector').html(html);
+                }
+
+                buildSelector();
+                $('.round-selector').val(String(window.rounds[0]));
+
+                window.nowFileRoundId=window.rounds[0];
+                await LoadRound(window.nowFileRoundId);
+
+                $('#round-selector').change(async()=>{
+                    if($('#round-selector').val()=='new'){
+                        const rid=window.prompt(`请输入回数`);
+                        if(!/^[1-9][0-9]*$/.test(rid)||rid.length>10)window.alert('请输入正整数');
+                        else if(window.rounds.includes(Number(rid)))window.alert('该回合已存在。');
+                        else{
+                            window.rounds.push(Number(rid));
+                            buildSelector();
+                            $('.round-selector').val(rid);
+                            localStorage.setItem(`tosochuwiki/round/${rid}`,`title: Title
+length: 60
+date: 2023-01-01
+message: 
+  - person: Person
+    type: win
+    money: 100`);
+                            window.nowFileRoundId=Number(rid);
+                            await LoadRound(window.nowFileRoundId);
+                        }
+                    }
+                    else{
+                        window.nowFileRoundId=Number($('#round-selector').val());
+                        await LoadRound(window.nowFileRoundId);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <select name="round-selector" id="round-selector" class="round-selector">
+            <option value="new">添加新回合</option>
+        </select>
+        <pre id="yaml-file" class="ace_editor" style="min-height: 400px;">
+            <textarea class="ace_text-input"></textarea>
+        </pre>
+        <p class="tip">程序启动中</p>
+    </body>
+</html>

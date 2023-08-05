@@ -1,0 +1,76 @@
+title: お台場2
+length: 70
+description: |
+  
+date: 2008-04-22
+video: BV17x411S78p
+message: 
+  - type: openning-game
+    person: [藤原時, 南明奈, エド・はるみ, 田崎佑一, 木下優樹菜]
+    time: 70:00
+  - type: catched
+    person: 野久保直樹
+    time: 65:24
+  - type: catched
+    time: 62:33
+    person: 上地雄輔
+  - type: catched
+    time: 56:22
+    person: たむらけんじ
+  - type: catched
+    time: 47:26
+    person: 箕輪はるか
+  - type: catched
+    time: 38:01
+    person: 泰葉
+  - type: catched
+    time: 31:57
+    person: 吉田敬
+  - type: catched
+    time: 29:20
+    person: ルー大柴
+  - type: catched
+    time: 25:36
+    person: くわばたりえ
+  - type: catched
+    time: 22:19
+    person: 小杉竜一
+  - type: catched
+    time: 17:03
+    person: 桜庭和志
+  - type: catched
+    time: 7:38
+    person: 花田勝
+  - type: catched
+    time: 4:26
+    person: 近藤春菜
+  - type: win
+    person: 矢口真里
+    money: 1260000
+  - type: win
+    person: 眞鍋かをり
+    money: 1260000
+  - type: win
+    person: 川合俊一
+    money: 1260000
+  - type: win
+    person: 岩尾望
+    money: 1260000
+  - type: win
+    person: 和泉元彌
+    money: 1260000
+  - type: money-game-catched
+    person: 岩尾望
+    money: -1260000
+  - type: money-game-catched
+    person: 眞鍋かをり
+    money: -1260000
+  - type: money-game-catched
+    person: 川合俊一
+    money: -1260000
+  - type: money-game-catched
+    person: 和泉元彌
+    money: -1260000
+  - type: money-game-win
+    person: 矢口真里
+    money: 740000
