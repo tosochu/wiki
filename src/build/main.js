@@ -285,6 +285,11 @@ ejs.renderFile("./src/templates/player_list.html",{
                  },HTML));
 });
 
+fs.writeFileSync(
+    "dist/dev.html",
+    fs.readFileSync('src/public/dev.html', 'utf8')
+);
+
 if(process.argv.slice(2).includes("-github")){
     const ghpages=require('gh-pages');
     ghpages.publish('dist',console.log);
