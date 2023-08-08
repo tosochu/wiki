@@ -16,6 +16,7 @@ jobs:
         npm install
         npm run dev:build
         cat dist/index.html
+        echo -e '\n\n\n'
         cat rounds-check-result
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@v4
