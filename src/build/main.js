@@ -66,11 +66,11 @@ Config.games.forEach((game,index)=>{
     var timeline={};
     {
         var {status,text}=Checker(detail);
-        if(status==0)rounds_check_result+=`Round ${game.id}: Very Good!\n`;
+        if(status==0)rounds_check_result.text+=`Round ${game.id}: Very Good!\n`;
         else if(status==1)rounds_check_result.warn++,
-            rounds_check_result+=`Round ${game.id}: Get Warnings: ${text.join('')}\n`;
+            rounds_check_result.text+=`Round ${game.id}: Get Warnings: ${text.join('')}\n`;
         else rounds_check_result.err++,
-            rounds_check_result+=`Round ${game.id}: Get Error: ${text}\n`;
+            rounds_check_result.text+=`Round ${game.id}: Get Error: ${text}\n`;
     }
     detail.message.forEach((message)=>{
         if(typeof message.person=="string"){
