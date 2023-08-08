@@ -3,6 +3,7 @@ const path=require('path');
 const ejs=require('ejs');
 const Template=require('./template.js');
 const Player=require('./player.js');
+const Checker=require('./check.js');
 
 const YAML=require('yamljs');
 var Config=YAML.load('./data/config.yaml');
@@ -58,10 +59,19 @@ ejs.renderFile("./src/templates/home.html",{
 
 Config.player=new Array();
 var playerSet=new Set();
+var rounds_check_result={text:``,err:0,warn:0};
 
 Config.games.forEach((game,index)=>{
     var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
     var timeline={};
+    {
+        var {status,text}=Checker(detail);
+        if(status==0)rounds_check_result+=`Round ${game.id}: Very Good!\n`;
+        else if(status==1)rounds_check_result.warn++,
+            rounds_check_result+=`Round ${game.id}: Get Warnings: ${text.join('')}\n`;
+        else rounds_check_result.err++,
+            rounds_check_result+=`Round ${game.id}: Get Error: ${text}\n`;
+    }
     detail.message.forEach((message)=>{
         if(typeof message.person=="string"){
             var temp=message.person;
@@ -294,6 +304,13 @@ ejs.renderFile("./src/templates/tool.html",{
 },(err,HTML)=>{
     fs.writeFileSync("./dist/tool.html",HTML);
 });
+
+fs.writeFileSync(
+    "rounds-check-result",
+    `Total Found ${rounds_check_result.err} Rounds Get Errors.\n`
+  + `Total Found ${rounds_check_result.warn} Rounds Get Warnings.\n`
+  + rounds_check_result.text
+);
 
 if(process.argv.slice(2).includes("-github")){
     const ghpages=require('gh-pages');

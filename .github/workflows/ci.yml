@@ -14,3 +14,4 @@ jobs:
         npm install
         npm run dev:build
         cat dist/index.html
+        cat rounds-check-result
