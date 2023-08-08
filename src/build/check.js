@@ -26,4 +26,5 @@ module.exports = (json) => {
     catch (e) {
         _return = { status: 2, text: err.message || String(err) };
     }
+    return _return;
 }
