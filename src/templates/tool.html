@@ -50,7 +50,7 @@
                     if(!json.chart)warnings.push('缺失奖金变更图。');
                     else{
                         json.chart.forEach(x=>{
-                            if(!x.time||!x.money)throw "图表数据不合法。";
+                            if(!x.time||(!x.money&&x.money!=0))throw "图表数据不合法。";
                         });
                     }
                     if(warnings.length)$('.tip').text(warnings.join(''));
