@@ -27,6 +27,8 @@
             }
         </style>
         <script>
+            const check_result={"1":0,"2":0,"3":0,"4":1,"5":1,"6":1,"7":1,"8":1,"9":1,"10":0,"11":1,"12":1,"17":1,"18":0,"25":1,"35":1,"38":1,"39":0,"43":1,"46":1,"49":1,"56":1,"60":1};
+
             async function CheckFile(){
                 $('.tip').text(`正在检查……`);
                 var warnings=new Array();
@@ -102,7 +104,13 @@
                     }
                 }
                 function buildSelector(){
-                    var html=window.rounds.map(x=>`<option value="${x}">第 ${x} 回</option>`);
+                    var html=window.rounds.map(x=>{
+                        if(check_result[String(x)]==2)
+                            return `<option value="${x}" style="background-color: red;">第 ${x} 回</option>`;
+                        if(check_result[String(x)]==1)
+                            return `<option value="${x}" style="background-color: orange;">第 ${x} 回</option>`;
+                        return `<option value="${x}">第 ${x} 回</option>`;
+                    });
                     html=`<option value="new">添加新回合</option>`+html;
                     $('.round-selector').html(html);
                 }
