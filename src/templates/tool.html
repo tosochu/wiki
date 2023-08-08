@@ -39,7 +39,7 @@
                         if(!m.type)throw "每条记录必须有一个类型。";
                         if(![
                             'catched','waiver','win','revive',
-                            'companion-win','money-game',
+                            'companion-win','money-game','openning-game',
                             'money-game-catched','money-game-win'
                         ].includes(m.type))throw "类型不合法。";
                         if(m.type=='revive'&&!m.reviver)throw "复活必须包含第二方玩家。";
