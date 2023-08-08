@@ -59,13 +59,15 @@ ejs.renderFile("./src/templates/home.html",{
 
 Config.player=new Array();
 var playerSet=new Set();
-var rounds_check_result={text:``,err:0,warn:0};
+var rounds_check_result={text:``,err:0,warn:0},
+    rounds_check_render={};
 
 Config.games.forEach((game,index)=>{
     var detail=YAML.load(`./data/${game.file}`),playerset=new Set(),players=new Array();
     var timeline={};
     {
         var {status,text}=Checker(detail);
+        rounds_check_render[String(game.id)]=status;
         if(status==0)rounds_check_result.text+=`Round ${game.id}: Very Good!\n`;
         else if(status==1)rounds_check_result.warn++,
             rounds_check_result.text+=`Round ${game.id}: Get Warnings: ${text.join('')}\n`;
@@ -300,7 +302,7 @@ ejs.renderFile("./src/templates/player_list.html",{
 });
 
 ejs.renderFile("./src/templates/tool.html",{
-    data: Config
+    data: Config, check: rounds_check_render
 },(err,HTML)=>{
     fs.writeFileSync("./dist/tool.html",HTML);
 });

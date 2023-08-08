@@ -27,6 +27,8 @@
             }
         </style>
         <script>
+            const check_result=<%- JSON.stringify(check) %>;
+
             async function CheckFile(){
                 $('.tip').text(`正在检查……`);
                 var warnings=new Array();
@@ -102,7 +104,13 @@
                     }
                 }
                 function buildSelector(){
-                    var html=window.rounds.map(x=>`<option value="${x}">第 ${x} 回</option>`);
+                    var html=window.rounds.map(x=>{
+                        if(check_result[String(x)]==2)
+                            return `<option value="${x}" style="background-color: red;">第 ${x} 回</option>`;
+                        if(check_result[String(x)]==1)
+                            return `<option value="${x}" style="background-color: orange;">第 ${x} 回</option>`;
+                        return `<option value="${x}">第 ${x} 回</option>`;
+                    });
                     html=`<option value="new">添加新回合</option>`+html;
                     $('.round-selector').html(html);
                 }
