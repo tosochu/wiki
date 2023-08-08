@@ -48,11 +48,9 @@
                     });
                     if(!json.video)warnings.push('缺失视频。');
                     if(!json.chart)warnings.push('缺失奖金变更图。');
-                    else{
-                        json.chart.forEach(x=>{
-                            if(!x.time||(!x.money&&x.money!=0))throw "图表数据不合法。";
-                        });
-                    }
+                    else json.chart.forEach(x=>{
+                        if(!x.time||(!x.money&&x.money!=0))throw "图表数据不合法。";
+                    });
                     if(warnings.length)$('.tip').text(warnings.join(''));
                     else $('.tip').text("检查通过。");
                     localStorage.setItem(`tosochuwiki/round/${window.nowFileRoundId}`,window.editor.getValue());
