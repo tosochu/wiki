@@ -49,7 +49,7 @@
                     if(!json.video)warnings.push('缺失视频。');
                     if(!json.chart)warnings.push('缺失奖金变更图。');
                     else{
-                        chart.forEach(x=>{
+                        json.chart.forEach(x=>{
                             if(!x.time||!x.money)throw "图表数据不合法。";
                         });
                     }
