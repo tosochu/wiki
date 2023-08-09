@@ -4,6 +4,11 @@ description: |
   
 date: 2008-04-22
 video: BV17x411S78p
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 70 min
+    money: 1260000
 message: 
   - type: openning-game
     person: [藤原時, 南明奈, エド・はるみ, 田崎佑一, 木下優樹菜]

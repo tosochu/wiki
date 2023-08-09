@@ -3,6 +3,11 @@ description: description
 video: BV1ws4y1w7tv
 length: 80
 date: 2010-08-28
+chart:
+  - time: 0 min
+    money: 0
+  - time: 80 min
+    money: 960000
 message: 
   - person: 優木まおみ
     type: catched

@@ -77,7 +77,7 @@
 </style>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
-    var ChartData={"display":false};
+    var ChartData={"chart":{"type":"area"},"title":{"text":"賞金変更"},"subtitle":{"text":"第 7 回 — お台場2"},"tooltip":{"shared":true,"valueSuffix":" 円"},"credits":{"enabled":false},"plotOptions":{"area":{"stacking":"normal","lineColor":"#666666","lineWidth":1,"marker":{"lineWidth":1,"lineColor":"#666666"}}},"xAxis":{"categories":["0 min","70 min"],"title":{"enabled":false},"tickmarkPlacement":"on"},"yAxis":{"title":{"enabled":false}},"series":[{"name":"当前時点の賞金","data":[0,1260000]}],"display":true};
     $(document).ready(()=>{
         if(ChartData.display){
             delete ChartData.display;
@@ -106,7 +106,14 @@
 
 
 
+    <br>
 
+
+
+    <br>
+    <div class="topan-section-shadow">
+        <div id="chart-money"></div>
+    </div>
 
 
 <h3>ゲームの行方</h3>
