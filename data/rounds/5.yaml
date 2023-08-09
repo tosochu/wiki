@@ -2,6 +2,12 @@ title: 渋谷3
 length: 60
 date: 2007-01-01
 description: description
+video: BV17x411S7e3
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 60 min
+    money: 1080000
 message: 
   - person: くまきりあさ美
     time: 57:42

@@ -3,6 +3,11 @@ length: 80
 date: 2007-04-07
 video: BV1su411i7c7
 description: description
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 80 min
+    money: 960000
 message:
   - person: ケンドーコバヤシ
     time: 63:25
