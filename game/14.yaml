@@ -1,0 +1,79 @@
+title: 王国の走り人
+length: 90
+date: 2010-03-24
+# video: 
+description: description
+chart: 
+  - time: 0 min
+    money: 0
+  - time: 90 min
+    money: 1080000
+message: 
+  - person: 鳥居みゆき
+    type: catched
+    time: 89:11
+  - person: 中岡創一
+    type: catched
+    time: 83:13
+  - person: コカドケンタロウ
+    type: catched
+    time: 80:35
+  - person: 大久保佳代子
+    type: catched
+    time: 68:03
+  - person: 吉田秀彦
+    type: catched
+    time: 62:03
+  - person: ビビる大木
+    type: catched
+    time: 57:43
+  - person: 長友光弘
+    type: catched
+    time: 52:08
+  - person: 市川亀治郎
+    type: waiver
+    time: 45:55
+    money: 529000
+  - person: 松井絵里奈
+    type: catched
+    time: 31:11
+  - person: 山根良顕
+    type: catched
+    time: 29:32
+  - person: 板野友美
+    type: catched
+    time: 22:43
+  - person: 庄司智春
+    type: catched
+    time: 22:05
+  - person: [片岡愛之助, 狩野英孝]
+    type: catched
+    time: 20:00
+  - person: [山根良顕, 中岡創一, 長友光弘]
+    type: revive
+    time: 20:00
+    reviver: [山根良顕, 中岡創一, 長友光弘]
+  - person: 田中卓志
+    type: catched
+    time: 17:33
+  - person: 長友光弘
+    type: catched
+    time: 17:10
+  - person: 山根良顕
+    type: catched
+    time: 16:10
+  - person: 中岡創一
+    type: catched
+    time: 15:04
+  - person: 優木まおみ
+    type: catched
+    time: 10:09
+  - person: 矢口真里
+    type: catched
+    time: 3:53
+  - person: 元木大介
+    type: catched
+    time: 0:58
+  - person: 安田美沙子
+    type: win
+    money: 1080000
