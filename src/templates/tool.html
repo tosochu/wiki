@@ -1,161 +1,244 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title id="title">开发者工具</title>
-        <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
-        <script src="https://molmin.github.io/yaml.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
-        <style>
-            .round-selector{
-                position: fixed;
-                top: 5px; left: 5px;
-                width: 100px; height: 20px;
-            }
-            .tip{
-                position: fixed;
-                top: 5px; left: 110px;
-                margin: 0;
-            }
-            #yaml-file{
-                position: fixed;
-                top: 30px; left: 5px;
-                width: 600px; height: calc(100% - 35px);
-                margin: 0;
-            }
-        </style>
-        <script>
-            const check_result=<%- JSON.stringify(check) %>;
 
-            async function CheckFile(){
-                $('.tip').text(`正在检查……`);
-                var warnings=new Array();
-                try{
-                    var json=window.yaml_parser(window.editor.getValue());
-                    if(!json.title||!json.date||!json.length||!json.message)
-                        throw "必须包含 title，date，length 和 message 字段。";
-                    json.message.forEach(m=>{
-                        if(!m.person)throw "每条记录必须包含玩家信息。";
-                        if(!m.type)throw "每条记录必须有一个类型。";
-                        if(![
-                            'catched','waiver','win','revive',
-                            'companion-win','money-game','openning-game',
-                            'money-game-catched','money-game-win'
-                        ].includes(m.type))throw "类型不合法。";
-                        if(m.type=='revive'&&!m.reviver)throw "复活必须包含第二方玩家。";
-                        if(m.type=='companion-win'&&!m.rely)throw "联合获胜必须有依赖方。";
-                        if(m.type=='money-game'&&!m.challenger)throw "Money Game 必须包含获胜者。";
-                    });
-                    if(!json.video)warnings.push('缺失视频。');
-                    if(!json.chart)warnings.push('缺失奖金变更图。');
-                    else json.chart.forEach(x=>{
-                        if(!x.time||(!x.money&&x.money!=0))throw "图表数据不合法。";
-                    });
-                    if(warnings.length)$('.tip').text(warnings.join(''));
-                    else $('.tip').text("检查通过。");
-                    localStorage.setItem(`tosochuwiki/round/${window.nowFileRoundId}`,window.editor.getValue());
-                }catch(err){
-                    $('.tip').text(err.message || String(err));
-                }
-            }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title id="title">开发者工具</title>
+  <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
+  <script src="https://molmin.github.io/yaml.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js" type="text/javascript"
+    charset="utf-8"></script>
+  <style>
+    .round-selector {
+      position: fixed;
+      top: 5px;
+      left: 5px;
+      width: 100px;
+      height: 20px;
+    }
+    
+    .frontend-worker {
+      position: fixed;
+      top: 30px;
+      left: 410px;
+      height: calc(100% - 35px);
+      width: calc(100% - 415px);
+      overflow: auto;
+    }
 
-            var timer;
+    select {
+      width: 50px;
+    }
 
-            async function LoadRound(id){
-                if(timer)clearInterval(timer);
-                var file;
-                if(localStorage.getItem(`tosochuwiki/round/${id}`))
-                    file=localStorage.getItem(`tosochuwiki/round/${id}`);
-                else{
-                    var response=await fetch(`/<%= data.on %>/game/${id}.yaml`);
-                    if(response.status!=200)return;
-                    file=await response.text();
-                }
-                window.editor.setValue(file);
-                await CheckFile();
-                setInterval(CheckFile,1000);
-            }
+    input {
+      width: 70px;
+    }
 
-            $(document).ready(async()=>{
-                editor = ace.edit("yaml-file");
-                theme = "clouds"
-                language = "yaml"
-                editor.setTheme("ace/theme/" + theme);
-                editor.session.setMode("ace/mode/" + language);
-                editor.setFontSize(18);
-                editor.setReadOnly(false); 
-                editor.setOption("wrap", "free")
-                ace.require("ace/ext/language_tools");
-                editor.setOptions({
-                    enableBasicAutocompletion: true,
-                    enableSnippets: true,
-                    enableLiveAutocompletion: true
-                });
-                window.editor=editor;
+    .worker-operation {
+      cursor: pointer;
+      color: rgb(100, 100, 100);
+    }
 
-                window.rounds=[<%= data.games.map(x=>x.id).toString() %>];
-                for(var key in localStorage){
-                    if(/^tosochuwiki\/round\/[1-9][0-9]*$/.test(key)){
-                        const rid=/^tosochuwiki\/round\/([1-9][0-9]*)$/.exec(key)[1];
-                        if(!window.rounds.includes(Number(rid)))
-                            window.rounds.push(Number(rid));
-                    }
-                }
-                function buildSelector(){
-                    var html=window.rounds.map(x=>{
-                        if(check_result[String(x)]==2)
-                            return `<option value="${x}" style="background-color: red;">第 ${x} 回</option>`;
-                        if(check_result[String(x)]==1)
-                            return `<option value="${x}" style="background-color: orange;">第 ${x} 回</option>`;
-                        return `<option value="${x}">第 ${x} 回</option>`;
-                    });
-                    html=`<option value="new">添加新回合</option>`+html;
-                    $('.round-selector').html(html);
-                }
+    .worker-operation:hover {
+      color: rgb(255, 163, 42);
+    }
 
-                buildSelector();
-                $('.round-selector').val(String(window.rounds[0]));
+    .tip {
+      position: fixed;
+      top: 5px;
+      left: 110px;
+      margin: 0;
+    }
 
-                window.nowFileRoundId=window.rounds[0];
-                await LoadRound(window.nowFileRoundId);
+    #yaml-file {
+      position: fixed;
+      top: 30px;
+      left: 5px;
+      width: 400px;
+      height: calc(100% - 35px);
+      margin: 0;
+    }
+  </style>
+  <script>
+    const check_result = <%- JSON.stringify(check) %>;
+    const SUPPORTED_TYPE = [
+      'catched', 'win', 'waiver', 'revive',
+      'companion-win', 'money-game', 'openning-game',
+      'money-game-catched', 'money-game-win'
+    ];
 
-                $('#round-selector').change(async()=>{
-                    if($('#round-selector').val()=='new'){
-                        const rid=window.prompt(`请输入回数`);
-                        if(!/^[1-9][0-9]*$/.test(rid)||rid.length>10)window.alert('请输入正整数');
-                        else if(window.rounds.includes(Number(rid)))window.alert('该回合已存在。');
-                        else{
-                            window.rounds.push(Number(rid));
-                            buildSelector();
-                            $('.round-selector').val(rid);
-                            localStorage.setItem(`tosochuwiki/round/${rid}`,`title: Title
+    async function CheckFile() {
+      $('.tip').text(`正在检查……`);
+      var warnings = new Array();
+      try {
+        var json = window.yaml_parser(window.editor.getValue());
+        if (!json.title || !json.date || !json.length || !json.message)
+          throw "必须包含 title，date，length 和 message 字段。";
+        json.message.forEach(m => {
+          if (!m.person) throw "每条记录必须包含玩家信息。";
+          if (!m.type) throw "每条记录必须有一个类型。";
+          if (!SUPPORTED_TYPE.includes(m.type)) throw "类型不合法。";
+          if (m.type == 'revive' && !m.reviver) throw "复活必须包含第二方玩家。";
+          if (m.type == 'companion-win' && !m.rely) throw "联合获胜必须有依赖方。";
+          if (m.type == 'money-game' && !m.challenger) throw "Money Game 必须包含获胜者。";
+        });
+        if (!json.video) warnings.push('缺失视频。');
+        if (!json.chart) warnings.push('缺失奖金变更图。');
+        else json.chart.forEach(x => {
+          if (!x.time || (!x.money && x.money != 0)) throw "图表数据不合法。";
+        });
+        if (warnings.length) $('.tip').text(warnings.join(''));
+        else $('.tip').text("检查通过。");
+        localStorage.setItem(`tosochuwiki/round/${window.nowFileRoundId}`, window.editor.getValue());
+      } catch (err) {
+        $('.tip').text(err.message || String(err));
+      }
+    }
+
+    var timer;
+
+    async function LoadRound(id) {
+      if (timer) clearInterval(timer);
+      var file;
+      if (localStorage.getItem(`tosochuwiki/round/${id}`))
+        file = localStorage.getItem(`tosochuwiki/round/${id}`);
+      else {
+        var response = await fetch(`/<%= data.on %>/game/${id}.yaml`);
+        if (response.status != 200) return;
+        file = await response.text();
+      }
+      window.editor.setValue(file);
+      await CheckFile();
+      setInterval(CheckFile, 1000);
+    }
+
+    $(document).ready(async () => {
+      editor = ace.edit("yaml-file");
+      theme = "clouds"
+      language = "yaml"
+      editor.setTheme("ace/theme/" + theme);
+      editor.session.setMode("ace/mode/" + language);
+      editor.setFontSize(18);
+      editor.setReadOnly(false);
+      editor.setOption("wrap", "free")
+      ace.require("ace/ext/language_tools");
+      editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+      });
+      window.editor = editor;
+
+      window.rounds = [<%= data.games.map(x => x.id).toString() %>];
+      for (var key in localStorage) {
+        if (/^tosochuwiki\/round\/[1-9][0-9]*$/.test(key)) {
+          const rid = /^tosochuwiki\/round\/([1-9][0-9]*)$/.exec(key)[1];
+          if (!window.rounds.includes(Number(rid)))
+            window.rounds.push(Number(rid));
+        }
+      }
+      function buildSelector() {
+        var html = window.rounds.map(x => {
+          if (check_result[String(x)] == 2)
+            return `<option value="${x}" style="background-color: red;">第 ${x} 回</option>`;
+          if (check_result[String(x)] == 1)
+            return `<option value="${x}" style="background-color: orange;">第 ${x} 回</option>`;
+          return `<option value="${x}">第 ${x} 回</option>`;
+        });
+        html = `<option value="new">添加新回合</option>` + html;
+        $('.round-selector').html(html);
+      }
+
+      buildSelector();
+      $('.round-selector').val(String(window.rounds[0]));
+
+      window.nowFileRoundId = window.rounds[0];
+      await LoadRound(window.nowFileRoundId);
+
+      $('#round-selector').change(async () => {
+        if ($('#round-selector').val() == 'new') {
+          const rid = window.prompt(`请输入回数`);
+          if (!/^[1-9][0-9]*$/.test(rid) || rid.length > 10) window.alert('请输入正整数');
+          else if (window.rounds.includes(Number(rid))) window.alert('该回合已存在。');
+          else {
+            window.rounds.push(Number(rid));
+            buildSelector();
+            $('.round-selector').val(rid);
+            localStorage.setItem(`tosochuwiki/round/${rid}`, `title: Title
 length: 60
 date: 2023-01-01
 message: 
   - person: Person
     type: win
     money: 100`);
-                            window.nowFileRoundId=Number(rid);
-                            await LoadRound(window.nowFileRoundId);
-                        }
-                    }
-                    else{
-                        window.nowFileRoundId=Number($('#round-selector').val());
-                        await LoadRound(window.nowFileRoundId);
-                    }
-                });
-            });
-        </script>
-    </head>
-    <body>
-        <select name="round-selector" id="round-selector" class="round-selector">
-            <option value="new">添加新回合</option>
-        </select>
-        <pre id="yaml-file" class="ace_editor" style="min-height: 400px;">
-            <textarea class="ace_text-input"></textarea>
-        </pre>
-        <p class="tip">程序启动中</p>
-    </body>
+            window.nowFileRoundId = Number(rid);
+            await LoadRound(window.nowFileRoundId);
+          }
+        }
+        else {
+          window.nowFileRoundId = Number($('#round-selector').val());
+          await LoadRound(window.nowFileRoundId);
+        }
+      });
+
+      window.Messages=new Array();
+      var maxId=0;
+
+      $('.operation-append').click(() => {
+        var now=maxId;
+        window.Messages.push({
+          player: '',
+          time: '',
+          money: 0,
+          type: 'catched',
+          id: maxId++
+        });
+        $("table").append(`
+        <tr>
+          <td><input type="text" class="event-${now}-player"></td>
+          <td><input type="time" class="event-${now}-time"></td>
+          <td><input type="number" class="event-${now}-money"></td>
+          <td><select class="type">
+            ${SUPPORTED_TYPE.map(x=>`<option value="${x}">${x}</option>`).join('')}
+          </select></td>
+          <td>
+            <span class="worker-operation event-${now}-delete">Delete</span>
+            <span class="worker-operation event-${now}-insert">Insert</span>
+          </td>
+        </tr>
+        `);
+        $(`.event-${now}-money`).val(0);
+        $(`.event-${now}-delete`).click(()=>{});
+        $(`.event-${now}-insert`).click(()=>{});
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <select name="round-selector" id="round-selector" class="round-selector">
+    <option value="new">添加新回合</option>
+  </select>
+  <pre id="yaml-file" class="ace_editor" style="min-height: 400px;">
+    <textarea class="ace_text-input"></textarea>
+  </pre>
+  <p class="tip">程序启动中</p>
+  <div class="frontend-worker">
+    <span class="worker-operation operation-append">Append</span>
+    <span class="worker-operation operation-sync">Sync</span>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Time</th>
+        <th>Money</th>
+        <th>Type</th>
+        <th>Operation</th>
+      </tr>
+      
+    </table>
+  </div>
+</body>
+
 </html>
