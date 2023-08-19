@@ -29,7 +29,7 @@
     }
 
     select {
-      width: 50px;
+      width: 70px;
     }
 
     input {
@@ -196,8 +196,7 @@ message:
           id: maxId++
         });
         $("table").append(`
-        <tr>
-          <td><input type="text" class="event-${now}-player"></td>
+        <tr class="event-${now}">
           <td><input type="time" class="event-${now}-time"></td>
           <td><input type="number" class="event-${now}-money"></td>
           <td><select class="type">
@@ -210,8 +209,11 @@ message:
         </tr>
         `);
         $(`.event-${now}-money`).val(0);
-        $(`.event-${now}-delete`).click(()=>{});
-        $(`.event-${now}-insert`).click(()=>{});
+        $(`span.event-${now}-delete`).click(()=>{
+          window.Messages= window.Messages.filter(x=>x.id!=now);
+          $(`tr.event-${now}`).remove();
+        });
+        $(`span.event-${now}-insert`).click(()=>{});
       });
     });
   </script>
@@ -230,7 +232,7 @@ message:
     <span class="worker-operation operation-sync">Sync</span>
     <table>
       <tr>
-        <th>Name</th>
+        <th>Player</th>
         <th>Time</th>
         <th>Money</th>
         <th>Type</th>
