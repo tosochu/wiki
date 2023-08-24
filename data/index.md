@@ -82,7 +82,7 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 			<tr>
 				<td>第十三回</td><td class="empty">Empt.</td>
 				<td><a href="/wiki/game/14.html">第十四回</a></td><td class="completed">Comp.</td>
-				<td>第十五回</td><td class="collecting">Coll.</td>
+				<td><a href="/wiki/game/15.html">第十五回</a></td><td class="completed">Comp.</td>
 				<td>第十六回</td><td class="empty">Empt.</td>
 			</tr>
 			<tr>
