@@ -151,6 +151,12 @@ Tosochu Wiki 将会给每个玩家计算平均以及单个回合的逃走率，�
 				<td>第五十九回</td><td class="empty">Empt.</td>
 				<td><a href="/wiki/game/60.html">第六十回</a></td><td class="completed">Comp.</td>
 			</tr>
+			<tr>
+				<td>第六十一回</td><td class="empty">Empt.</td>
+				<td>第六十二回</td><td class="empty">Empt.</td>
+				<td></td><td>None</td>
+				<td></td><td>None</td>
+			</tr>
 		</tbody>
 	</table>
 </center>
