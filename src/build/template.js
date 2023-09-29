@@ -10,9 +10,9 @@ module.exports=(config,HTML)=>{
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title id="title">${config.title} - ${Config.title}</title>
-        <script src="https://topan-dev.github.io/TopanUI/src/jquery.js"></script>
-        <link rel="stylesheet" href="https://topan-dev.github.io/TopanUI/topan.css">
-        <script src="https://topan-dev.github.io/TopanUI/topan.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/topan-dev/TopanUI/src/jquery.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/topan-dev/TopanUI/topan.css">
+        <script src="https://cdn.jsdelivr.net/gh/topan-dev/TopanUI/topan.js"></script>
         <script src="https://kit.fontawesome.com/0d8081718e.js" crossorigin="anonymous"></script>
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         ${config.header}
